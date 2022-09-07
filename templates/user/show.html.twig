@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.user_details'|trans({'%id%': user.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'title.user_details'|trans({'%id%': user.id|default('')}) }}</h1>
+    {% if user is defined and user|length %}
+        <dl class="dl-horizontal">
+            <dt>{{ 'label.id'|trans }}</dt>
+            <dd>{{ user.id }}</dd>
+            <dt>{{ 'label.email'|trans }}</dt>
+            <dd>{{ user.email }}</dd>
+            <dt>{{ 'label.login'|trans }}</dt>
+            <dd>{{ user.userData.login }}</dd>
+            <dt>{{ 'label.name'|trans }}</dt>
+            <dd>{{ user.userData.firstname }}</dd>
+        </dl>
+        <br>
+
+        <p>
+            <a href="{{ url('change_password', {id: user.id}) }}" title="{{ 'action.change_password'|trans }}">
+                {{ 'action.change_password'|trans }}
+            </a>
+        </p>
+
+        <p>
+            <a href="{{ url('user_index') }}" title="{{ 'action.back_to_list'|trans }}">
+                {{ 'action.back_to_list'|trans }}
+            </a>
+        </p>
+    {% else %}
+        <p>
+            {{ 'message.record_not_found'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

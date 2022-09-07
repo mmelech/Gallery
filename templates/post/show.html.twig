@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.post_details'|trans({'%id%': post.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'title.post_details'|trans({'%id%': post.id|default('')}) }}</h1>
+    {% if post is defined and post|length %}
+        <dl class="dl-horizontal">
+            <dt>{{ 'label.id'|trans }}</dt>
+            <dd>{{ post.id }}</dd>
+            <dt>{{ 'label.date'|trans }}</dt>
+            <dd>{{ post.date|date('d/m/Y') }}</dd>
+            <dt>{{ 'label.title'|trans }}</dt>
+            <dd>{{  post.title }}</dd>
+            <dt>{{ 'label.content'|trans }}</dt>
+            <dd>{{  post.content }}</dd>
+            <dt>{{ 'label.category'|trans }}</dt>
+            <dd>
+                    <a href="{{ url('category_show', {id: post.category.id}) }}" title="{{ 'category_show'|trans }}">
+                        {{ post.category.title }}
+                    </a>
+            </dd>
+            <dt>{{ 'label.tags'|trans }}</dt>
+            <dd>
+                {% for tag in post.tags %}
+                    <a href="{{ url('tag_show', {id: tag.id}) }}" title="{{ 'tag_show'|trans }}">
+                        {{ tag.title }}{{ ',' }}
+                    </a>
+                {% endfor %}
+            </dd>
+        </dl>
+        <br>
+
+        <h4>
+            {{ 'label_comments'|trans }}
+        </h4>
+
+        <p>
+            <a href="{{ url('comment_create', {id: post.id}) }}" title="{{ 'action.create'|trans }}">
+                {{ 'action.create'|trans }}
+            </a>
+        </p>
+        <table class="table table-striped">
+            <tbody>
+            {% for comment in post.comments %}
+                <tr>
+
+                    <td>{{ comment.date|date('d/m/Y') }}</td>
+                    <td>{{ comment.content }}</td>
+                    <td>{{ comment.author.userData.login }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <p>
+            <a href="{{ url('post_index') }}" title="{{ 'action.back_to_list'|trans }}">
+                {{ 'action.back_to_list'|trans }}
+            </a>
+        </p>
+    {% else %}
+        <p>
+            {{ 'message.record_not_found'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

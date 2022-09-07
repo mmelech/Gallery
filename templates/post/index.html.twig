@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.post_list'|trans }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'title.post_list'|trans }}</h1>
+    <p>
+        <a href="{{ url('post_create') }}" title="{{ 'action.create'|trans }}">
+            {{ 'action.create'|trans }}
+        </a>
+    </p>
+    {% if pagination is defined and pagination.items|length %}
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ knp_pagination_sortable(pagination, 'label.id'|trans, 'post.id') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.date'|trans, 'post.date') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'post.title') }}</th>
+                <th>{{ 'label.category'|trans }}</th>
+                <th>{{ 'label.actions'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for post in pagination.items %}
+                <tr>
+                    <td>{{ post.id }}</td>
+                    <td>{{ post.date|date('d/m/Y') }}</td>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.category.title }}</td>
+                    <td>
+                        <a href="{{ url('post_show', {id: post.id}) }}" title="{{ 'action.view'|trans }}">
+                            {{ 'action.view'|trans }}
+                        </a>
+                        <a href="{{ url('post_edit', {id: post.id}) }}" title="{{ 'action.edit'|trans }}">
+                            {{ 'action.edit'|trans }}
+                        </a>
+                        <a href="{{ url('post_delete', {id: post.id}) }}" title="{{ 'action.delete'|trans }}">
+                            {{ 'action.delete'|trans }}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+    {% else %}
+        <p>
+            {{ 'message.empty_list'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}
