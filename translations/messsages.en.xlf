@@ -4,11 +4,19 @@
     <body>
       <trans-unit id="label.actions">
         <source>label.actions</source>
-        <target>Actions</target>
+        <target> </target>
+      </trans-unit>
+      <trans-unit id="label.title.gallery">
+         <source>label.title.gallery</source>
+         <target>Gallery title</target>
       </trans-unit>
       <trans-unit id="label.id">
         <source>label.id</source>
-        <target>Id</target>
+        <target>Number</target>
+      </trans-unit>
+      <trans-unit id="label.title.photo">
+        <source>label.title.photo</source>
+        <target>Photo title</target>
       </trans-unit>
       <trans-unit id="label.title">
         <source>label.title</source>
@@ -16,7 +24,7 @@
       </trans-unit>
       <trans-unit id="label.content">
         <source>label.content</source>
-        <target>Content</target>
+        <target>Photo description</target>
       </trans-unit>
       <trans-unit id="label.tags">
         <source>label.tags</source>
@@ -24,91 +32,91 @@
       </trans-unit>
       <trans-unit id="message.empty_list">
         <source>message.empty_list</source>
-        <target>List is empty.</target>
+        <target>Error</target>
       </trans-unit>
       <trans-unit id="message.record_not_found">
         <source>message.record_not_found</source>
-        <target>Record not found.</target>
+        <target>Record not found</target>
       </trans-unit>
       <trans-unit id="title.record_list">
         <source>title.record_list</source>
-        <target>Records list</target>
+        <target>List of rekords</target>
       </trans-unit>
       <trans-unit id="title.record_view">
         <source>title.record_view</source>
-        <target>Record view #%id%</target>
+        <target>Record #%id%</target>
       </trans-unit>
-      <trans-unit id="title.tag_list">
-        <source>title.tag_list</source>
-        <target>Tags</target>
+      <trans-unit id="title.tags_list">
+        <source>title.tags_list</source>
+        <target>List of tags</target>
       </trans-unit>
-      <trans-unit id="title.tag_edit">
-        <source>title.tag_edit</source>
+      <trans-unit id="title.tags_edit">
+        <source>title.tags_edit</source>
         <target>Edit tag</target>
         </trans-unit>
-      <trans-unit id="title.tag_create">
-        <source>title.tag_create</source>
+      <trans-unit id="title.tags_create">
+        <source>title.tags_create</source>
         <target>Create tag</target>
       </trans-unit>
-      <trans-unit id="title.tag_delete">
-        <source>title.tag_delete</source>
+      <trans-unit id="title.tags_delete">
+        <source>title.tags_delete</source>
         <target>Delete tag</target>
       </trans-unit>
       <trans-unit id="title.tag_details">
         <source>title.tag_details</source>
-        <target>Tag details</target>
+        <target>Tag detail</target>
       </trans-unit>
-      <trans-unit id="title.category_list">
-        <source>title.category_list</source>
-        <target>Categories</target>
+      <trans-unit id="title.gallery_list">
+        <source>title.gallery_list</source>
+        <target>List of galleries</target>
       </trans-unit>
-      <trans-unit id="title.category_edit">
-        <source>title.category_edit</source>
-        <target>Edit category</target>
+      <trans-unit id="title.gallery_edit">
+        <source>title.gallery_edit</source>
+        <target>Edit gallery</target>
       </trans-unit>
-      <trans-unit id="title.category_create">
-        <source>title.category_create</source>
-        <target>Create category</target>
+      <trans-unit id="title.gallery_create">
+        <source>title.gallery_create</source>
+        <target>Create gallery</target>
       </trans-unit>
-      <trans-unit id="title.category_delete">
-        <source>title.category_delete</source>
-        <target>Delete category</target>
+      <trans-unit id="title.gallery_delete">
+        <source>title.gallery_delete</source>
+        <target>Delete gallery</target>
       </trans-unit>
-      <trans-unit id="title.category_details">
-        <source>title.category_details</source>
-        <target>Category details</target>
+      <trans-unit id="title.gallery_details">
+        <source>title.gallery_details</source>
+        <target>Gallery details</target>
       </trans-unit>
       <trans-unit id="title.photo_list">
         <source>title.photo_list</source>
-        <target>Posts</target>
+        <target>Photo</target>
       </trans-unit>
-      <trans-unit id="title.post_edit">
-        <source>title.post_edit</source>
-        <target>Edit post</target>
+      <trans-unit id="title.photo_edit">
+        <source>title.photo_edit</source>
+        <target>Edit photo</target>
       </trans-unit>
-      <trans-unit id="title.post_create">
-        <source>title.post_create</source>
-        <target>Create post</target>
+      <trans-unit id="title.photo_create">
+        <source>title.photo_create</source>
+        <target>Create photo</target>
       </trans-unit>
-      <trans-unit id="title.post_delete">
-        <source>title.post_delete</source>
-        <target>Delete post</target>
+      <trans-unit id="title.photo_delete">
+        <source>title.photo_delete</source>
+        <target>Delete photo</target>
       </trans-unit>
       <trans-unit id="title.comment_create">
         <source>title.comment_create</source>
         <target>Create comment</target>
       </trans-unit>
-      <trans-unit id="title.post_details">
-        <source>title.post_details</source>
-        <target>Post details</target>
+      <trans-unit id="title.photo_details">
+        <source>title.photo_details</source>
+        <target>Photo details</target>
       </trans-unit>
-      <trans-unit id="post_show">
-        <source>post_show</source>
-        <target>Show post</target>
+      <trans-unit id="photo_show">
+        <source>photo_show</source>
+        <target>Show photo</target>
       </trans-unit>
-      <trans-unit id="category_show">
-        <source>category_show</source>
-        <target>Show category</target>
+      <trans-unit id="gallery_show">
+        <source>gallery_show</source>
+        <target>Show gallery</target>
       </trans-unit>
       <trans-unit id="tag_show">
         <source>tag_show</source>
@@ -116,19 +124,19 @@
       </trans-unit>
       <trans-unit id="label.date">
         <source>label.date</source>
-        <target>Date</target>
+        <target>Data</target>
       </trans-unit>
-      <trans-unit id="label.category">
-        <source>label.category</source>
-        <target>Category</target>
+      <trans-unit id="label.gallery">
+        <source>label.gallery</source>
+        <target>Gallery</target>
       </trans-unit>
-      <trans-unit id="label_post">
-        <source>label_post</source>
-        <target>Post</target>
+      <trans-unit id="label_photo">
+        <source>label_photo</source>
+        <target>Photo</target>
       </trans-unit>
       <trans-unit id="action.view">
         <source>action.view</source>
-        <target>View</target>
+        <target>Show</target>
       </trans-unit>
       <trans-unit id="action.edit">
         <source>action.edit</source>
@@ -144,7 +152,7 @@
       </trans-unit>
       <trans-unit id="action_back_to_list">
         <source>action_back_to_list</source>
-        <target>Back to list</target>
+        <target>Back</target>
       </trans-unit>
       <trans-unit id="action.create">
         <source>action.create</source>
@@ -152,19 +160,15 @@
       </trans-unit>
       <trans-unit id="action.back_to_list">
         <source>action.back_to_list</source>
-        <target>Back to list</target>
-      </trans-unit>
-      <trans-unit id="">
-        <source>action_create</source>
-        <target>Create</target>
+        <target>Back</target>
       </trans-unit>
       <trans-unit id="message.created_successfully">
         <source>message.created_successfully</source>
-        <target>Created successfully</target>
+        <target>Added!</target>
       </trans-unit>
       <trans-unit id="message.deleted_successfully">
         <source>message.deleted_successfully</source>
-        <target>Deleted successfully</target>
+        <target>Deleted!</target>
       </trans-unit>
       <trans-unit id="message.form_error">
         <source>message.form_error</source>
@@ -174,17 +178,94 @@
         <source>label_comments</source>
         <target>Comments</target>
       </trans-unit>
-      <trans-unit id="label_posts">
-              <source>label_posts</source>
-              <target>Posts</target>
-            </trans-unit>
-      <trans-unit id="label_categories">
-        <source>label_categories</source>
-        <target>Categories</target>
+      <trans-unit id="label_photos">
+        <source>label_photos</source>
+        <target>Photos</target>
+      </trans-unit>
+      <trans-unit id="label_galleries">
+        <source>label_galleries</source>
+        <target>Galleries</target>
       </trans-unit>
       <trans-unit id="label_tags">
         <source>label_tags</source>
         <target>Tags</target>
+      </trans-unit>
+      <trans-unit id="action_login">
+        <source>action_login</source>
+        <target>Sign in</target>
+      </trans-unit>
+      <trans-unit id="action_register">
+        <source>action_register</source>
+        <target>Sign up</target>
+      </trans-unit>
+      <trans-unit id="action_logout">
+        <source>action_logout</source>
+        <target>Log out</target>
+      </trans-unit>
+      <trans-unit id="action.filtrate">
+        <source>action.filtrate</source>
+        <target>Filtr</target>
+      </trans-unit>
+
+      <trans-unit id="action.change_userData">
+        <source>action.change_userData</source>
+        <target>Change data</target>
+      </trans-unit>
+      <trans-unit id="action.change_password">
+        <source>action.change_password</source>
+        <target>Change password</target>
+      </trans-unit>
+      <trans-unit id="title.user_details">
+        <source>title.user_details</source>
+        <target>User data</target>
+      </trans-unit>
+      <trans-unit id="label.email">
+        <source>label.email</source>
+        <target>E-mail</target>
+      </trans-unit>
+      <trans-unit id="label.login">
+        <source>label.login</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="label.name">
+        <source>label.name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="label_firstname">
+        <source>label_firstname</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="title.change_password">
+        <source>title.change_password</source>
+        <target>Change password</target>
+      </trans-unit>
+      <trans-unit id="new.password">
+        <source>new.password</source>
+        <target>New password</target>
+      </trans-unit>
+      <trans-unit id="repeat.password">
+        <source>repeat.password</source>
+        <target>Repeat password</target>
+      </trans-unit>
+      <trans-unit id="action_registration">
+        <source>action_registration</source>
+        <target>Sign up</target>
+      </trans-unit>
+      <trans-unit id="title_useredit">
+        <source>title_useredit</source>
+        <target>Change data</target>
+      </trans-unit>
+      <trans-unit id="label.tag">
+        <source>label.tag</source>
+        <target>Tags</target>
+      </trans-unit>
+      <trans-unit id="label_users">
+        <source>label_users</source>
+        <target>Users</target>
+      </trans-unit>
+      <trans-unit id="title.user_list">
+        <source>title.user_list</source>
+        <target>List of users</target>
       </trans-unit>
     </body>
   </file>

@@ -80,7 +80,7 @@
       </trans-unit>
       <trans-unit id="title.gallery_delete">
         <source>title.gallery_delete</source>
-        <target>Usuń kategorię</target>
+        <target>Usuń galerię</target>
       </trans-unit>
       <trans-unit id="title.gallery_details">
         <source>title.gallery_details</source>
