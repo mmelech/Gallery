@@ -66,7 +66,7 @@ class UserDataController extends AbstractController
             $this->userDataService->save($userdata);
             $this->addFlash('success', 'message_updated_successfully');
 
-            return $this->redirectToRoute('post_index');
+            return $this->redirectToRoute('photo_index');
         }
 
         return $this->render(

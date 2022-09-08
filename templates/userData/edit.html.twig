@@ -1,5 +1,5 @@
 {% include 'default/_form.html.twig' with {
-    page_title: 'title_user_edit',
+    page_title: 'title_useredit'|trans,
     page_title_param: {'%id%': userData.id},
     attr: {
         method: 'PUT',
@@ -7,5 +7,5 @@
     },
     form: form,
     submit_label: 'action.edit'|trans,
-    back_to_list_path: 'post_index',
+    back_to_list_path: 'photo_index',
 } %}

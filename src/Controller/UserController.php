@@ -217,7 +217,7 @@ class UserController extends AbstractController
                 $this->translator->trans('message.password_edited_successfully')
             );
 
-            return $this->redirectToRoute('post_index');
+            return $this->redirectToRoute('photo_index');
         }
 
         return $this->render(

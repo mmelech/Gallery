@@ -1,21 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ 'action_registration|trans' }}
+    {{ 'action_registration'|trans }}
 {% endblock %}
 
 {% block body %}
-    <h1>{{ 'action_registration' }}</h1>
+    <h1>{{ 'action_registration'|trans }}</h1>
 
     {{ form_start(form, { method: 'POST', action: url('app_register') }) }}
     {{ form_widget(form) }}
 
-    <div class="form-group row float-sm_right">
-        <input type="submit" value="{{ 'action.save'|trans }}" class="btn btn-primary">
+    <div>
+        <input type="submit" value="{{ 'action.save'|trans }}" class="btn btn-dark">
     </div>
 
     <div>
-        <a href="{{ url('post_index') }}">
+        <a href="{{ url('photo_index') }}">
             {{ 'action_back_to_list'|trans }}
         </a>
     </div>
