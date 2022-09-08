@@ -10,6 +10,7 @@ use App\Entity\Post;
 use App\Entity\User;
 use App\Entity\UserData;
 use App\Form\Type\CommentType;
+use DateTimeImmutable;
 use App\Form\Type\PostType;
 use App\Repository\CommentRepository;
 use App\Service\PostServiceInterface;
@@ -110,6 +111,7 @@ class PostController extends AbstractController
         $post = new Post();
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
+        $post->setDate(new DateTimeImmutable());
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->postService->save($post);

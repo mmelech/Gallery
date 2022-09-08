@@ -6,11 +6,16 @@
 
 {% block body %}
     <h1>{{ 'title.post_list'|trans }}</h1>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
     <p>
         <a href="{{ url('post_create') }}" title="{{ 'action.create'|trans }}">
             {{ 'action.create'|trans }}
         </a>
+        <a href="{{ url('tags_filtrate') }}" title="{{ 'action.filtrate'|trans }}">
+            {{ 'action.filtrate'|trans }}
+        </a>
     </p>
+    {% endif %}
     {% if pagination is defined and pagination.items|length %}
 
         <table class="table table-striped">
@@ -29,17 +34,21 @@
                     <td>{{ post.id }}</td>
                     <td>{{ post.date|date('d/m/Y') }}</td>
                     <td>{{ post.title }}</td>
+{#                    <td>{{ post.tags }}</td>#}
                     <td>{{ post.category.title }}</td>
+{#                    <td>{{ tags.title }}</td>#}
                     <td>
                         <a href="{{ url('post_show', {id: post.id}) }}" title="{{ 'action.view'|trans }}">
                             {{ 'action.view'|trans }}
                         </a>
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <a href="{{ url('post_edit', {id: post.id}) }}" title="{{ 'action.edit'|trans }}">
                             {{ 'action.edit'|trans }}
                         </a>
                         <a href="{{ url('post_delete', {id: post.id}) }}" title="{{ 'action.delete'|trans }}">
                             {{ 'action.delete'|trans }}
                         </a>
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor %}

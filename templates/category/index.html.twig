@@ -6,11 +6,13 @@
 
 {% block body %}
     <h1>{{ 'title.category_list'|trans }}</h1>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
     <p>
         <a href="{{ url('category_create') }}" title="{{ 'action.create'|trans }}">
             {{ 'action.create'|trans }}
         </a>
     </p>
+    {% endif %}
     {% if pagination is defined and pagination.items|length %}
         <table class="table table-striped">
             <thead>
@@ -27,12 +29,14 @@
                         <a href="{{ url('category_show', {id: category.id}) }}" title="{{ 'action.view'|trans }}">
                             {{ 'action.view'|trans }}
                         </a>
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <a href="{{ url('category_edit', {id: category.id}) }}" title="{{ 'action.edit'|trans }}">
                             {{ 'action.edit'|trans }}
                         </a>
                         <a href="{{ url('category_delete', {id: category.id}) }}" title="{{ 'action.delete'|trans }}">
                             {{ 'action.delete'|trans }}
                         </a>
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor %}

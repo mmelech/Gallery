@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="label.actions">
+        <source>label.actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="label.id">
+        <source>label.id</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="label.title">
+        <source>label.title</source>
+        <target>Title</target>
+      </trans-unit>
+      <trans-unit id="label.content">
+        <source>label.content</source>
+        <target>Content</target>
+      </trans-unit>
+      <trans-unit id="label.tags">
+        <source>label.tags</source>
+        <target>Tags</target>
+      </trans-unit>
+      <trans-unit id="message.empty_list">
+        <source>message.empty_list</source>
+        <target>List is empty.</target>
+      </trans-unit>
+      <trans-unit id="message.record_not_found">
+        <source>message.record_not_found</source>
+        <target>Record not found.</target>
+      </trans-unit>
+      <trans-unit id="title.record_list">
+        <source>title.record_list</source>
+        <target>Records list</target>
+      </trans-unit>
+      <trans-unit id="title.record_view">
+        <source>title.record_view</source>
+        <target>Record view #%id%</target>
+      </trans-unit>
+      <trans-unit id="title.tag_list">
+        <source>title.tag_list</source>
+        <target>Tags</target>
+      </trans-unit>
+      <trans-unit id="title.tag_edit">
+        <source>title.tag_edit</source>
+        <target>Edit tag</target>
+        </trans-unit>
+      <trans-unit id="title.tag_create">
+        <source>title.tag_create</source>
+        <target>Create tag</target>
+      </trans-unit>
+      <trans-unit id="title.tag_delete">
+        <source>title.tag_delete</source>
+        <target>Delete tag</target>
+      </trans-unit>
+      <trans-unit id="title.tag_details">
+        <source>title.tag_details</source>
+        <target>Tag details</target>
+      </trans-unit>
+      <trans-unit id="title.category_list">
+        <source>title.category_list</source>
+        <target>Categories</target>
+      </trans-unit>
+      <trans-unit id="title.category_edit">
+        <source>title.category_edit</source>
+        <target>Edit category</target>
+      </trans-unit>
+      <trans-unit id="title.category_create">
+        <source>title.category_create</source>
+        <target>Create category</target>
+      </trans-unit>
+      <trans-unit id="title.category_delete">
+        <source>title.category_delete</source>
+        <target>Delete category</target>
+      </trans-unit>
+      <trans-unit id="title.category_details">
+        <source>title.category_details</source>
+        <target>Category details</target>
+      </trans-unit>
+      <trans-unit id="title.photo_list">
+        <source>title.photo_list</source>
+        <target>Posts</target>
+      </trans-unit>
+      <trans-unit id="title.post_edit">
+        <source>title.post_edit</source>
+        <target>Edit post</target>
+      </trans-unit>
+      <trans-unit id="title.post_create">
+        <source>title.post_create</source>
+        <target>Create post</target>
+      </trans-unit>
+      <trans-unit id="title.post_delete">
+        <source>title.post_delete</source>
+        <target>Delete post</target>
+      </trans-unit>
+      <trans-unit id="title.comment_create">
+        <source>title.comment_create</source>
+        <target>Create comment</target>
+      </trans-unit>
+      <trans-unit id="title.post_details">
+        <source>title.post_details</source>
+        <target>Post details</target>
+      </trans-unit>
+      <trans-unit id="post_show">
+        <source>post_show</source>
+        <target>Show post</target>
+      </trans-unit>
+      <trans-unit id="category_show">
+        <source>category_show</source>
+        <target>Show category</target>
+      </trans-unit>
+      <trans-unit id="tag_show">
+        <source>tag_show</source>
+        <target>Show tag</target>
+      </trans-unit>
+      <trans-unit id="label.date">
+        <source>label.date</source>
+        <target>Date</target>
+      </trans-unit>
+      <trans-unit id="label.category">
+        <source>label.category</source>
+        <target>Category</target>
+      </trans-unit>
+      <trans-unit id="label_post">
+        <source>label_post</source>
+        <target>Post</target>
+      </trans-unit>
+      <trans-unit id="action.view">
+        <source>action.view</source>
+        <target>View</target>
+      </trans-unit>
+      <trans-unit id="action.edit">
+        <source>action.edit</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="action.delete">
+        <source>action.delete</source>
+        <target>Delete</target>
+      </trans-unit>
+      <trans-unit id="action.save">
+        <source>action.save</source>
+        <target>Save</target>
+      </trans-unit>
+      <trans-unit id="action_back_to_list">
+        <source>action_back_to_list</source>
+        <target>Back to list</target>
+      </trans-unit>
+      <trans-unit id="action.create">
+        <source>action.create</source>
+        <target>Create</target>
+      </trans-unit>
+      <trans-unit id="action.back_to_list">
+        <source>action.back_to_list</source>
+        <target>Back to list</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>action_create</source>
+        <target>Create</target>
+      </trans-unit>
+      <trans-unit id="message.created_successfully">
+        <source>message.created_successfully</source>
+        <target>Created successfully</target>
+      </trans-unit>
+      <trans-unit id="message.deleted_successfully">
+        <source>message.deleted_successfully</source>
+        <target>Deleted successfully</target>
+      </trans-unit>
+      <trans-unit id="message.form_error">
+        <source>message.form_error</source>
+        <target>Form error</target>
+      </trans-unit>
+      <trans-unit id="label_comments">
+        <source>label_comments</source>
+        <target>Comments</target>
+      </trans-unit>
+      <trans-unit id="label_posts">
+              <source>label_posts</source>
+              <target>Posts</target>
+            </trans-unit>
+      <trans-unit id="label_categories">
+        <source>label_categories</source>
+        <target>Categories</target>
+      </trans-unit>
+      <trans-unit id="label_tags">
+        <source>label_tags</source>
+        <target>Tags</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

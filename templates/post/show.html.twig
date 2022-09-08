@@ -36,12 +36,14 @@
         <h4>
             {{ 'label_comments'|trans }}
         </h4>
-
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
         <p>
             <a href="{{ url('comment_create', {id: post.id}) }}" title="{{ 'action.create'|trans }}">
                 {{ 'action.create'|trans }}
             </a>
+
         </p>
+        {% endif %}
         <table class="table table-striped">
             <tbody>
             {% for comment in post.comments %}
@@ -50,6 +52,11 @@
                     <td>{{ comment.date|date('d/m/Y') }}</td>
                     <td>{{ comment.content }}</td>
                     <td>{{ comment.author.userData.login }}</td>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') and 'ROLE_ADMIN' in app.user.roles %}
+                    <td><a href="{{ url('comment_delete', {id: comment.id}) }}" title="{{ 'action.delete'|trans }}">
+                            {{ 'action.delete'|trans }}
+                        </a></td>
+                    {% endif %}
                 </tr>
             {% endfor %}
             </tbody>

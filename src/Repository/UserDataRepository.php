@@ -17,6 +17,15 @@ use Doctrine\Persistence\ManagerRegistry;
 class UserDataRepository extends ServiceEntityRepository
 {
     /**
+    * Items per page.
+    *
+    * @constant int
+    */
+    public const PAGINATOR_ITEMS_PER_PAGE = 10;
+
+
+
+    /**
      * Constructor.
      *
      * @param ManagerRegistry $registry

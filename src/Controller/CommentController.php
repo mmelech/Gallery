@@ -9,6 +9,7 @@ use App\Entity\Comment;
 use App\Entity\Post;
 use App\Entity\User;
 use App\Entity\UserData;
+use DateTimeImmutable;
 use App\Form\Type\CommentType;
 use App\Repository\CommentRepository;
 use App\Service\CommentServiceInterface;
@@ -71,6 +72,7 @@ class CommentController extends AbstractController
         if($form->isSubmitted() && $form->isValid()) {
             $comment->setPost($post);
             $comment->setAuthor($author);
+            $comment->setDate(new DateTimeImmutable());
             $commentRepository->save($comment);
 
             $this->addFlash(

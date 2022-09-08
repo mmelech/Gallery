@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="label.actions">
+        <source>label.actions</source>
+        <target> </target>
+      </trans-unit>
+      <trans-unit id="label.gallery">
+         <source>label.title.gallery</source>
+         <target>Nazwa galerii</target>
+      </trans-unit>
+      <trans-unit id="label.id">
+        <source>label.id</source>
+        <target>Numer</target>
+      </trans-unit>
+      <trans-unit id="label.title.photo">
+        <source>label.title.photo</source>
+        <target>Nazwa zdjęcia</target>
+      </trans-unit>
+      <trans-unit id="label.title">
+        <source>label.title</source>
+        <target>Nazwa</target>
+      </trans-unit>
+      <trans-unit id="label.content">
+        <source>label.content</source>
+        <target>Opis zdjęcia</target>
+      </trans-unit>
+      <trans-unit id="label.tags">
+        <source>label.tags</source>
+        <target>Tagi</target>
+      </trans-unit>
+      <trans-unit id="message.empty_list">
+        <source>message.empty_list</source>
+        <target>Tu nic nie ma :(.</target>
+      </trans-unit>
+      <trans-unit id="message.record_not_found">
+        <source>message.record_not_found</source>
+        <target>Nie znaleziono wiersza.</target>
+      </trans-unit>
+      <trans-unit id="title.record_list">
+        <source>title.record_list</source>
+        <target>Lista rekordów</target>
+      </trans-unit>
+      <trans-unit id="title.record_view">
+        <source>title.record_view</source>
+        <target>Widok rekordu #%id%</target>
+      </trans-unit>
+      <trans-unit id="title.tags_list">
+        <source>title.tags_list</source>
+        <target>Lista tagów</target>
+      </trans-unit>
+      <trans-unit id="title.tags_edit">
+        <source>title.tags_edit</source>
+        <target>Edytuj tag</target>
+        </trans-unit>
+      <trans-unit id="title.tags_create">
+        <source>title.tags_create</source>
+        <target>Utwórz tag</target>
+      </trans-unit>
+      <trans-unit id="title.tags_delete">
+        <source>title.tags_delete</source>
+        <target>Usuń tag</target>
+      </trans-unit>
+      <trans-unit id="title.tag_details">
+        <source>title.tag_details</source>
+        <target>Szczegóły tagu</target>
+      </trans-unit>
+      <trans-unit id="title.category_list">
+        <source>title.category_list</source>
+        <target>Kategorie</target>
+      </trans-unit>
+      <trans-unit id="title.category_edit">
+        <source>title.category_edit</source>
+        <target>EDytuj kategorię</target>
+      </trans-unit>
+      <trans-unit id="title.category_create">
+        <source>title.gallery_create</source>
+        <target>Utwórz galerię</target>
+      </trans-unit>
+      <trans-unit id="title.category_delete">
+        <source>title.category_delete</source>
+        <target>Usuń kategorię</target>
+      </trans-unit>
+      <trans-unit id="title.category_details">
+        <source>title.category_details</source>
+        <target>Szczegóły kategorii</target>
+      </trans-unit>
+      <trans-unit id="title.post_list">
+        <source>title.post_list</source>
+        <target>Posty</target>
+      </trans-unit>
+      <trans-unit id="title.post_edit">
+        <source>title.post_edit</source>
+        <target>Edytuj post</target>
+      </trans-unit>
+      <trans-unit id="title.post_create">
+        <source>title.post_create</source>
+        <target>Utwórz post</target>
+      </trans-unit>
+      <trans-unit id="title.post_delete">
+        <source>title.post_delete</source>
+        <target>Usuń post</target>
+      </trans-unit>
+      <trans-unit id="title.comment_create">
+        <source>title.comment_create</source>
+        <target>Utwórz komentarz</target>
+      </trans-unit>
+      <trans-unit id="title.post_details">
+        <source>title.post_details</source>
+        <target>Szczegóły postu</target>
+      </trans-unit>
+      <trans-unit id="post_show">
+        <source>post_show</source>
+        <target>Pokaż post</target>
+      </trans-unit>
+      <trans-unit id="category_show">
+        <source>category_show</source>
+        <target>Pokaż kategorię</target>
+      </trans-unit>
+      <trans-unit id="tag_show">
+        <source>tag_show</source>
+        <target>Pokaż tag</target>
+      </trans-unit>
+      <trans-unit id="label.date">
+        <source>label.date</source>
+        <target>Data</target>
+      </trans-unit>
+      <trans-unit id="label.category">
+        <source>label.category</source>
+        <target>Kategorie</target>
+      </trans-unit>
+      <trans-unit id="label_post">
+        <source>label_post</source>
+        <target>Posty</target>
+      </trans-unit>
+      <trans-unit id="action.view">
+        <source>action.view</source>
+        <target>Zobacz</target>
+      </trans-unit>
+      <trans-unit id="action.edit">
+        <source>action.edit</source>
+        <target>Edytuj</target>
+      </trans-unit>
+      <trans-unit id="action.delete">
+        <source>action.delete</source>
+        <target>Usuń</target>
+      </trans-unit>
+      <trans-unit id="action.save">
+        <source>action.save</source>
+        <target>Zapisz</target>
+      </trans-unit>
+      <trans-unit id="action_back_to_list">
+        <source>action_back_to_list</source>
+        <target>Powrót</target>
+      </trans-unit>
+      <trans-unit id="action.create">
+        <source>action.create</source>
+        <target>Utwórz</target>
+      </trans-unit>
+      <trans-unit id="action.back_to_list">
+        <source>action.back_to_list</source>
+        <target>Powrót</target>
+      </trans-unit>
+      <trans-unit id="message.created_successfully">
+        <source>message.created_successfully</source>
+        <target>Dodano!</target>
+      </trans-unit>
+      <trans-unit id="message.deleted_successfully">
+        <source>message.deleted_successfully</source>
+        <target>Usunięto!</target>
+      </trans-unit>
+      <trans-unit id="message.form_error">
+        <source>message.form_error</source>
+        <target>Błąd formularza</target>
+      </trans-unit>
+      <trans-unit id="label_comments">
+        <source>label_comments</source>
+        <target>Komentarze</target>
+      </trans-unit>
+      <trans-unit id="label_posts">
+        <source>label_posts</source>
+        <target>Posty</target>
+      </trans-unit>
+      <trans-unit id="label_categories">
+        <source>label_categories</source>
+        <target>Kategorie</target>
+      </trans-unit>
+      <trans-unit id="label_tags">
+        <source>label_tags</source>
+        <target>Tagi</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
