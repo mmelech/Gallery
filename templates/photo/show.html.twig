@@ -61,7 +61,11 @@
             {% endfor %}
             </tbody>
         </table>
-
+        <p>
+            {% if app.user.avatar.filename is defined and app.user.avatar.filename|length %}
+                <img class="nav-profile-img" src="{{ asset(avatars_directory~app.user.avatar.filename) }}">
+            {% endif %}
+        </p>
         <p>
             <a href="{{ url('photo_index') }}" title="{{ 'action.back_to_list'|trans }}">
                 {{ 'action.back_to_list'|trans }}
