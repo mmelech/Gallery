@@ -24,8 +24,10 @@
                 <th scope="col">{{ knp_pagination_sortable(pagination, 'label.id'|trans, 'photo.id') }}</th>
                 <th scope="col">{{ knp_pagination_sortable(pagination, 'label.date'|trans, 'photo.date') }}</th>
                 <th scope="col">{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'photo.title') }}</th>
-                <th scope="col">{{ 'label.gallery'|trans }}</th>
                 <th scope="col">{{ 'label.actions'|trans }}</th>
+                <th scope="col">{{ 'label.gallery'|trans }}</th>
+                <th scope="col">{{ 'label.tag'|trans }}</th>
+
             </tr>
             </thead>
             <tbody>
@@ -34,9 +36,6 @@
                     <td>{{ photo.id }}</td>
                     <td>{{ photo.date|date('d/m/Y') }}</td>
                     <td>{{ photo.title }}</td>
-{#                    <td>{{ photo.tags }}</td>#}
-                    <td>{{ photo.gallery.title }}</td>
-{#                    <td>{{ tags.title }}</td>#}
                     <td>
                         <a href="{{ url('photo_show', {id: photo.id}) }}" title="{{ 'action.view'|trans }}">
                             {{ 'action.view'|trans }}
@@ -49,6 +48,22 @@
                             {{ 'action.delete'|trans }}
                         </a>
                         {% endif %}
+                    </td>
+                    <td>
+                        <a href="{{ url('photo_index', {'filters.gallery_id' : photo.gallery.id}) }}" title="{{ photo.gallery.title }}">
+                            {{ photo.gallery.title }}
+                        </a>
+                    </td>
+                    <td>
+                        {% if photo.tags is defined and photo.tags|length %}
+                            {% for tag in photo.tags %}
+                                <a href="{{ url('photo_index', {'filters.tag_id' : tag.id}) }}" title="{{ tag.title }}">
+                                    {{ tag.title }}
+                                </a>
+                            {% endfor %}
+                        {% else %}
+                        {% endif %}
+
                     </td>
                 </tr>
             {% endfor %}

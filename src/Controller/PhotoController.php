@@ -62,8 +62,10 @@ class PhotoController extends AbstractController
     )]
     public function index(Request $request): Response
     {
+        $filters = $this->getFilters($request);
         $pagination = $this->photoService->getPaginatedList(
-            $request->query->getInt('page', 1)
+            $request->query->getInt('page', 1),
+            $filters
         );
 
         return $this->render(
@@ -208,5 +210,23 @@ class PhotoController extends AbstractController
                 'photo' => $photo,
             ]
         );
+    }
+
+    /**
+     * Get filters from request.
+     *
+     * @param Request $request HTTP request
+     *
+     * @return array<string, int> Array of filters
+     *
+     * @psalm-return array{gallery_id: int, tag_id: int, status_id: int}
+     */
+    private function getFilters(Request $request): array
+    {
+        $filters = [];
+        $filters['gallery_id'] = $request->query->getInt('filters_gallery_id');
+        $filters['photos_tags_id'] = $request->query->getInt('filters_tags_id');
+
+        return $filters;
     }
 }

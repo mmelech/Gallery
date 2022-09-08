@@ -255,6 +255,18 @@
         <source>title_useredit</source>
         <target>Zmiana danych</target>
       </trans-unit>
+      <trans-unit id="label.tag">
+        <source>label.tag</source>
+        <target>Tagi</target>
+      </trans-unit>
+      <trans-unit id="label_users">
+        <source>label_users</source>
+        <target>Użytkownicy</target>
+      </trans-unit>
+      <trans-unit id="title.user_list">
+        <source>title.user_list</source>
+        <target>Lista użytkowników</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

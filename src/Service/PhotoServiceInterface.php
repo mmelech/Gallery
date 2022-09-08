@@ -6,6 +6,7 @@
 namespace App\Service;
 
 use App\Entity\Photo;
+use App\Entity\User;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 
 /**
@@ -20,7 +21,7 @@ interface PhotoServiceInterface
      *
      * @return PaginationInterface<string, mixed> Paginated list
      */
-    public function getPaginatedList(int $page): PaginationInterface;
+    public function getPaginatedList(int $page, array $filters = []): PaginationInterface;
 
     /**
      * Save entity.
@@ -35,4 +36,6 @@ interface PhotoServiceInterface
      * @param Photo $photo Photo entity
      */
     public function delete(Photo $photo): void;
+
+    public function prepareFilters(array $filters): array;
 }

@@ -72,4 +72,18 @@ class GalleryService implements GalleryServiceInterface
     {
         $this->galleryRepository->delete($gallery);
     }
+
+    /**
+     * Find by id.
+     *
+     * @param int $id Gallery id
+     *
+     * @return Gallery|null Gallery entity
+     *
+     * @throws NonUniqueResultException
+     */
+    public function findOneById(int $id): ?Gallery
+    {
+        return $this->galleryRepository->findOneById($id);
+    }
 }

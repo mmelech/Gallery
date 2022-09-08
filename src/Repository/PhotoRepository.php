@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Gallery;
+use App\Entity\Tag;
 use App\Entity\Photo;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
@@ -46,12 +47,51 @@ class PhotoRepository extends ServiceEntityRepository
      *
      * @return QueryBuilder Query builder
      */
-    public function queryAll(): QueryBuilder
+    public function queryAll(array $filters): QueryBuilder
     {
-        return $this->getOrCreateQueryBuilder()
-            ->select('photo', 'gallery')
+        $queryBuilder = $this->getOrCreateQueryBuilder()
+            ->select(
+                'partial photo.{id, date, title, content}',
+                'partial gallery.{id, title}',
+                'partial tags.{id, title}'
+            )
             ->join('photo.gallery', 'gallery')
+            ->leftJoin('photo.tags', 'tags')
             ->orderBy('photo.date', 'DESC');
+
+        return $this->applyFiltersToList($queryBuilder, $filters);
+    }
+
+//    {
+//        return $this->getOrCreateQueryBuilder()
+//            ->select('photo', 'gallery')
+//            ->join('photo.gallery', 'gallery')
+//            ->orderBy('photo.date', 'DESC');
+//    }
+
+
+
+    /**
+     * Apply filters to paginated list.
+     *
+     * @param QueryBuilder          $queryBuilder Query builder
+     * @param array<string, object> $filters      Filters array
+     *
+     * @return QueryBuilder Query builder
+     */
+    private function applyFiltersToList(QueryBuilder $queryBuilder, array $filters = []): QueryBuilder
+    {
+        if (isset($filters['gallery']) && $filters['gallery'] instanceof Gallery) {
+            $queryBuilder->andWhere('gallery = :gallery')
+                ->setParameter('gallery', $filters['gallery']);
+        }
+
+        if (isset($filters['tag']) && $filters['tag'] instanceof Tag) {
+            $queryBuilder->andWhere('tags IN (:tags)')
+                ->setParameter('tag', $filters['tag']);
+        }
+
+        return $queryBuilder;
     }
 
     /**

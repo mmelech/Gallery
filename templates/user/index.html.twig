@@ -8,11 +8,13 @@
     <h1>{{ 'title.user_list'|trans }}</h1>
 
     {% if pagination is defined and pagination.items|length %}
-        <table class="table table-striped">
+        <table class="table table-bordered">
             <thead>
             <tr>
                 <th>{{ knp_pagination_sortable(pagination, 'label.id'|trans, 'user.id') }}</th>
                 <th>{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'user.email') }}</th>
+                <th>{{ 'label.actions'|trans }}</th>
+                <th>{{ 'label.actions'|trans }}</th>
                 <th>{{ 'label.actions'|trans }}</th>
             </tr>
             </thead>
@@ -25,6 +27,8 @@
                         <a href="{{ url('user_show', {id: user.id}) }}" title="{{ 'action.view'|trans }}">
                             {{ 'action.view'|trans }}
                         </a>
+                    </td>
+                    <td>
                         <a href="{{ url('change_password', {id: user.id}) }}" title="{{ 'action.edit'|trans }}">
                             {{ 'action.edit'|trans }}
                         </a>

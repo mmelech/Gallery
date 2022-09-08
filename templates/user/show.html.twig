@@ -7,7 +7,7 @@
 {% block body %}
     <h1>{{ 'title.user_details'|trans({'%id%': user.id|default('')}) }}</h1>
     {% if user is defined and user|length %}
-        <dl class="dl-horizontal">
+        <dl>
             <dt>{{ 'label.id'|trans }}</dt>
             <dd>{{ user.id }}</dd>
             <dt>{{ 'label.email'|trans }}</dt>
