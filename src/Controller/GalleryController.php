@@ -1,13 +1,13 @@
 <?php
 /**
- * Category controller.
+ * Gallery controller.
  */
 
 namespace App\Controller;
 
-use App\Entity\Category;
-use App\Form\Type\CategoryType;
-use App\Service\CategoryServiceInterface;
+use App\Entity\Gallery;
+use App\Form\Type\GalleryType;
+use App\Service\GalleryServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,15 +16,15 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
- * Class CategoryController.
+ * Class GalleryController.
  */
-#[Route('/category')]
-class CategoryController extends AbstractController
+#[Route('/gallery')]
+class GalleryController extends AbstractController
 {
     /**
-     * Category service.
+     * Gallery service.
      */
-    private CategoryServiceInterface $categoryService;
+    private GalleryServiceInterface $galleryService;
 
     /**
      * Translator.
@@ -34,12 +34,12 @@ class CategoryController extends AbstractController
     /**
      * Constructor.
      *
-     * @param CategoryServiceInterface $categoryService Category service
+     * @param GalleryServiceInterface $galleryService Gallery service
      * @param TranslatorInterface      $translator      Translator
      */
-    public function __construct(CategoryServiceInterface $categoryService, TranslatorInterface $translator)
+    public function __construct(GalleryServiceInterface $galleryService, TranslatorInterface $translator)
     {
-        $this->categoryService = $categoryService;
+        $this->galleryService = $galleryService;
         $this->translator = $translator;
     }
 
@@ -51,33 +51,33 @@ class CategoryController extends AbstractController
      * @return Response HTTP response
      */
     #[Route(
-        name: 'category_index',
+        name: 'gallery_index',
         methods: 'GET')]
     public function index(Request $request): Response
     {
-        $pagination = $this->categoryService->getPaginatedList(
+        $pagination = $this->galleryService->getPaginatedList(
             $request->query->getInt('page', 1)
         );
 
-        return $this->render('category/index.html.twig', ['pagination' => $pagination]);
+        return $this->render('gallery/index.html.twig', ['pagination' => $pagination]);
     }
 
     /**
      * Show action.
      *
-     * @param Category $category Category
+     * @param Gallery $gallery Gallery
      *
      * @return Response HTTP response
      */
     #[Route(
         '/{id}',
-        name: 'category_show',
+        name: 'gallery_show',
         requirements: ['id' => '[1-9]\d*'],
         methods: 'GET'
     )]
-    public function show(Category $category): Response
+    public function show(Gallery $gallery): Response
     {
-        return $this->render('category/show.html.twig', ['category' => $category]);
+        return $this->render('gallery/show.html.twig', ['gallery' => $gallery]);
     }
 
     /**
@@ -89,28 +89,28 @@ class CategoryController extends AbstractController
      */
     #[Route(
         '/create',
-        name: 'category_create',
+        name: 'gallery_create',
         methods: 'GET|POST',
     )]
     public function create(Request $request): Response
     {
-        $category = new Category();
-        $form = $this->createForm(CategoryType::class, $category);
+        $gallery = new Gallery();
+        $form = $this->createForm(GalleryType::class, $gallery);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->categoryService->save($category);
+            $this->galleryService->save($gallery);
 
             $this->addFlash(
                 'success',
                 $this->translator->trans('message.created_successfully')
             );
 
-            return $this->redirectToRoute('category_index');
+            return $this->redirectToRoute('gallery_index');
         }
 
         return $this->render(
-            'category/create.html.twig',
+            'gallery/create.html.twig',
             ['form' => $form->createView()]
         );
     }
@@ -119,35 +119,35 @@ class CategoryController extends AbstractController
      * Edit action.
      *
      * @param Request  $request  HTTP request
-     * @param Category $category Category entity
+     * @param Gallery $gallery Gallery entity
      *
      * @return Response HTTP response
      */
-    #[Route('/{id}/edit', name: 'category_edit', requirements: ['id' => '[1-9]\d*'], methods: 'GET|PUT')]
-    public function edit(Request $request, Category $category): Response
+    #[Route('/{id}/edit', name: 'gallery_edit', requirements: ['id' => '[1-9]\d*'], methods: 'GET|PUT')]
+    public function edit(Request $request, Gallery $gallery): Response
     {
-        $form = $this->createForm(CategoryType::class, $category, [
+        $form = $this->createForm(GalleryType::class, $gallery, [
             'method' => 'PUT',
-            'action' => $this->generateUrl('category_edit', ['id' => $category->getId()]),
+            'action' => $this->generateUrl('gallery_edit', ['id' => $gallery->getId()]),
         ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->categoryService->save($category);
+            $this->galleryService->save($gallery);
 
             $this->addFlash(
                 'success',
                 $this->translator->trans('message.created_successfully')
             );
 
-            return $this->redirectToRoute('category_index');
+            return $this->redirectToRoute('gallery_index');
         }
 
         return $this->render(
-            'category/edit.html.twig',
+            'gallery/edit.html.twig',
             [
                 'form' => $form->createView(),
-                'category' => $category,
+                'gallery' => $gallery,
             ]
         );
     }
@@ -156,35 +156,35 @@ class CategoryController extends AbstractController
      * Delete action.
      *
      * @param Request  $request  HTTP request
-     * @param Category $category Category entity
+     * @param Gallery $gallery Gallery entity
      *
      * @return Response HTTP response
      */
-    #[Route('/{id}/delete', name: 'category_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
-    public function delete(Request $request, Category $category): Response
+    #[Route('/{id}/delete', name: 'gallery_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
+    public function delete(Request $request, Gallery $gallery): Response
     {
-        $form = $this->createForm(FormType::class, $category, [
+        $form = $this->createForm(FormType::class, $gallery, [
             'method' => 'DELETE',
-            'action' => $this->generateUrl('category_delete', ['id' => $category->getId()]),
+            'action' => $this->generateUrl('gallery_delete', ['id' => $gallery->getId()]),
         ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->categoryService->delete($category);
+            $this->galleryService->delete($gallery);
 
             $this->addFlash(
                 'success',
                 $this->translator->trans('message.deleted_successfully')
             );
 
-            return $this->redirectToRoute('category_index');
+            return $this->redirectToRoute('gallery_index');
         }
 
         return $this->render(
-            'category/delete.html.twig',
+            'gallery/delete.html.twig',
             [
                 'form' => $form->createView(),
-                'category' => $category,
+                'gallery' => $gallery,
             ]
         );
     }

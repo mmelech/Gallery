@@ -2,8 +2,8 @@
 
 namespace App\Repository;
 
-use App\Entity\Category;
-use App\Entity\Post;
+use App\Entity\Gallery;
+use App\Entity\Photo;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
@@ -11,14 +11,14 @@ use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Post>
+ * @extends ServiceEntityRepository<Photo>
  *
- * @method Post|null find($id, $lockMode = null, $lockVersion = null)
- * @method Post|null findOneBy(array $criteria, array $orderBy = null)
- * @method Post[]    findAll()
- * @method Post[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Photo|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Photo|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Photo[]    findAll()
+ * @method Photo[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PostRepository extends ServiceEntityRepository
+class PhotoRepository extends ServiceEntityRepository
 {
     /**
      * Items per page.
@@ -38,7 +38,7 @@ class PostRepository extends ServiceEntityRepository
      */
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Post::class);
+        parent::__construct($registry, Photo::class);
     }
 
     /**
@@ -49,9 +49,9 @@ class PostRepository extends ServiceEntityRepository
     public function queryAll(): QueryBuilder
     {
         return $this->getOrCreateQueryBuilder()
-            ->select('post', 'category')
-            ->join('post.category', 'category')
-            ->orderBy('post.date', 'DESC');
+            ->select('photo', 'gallery')
+            ->join('photo.gallery', 'gallery')
+            ->orderBy('photo.date', 'DESC');
     }
 
     /**
@@ -63,31 +63,31 @@ class PostRepository extends ServiceEntityRepository
      */
     private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
     {
-        return $queryBuilder ?? $this->createQueryBuilder('post');
+        return $queryBuilder ?? $this->createQueryBuilder('photo');
     }
 
     /**
-     * Count posts by category.
+     * Count photos by gallery.
      *
-     * @param Category $category Category
+     * @param Gallery $gallery Gallery
      *
-     * @return int Number of posts in category
+     * @return int Number of photos in gallery
      *
      * @throws NoResultException
      * @throws NonUniqueResultException
      */
-    public function countByCategory(Category $category): int
+    public function countByGallery(Gallery $gallery): int
     {
         $qb = $this->getOrCreateQueryBuilder();
 
-        return $qb->select($qb->expr()->countDistinct('post.id'))
-            ->where('post.category = :category')
-            ->setParameter(':category', $category)
+        return $qb->select($qb->expr()->countDistinct('photo.id'))
+            ->where('photo.gallery = :gallery')
+            ->setParameter(':gallery', $gallery)
             ->getQuery()
             ->getSingleScalarResult();
     }
 
-    public function add(Post $entity, bool $flush = false): void
+    public function add(Photo $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -97,34 +97,34 @@ class PostRepository extends ServiceEntityRepository
     }
 
     /***
-    public function remove(Post $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
-
-    /**
+    * public function remove(Post $entity, bool $flush = false): void
+    * {
+        * $this->getEntityManager()->remove($entity);
+ *
+* if ($flush) {
+            * $this->getEntityManager()->flush();
+        * }
+    * }
+ *
+* /**
      * Save entity.
      *
-     * @param Post $post Post entity
+     * @param Photo $Photo Photo entity
      */
-    public function save(Post $post): void
+    public function save(Photo $photo): void
     {
-        $this->_em->persist($post);
+        $this->_em->persist($photo);
         $this->_em->flush();
     }
 
     /**
      * Delete entity.
      *
-     * @param Post $post Post entity
+     * @param Photo $photo Photo entity
      */
-    public function delete(Post $post): void
+    public function delete(Photo $photo): void
     {
-        $this->_em->remove($post);
+        $this->_em->remove($photo);
         $this->_em->flush();
     }
 }

@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ 'title.category_list'|trans }}
+    {{ 'title.gallery_list'|trans }}
 {% endblock %}
 
 {% block body %}
-    <h1>{{ 'title.category_list'|trans }}</h1>
+    <h1>{{ 'title.gallery_list'|trans }}</h1>
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
     <p>
-        <a href="{{ url('category_create') }}" title="{{ 'action.create'|trans }}">
+        <a href="{{ url('gallery_create') }}" title="{{ 'action.create'|trans }}">
             {{ 'action.create'|trans }}
         </a>
     </p>
@@ -17,23 +17,23 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'category.title') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'gallery.title') }}</th>
                 <th>{{ 'label.actions'|trans }}</th>
             </tr>
             </thead>
             <tbody>
-            {% for category in pagination.items %}
+            {% for gallery in pagination.items %}
                 <tr>
-                    <td>{{ category.title }}</td>
+                    <td>{{ gallery.title }}</td>
                     <td>
-                        <a href="{{ url('category_show', {id: category.id}) }}" title="{{ 'action.view'|trans }}">
+                        <a href="{{ url('gallery_show', {id: gallery.id}) }}" title="{{ 'action.view'|trans }}">
                             {{ 'action.view'|trans }}
                         </a>
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <a href="{{ url('category_edit', {id: category.id}) }}" title="{{ 'action.edit'|trans }}">
+                        <a href="{{ url('gallery_edit', {id: gallery.id}) }}" title="{{ 'action.edit'|trans }}">
                             {{ 'action.edit'|trans }}
                         </a>
-                        <a href="{{ url('category_delete', {id: category.id}) }}" title="{{ 'action.delete'|trans }}">
+                        <a href="{{ url('gallery_delete', {id: gallery.id}) }}" title="{{ 'action.delete'|trans }}">
                             {{ 'action.delete'|trans }}
                         </a>
                         {% endif %}

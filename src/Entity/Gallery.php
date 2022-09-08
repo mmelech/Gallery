@@ -1,24 +1,24 @@
 <?php
 /**
- * Category entity.
+ * Gallery entity.
  */
 
 namespace App\Entity;
 
-use App\Repository\CategoryRepository;
+use App\Repository\GalleryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * Class Category.
+ * Class Gallery.
  */
-#[ORM\Entity(repositoryClass: CategoryRepository::class)]
-#[ORM\Table(name: 'categories')]
-#[ORM\UniqueConstraint(name: 'uq_categories_title', columns: ['title'])]
+#[ORM\Entity(repositoryClass: GalleryRepository::class)]
+#[ORM\Table(name: 'galleries')]
+#[ORM\UniqueConstraint(name: 'uq_galleries_title', columns: ['title'])]
 #[UniqueEntity(fields: ['title'])]
-class Category
+class Gallery
 {
     /**
      * Primary key.
@@ -41,15 +41,15 @@ class Category
     /**
      * @var ArrayCollection
      */
-    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Post::class)]
-    private $posts;
+    #[ORM\OneToMany(mappedBy: 'gallery', targetEntity: Photo::class)]
+    private $photos;
 
     /**
      * Constructor.
      */
     public function __construct()
     {
-        $this->posts = new ArrayCollection();
+        $this->photos = new ArrayCollection();
     }
 
     /**
@@ -83,39 +83,39 @@ class Category
     }
 
     /**
-     * Getter for post.
+     * Getter for photo.
      *
-     * @return Collection<int, Post>
+     * @return Collection<int, Photo>
      */
-    public function getPosts(): Collection
+    public function getPhotos(): Collection
     {
-        return $this->posts;
+        return $this->photos;
     }
 
     /**
-     * Add post.
+     * Add photo.
      *
-     * @param Post $post Post
+     * @param Photo $photo Photo
      */
-    public function addPost(Post $post): void
+    public function addPhoto(Photo $photo): void
     {
-        if (!$this->posts->contains($post)) {
-            $this->posts[] = $post;
-            $post->setCategory($this);
+        if (!$this->photos->contains($photo)) {
+            $this->photos[] = $photo;
+            $photo->setGallery($this);
         }
     }
 
     /**
-     * Remove post.
+     * Remove photo.
      *
-     * @param Post $post Post
+     * @param Photo $photo Photo
      */
-    public function removePost(Post $post): void
+    public function removePhoto(Photo $photo): void
     {
-        if ($this->posts->removeElement($post)) {
+        if ($this->photos->removeElement($photo)) {
             // set the owning side to null (unless already changed)
-            if ($post->getCategory() === $this) {
-                $post->setCategory(null);
+            if ($photo->getGallery() === $this) {
+                $photo->setGallery(null);
             }
         }
     }

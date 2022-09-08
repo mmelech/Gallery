@@ -1,17 +1,17 @@
 <?php
 /**
- * Post service interface.
+ * Photo service interface.
  */
 
 namespace App\Service;
 
-use App\Entity\Post;
+use App\Entity\Photo;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 
 /**
- * Interface PostServiceInterface.
+ * Interface PhotoServiceInterface.
  */
-interface PostServiceInterface
+interface PhotoServiceInterface
 {
     /**
      * Get paginated list.
@@ -25,14 +25,14 @@ interface PostServiceInterface
     /**
      * Save entity.
      *
-     * @param Post $post Post entity
+     * @param Photo $photo Photo entity
      */
-    public function save(Post $post): void;
+    public function save(Photo $photo): void;
 
     /**
      * Delete entity.
      *
-     * @param Post $post Post entity
+     * @param Photo $photo Photo entity
      */
-    public function delete(Post $post): void;
+    public function delete(Photo $photo): void;
 }

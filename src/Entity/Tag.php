@@ -38,15 +38,15 @@ class Tag
     /**
      *
      */
-    #[ORM\ManyToMany(targetEntity: Post::class, mappedBy: 'tags')]
-    private $posts;
+    #[ORM\ManyToMany(targetEntity: Photo::class, mappedBy: 'tags')]
+    private $photos;
 
     /**
      * Constructor.
      */
     public function __construct()
     {
-        $this->posts = new ArrayCollection();
+        $this->photos = new ArrayCollection();
     }
 
     /**
@@ -80,22 +80,22 @@ class Tag
     }
 
     /**
-     * Add post.
+     * Add photo.
      *
-     * @param Post $post Post entity
+     * @param Photo $photo Photo entity
      */
-    public function addPost(Post $post): void
+    public function addPhoto(Photo $photo): void
     {
-        if (!$this->posts->contains($post)) {
-            $this->posts[] = $post;
+        if (!$this->photos->contains($photo)) {
+            $this->photos[] = $photo;
         }
     }
 
     /**
-     * Remove post.
+     * Remove photo.
      */
-    public function removePost(Post $post): void
+    public function removePhoto(Photo $photo): void
     {
-        $this->posts->removeElement($post);
+        $this->photos->removeElement($photo);
     }
 }

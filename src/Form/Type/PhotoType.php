@@ -1,11 +1,11 @@
 <?php
 /**
- * Post type.
+ * Photo type.
  */
 
 namespace App\Form\Type;
 
-use App\Entity\Post;
+use App\Entity\Photo;
 use App\Form\DataTransformer\TagsDataTransformer;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -14,9 +14,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * Class PostType.
+ * Class PhotoType.
  */
-class PostType extends AbstractType
+class PhotoType extends AbstractType
 {
     /**
      * Tags data transformer.
@@ -64,12 +64,12 @@ class PostType extends AbstractType
             ]);
 
         $builder->add(
-            'category',
+            'gallery',
             EntityType::class,
             [
-                'label' => 'label.category',
-                'class' => "App\Entity\Category",
-                'placeholder' => 'label.category',
+                'label' => 'label.gallery',
+                'class' => "App\Entity\Gallery",
+                'placeholder' => 'label.gallery',
                 'choice_label' => 'title',
             ]
         );
@@ -94,7 +94,7 @@ class PostType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults(['data_class' => Post::class]);
+        $resolver->setDefaults(['data_class' => Photo::class]);
     }
 
     /**
@@ -105,6 +105,6 @@ class PostType extends AbstractType
      */
     public function getBlockPrefix(): string
     {
-        return 'post';
+        return 'photo';
     }
 }

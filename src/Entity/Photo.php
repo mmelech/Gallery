@@ -1,11 +1,11 @@
 <?php
 /**
- * Post entity.
+ * Photo entity.
  */
 
 namespace App\Entity;
 
-use App\Repository\PostRepository;
+use App\Repository\PhotoRepository;
 use DateTimeImmutable;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -14,11 +14,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Class Post.
+ * Class Photo.
  */
-#[ORM\Entity(repositoryClass: PostRepository::class)]
-#[ORM\Table(name: 'posts')]
-class Post
+#[ORM\Entity(repositoryClass: PhotoRepository::class)]
+#[ORM\Table(name: 'photos')]
+class Photo
 {
     /**
      * Primary key.
@@ -58,14 +58,14 @@ class Post
     private ?string $content = null;
 
     /**
-     * Category.
+     * Gallery.
      *
-     * @var Category
+     * @var Gallery
      **/
-    #[ORM\ManyToOne(targetEntity: Category::class)]
+    #[ORM\ManyToOne(targetEntity: Gallery::class)]
     #[Assert\NotBlank]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Category $category;
+    private ?Gallery $gallery;
 
     /**
      * Tags.
@@ -73,8 +73,8 @@ class Post
      * @var ArrayCollection<int, Tag>
      */
     #[Assert\Valid]
-    #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'posts')]
-    #[ORM\JoinColumn(name: 'posts_tags')]
+    #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'photos')]
+    #[ORM\JoinColumn(name: 'photos_tags')]
     private $tags;
 
     /**
@@ -82,7 +82,7 @@ class Post
      *
      * @var ArrayCollection
      */
-    #[ORM\OneToMany(mappedBy: 'post', targetEntity: Comment::class, fetch: 'EXTRA_LAZY', orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'photo', targetEntity: Comment::class, fetch: 'EXTRA_LAZY', orphanRemoval: true)]
     private $comments;
 
     /**
@@ -165,19 +165,19 @@ class Post
     }
 
     /**
-     * Getter for category.
+     * Getter for gallery.
      */
-    public function getCategory(): ?Category
+    public function getGallery(): ?Gallery
     {
-        return $this->category;
+        return $this->gallery;
     }
 
     /**
-     * Setter for category.
+     * Setter for gallery.
      */
-    public function setCategory(?Category $category): void
+    public function setGallery(?Gallery $gallery): void
     {
-        $this->category = $category;
+        $this->gallery = $gallery;
     }
 
     /**
@@ -229,7 +229,7 @@ class Post
     {
         if (!$this->comments->contains($comment)) {
             $this->comments[] = $comment;
-            $comment->setPost($this);
+            $comment->setPhoto($this);
         }
 
         return $this;
@@ -244,8 +244,8 @@ class Post
     {
         if ($this->comments->removeElement($comment)) {
             // set the owning side to null (unless already changed)
-            if ($comment->getPost() === $this) {
-                $comment->setPost(null);
+            if ($comment->getPhoto() === $this) {
+                $comment->setPhoto(null);
             }
         }
 

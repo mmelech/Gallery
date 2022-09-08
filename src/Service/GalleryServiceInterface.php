@@ -1,17 +1,17 @@
 <?php
 /**
- * Category service interface.
+ * Gallery service interface.
  */
 
 namespace App\Service;
 
-use App\Entity\Category;
+use App\Entity\Gallery;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 
 /**
- * Interface CategoryInterface.
+ * Interface GalleryInterface.
  */
-interface CategoryServiceInterface
+interface GalleryServiceInterface
 {
     /**
      * Get paginated list.
@@ -25,14 +25,14 @@ interface CategoryServiceInterface
     /**
      * Save entity.
      *
-     * @param Category $category Category entity
+     * @param Gallery $gallery Gallery entity
      */
-    public function save(Category $category): void;
+    public function save(Gallery $gallery): void;
 
     /**
      * Delete entity.
      *
-     * @param Category $category Category entity
+     * @param Gallery $gallery Gallery entity
      */
-    public function delete(Category $category): void;
+    public function delete(Gallery $gallery): void;
 }

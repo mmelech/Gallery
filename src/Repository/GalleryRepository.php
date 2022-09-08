@@ -1,24 +1,24 @@
 <?php
 /**
- * Category repository.
+ * Gallery repository.
  */
 
 namespace App\Repository;
 
-use App\Entity\Category;
+use App\Entity\Gallery;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Category>
+ * @extends ServiceEntityRepository<Gallery>
  *
- * @method Category|null find($id, $lockMode = null, $lockVersion = null)
- * @method Category|null findOneBy(array $criteria, array $orderBy = null)
- * @method Category[]    findAll()
- * @method Category[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Gallery|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Gallery|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Gallery[]    findAll()
+ * @method Gallery[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class CategoryRepository extends ServiceEntityRepository
+class GalleryRepository extends ServiceEntityRepository
 {
     /**
      * Items per page.
@@ -36,7 +36,7 @@ class CategoryRepository extends ServiceEntityRepository
      */
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Category::class);
+        parent::__construct($registry, Gallery::class);
     }
 
     /**
@@ -47,7 +47,7 @@ class CategoryRepository extends ServiceEntityRepository
     public function queryAll(): QueryBuilder
     {
         return $this->getOrCreateQueryBuilder()
-            ->orderBy('category.title', 'ASC');
+            ->orderBy('gallery.title', 'ASC');
     }
 
     /**
@@ -59,28 +59,28 @@ class CategoryRepository extends ServiceEntityRepository
      */
     private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
     {
-        return $queryBuilder ?? $this->createQueryBuilder('category');
+        return $queryBuilder ?? $this->createQueryBuilder('gallery');
     }
 
     /**
      * Save entity.
      *
-     * @param Category $category Category entity
+     * @param Gallery $gallery Gallery entity
      */
-    public function save(Category $category): void
+    public function save(Gallery $gallery): void
     {
-        $this->_em->persist($category);
+        $this->_em->persist($gallery);
         $this->_em->flush();
     }
 
     /**
      * Delete entity.
      *
-     * @param Category $category Category entity
+     * @param Gallery $gallery Gallery entity
      */
-    public function delete(Category $category): void
+    public function delete(Gallery $gallery): void
     {
-        $this->_em->remove($category);
+        $this->_em->remove($gallery);
         $this->_em->flush();
     }
 }

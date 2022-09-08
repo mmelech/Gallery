@@ -6,7 +6,7 @@
 namespace App\Controller;
 
 use App\Entity\Comment;
-use App\Entity\Post;
+use App\Entity\Photo;
 use App\Entity\User;
 use App\Entity\UserData;
 use DateTimeImmutable;
@@ -56,21 +56,21 @@ class CommentController extends AbstractController
      * @return Response HTTP response
      */
     #[Route(
-        '/create/post/{id}',
+        '/create/photo/{id}',
         name: 'comment_create',
         methods: 'GET|POST',
     )]
-    public function create(Request $request, Post $post, CommentRepository $commentRepository): Response
+    public function create(Request $request, Photo $photo, CommentRepository $commentRepository): Response
     {
         $comment = new Comment();
-        $id = $post->getId();
+        $id = $photo->getId();
         $author = $this->getUser();
 
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
-            $comment->setPost($post);
+            $comment->setPhoto($photo);
             $comment->setAuthor($author);
             $comment->setDate(new DateTimeImmutable());
             $commentRepository->save($comment);
@@ -80,7 +80,7 @@ class CommentController extends AbstractController
                 $this->translator->trans('message.created_successfully')
             );
 
-            return $this->redirectToRoute('post_show', ['id' => $id]);
+            return $this->redirectToRoute('photo_show', ['id' => $id]);
         }
 
         return $this->render(
@@ -117,7 +117,7 @@ class CommentController extends AbstractController
                 $this->translator->trans('message.created_successfully')
             );
 
-            return $this->redirectToRoute('post_index');
+            return $this->redirectToRoute('photo_index');
         }
 
         return $this->render(
@@ -157,7 +157,7 @@ class CommentController extends AbstractController
                 $this->translator->trans('message.deleted_successfully')
             );
 
-            return $this->redirectToRoute('post_index');
+            return $this->redirectToRoute('photo_index');
         }
 
         return $this->render(

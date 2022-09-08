@@ -46,12 +46,12 @@ class Comment
     private ?DateTimeImmutable $date;
 
     /**
-     * Post.
+     * Photo.
      *
-     * @var Post|null
+     * @var Photo|null
      */
-    #[ORM\ManyToOne(targetEntity: Post::class, inversedBy: 'comments')]
-    private $post;
+    #[ORM\ManyToOne(targetEntity: Photo::class, inversedBy: 'comments')]
+    private $photo;
 
     /**
      * Author.
@@ -109,22 +109,22 @@ class Comment
     }
 
     /**
-     * @return Post|null
+     * @return Photo|null
      */
-    public function getPost(): ?Post
+    public function getPhoto(): ?Photo
     {
-        return $this->post;
+        return $this->photo;
     }
 
     /**
-     * Setter for Post.
+     * Setter for Photo.
      *
-     * @param Post|null $post
+     * @param Photo|null $photo
      * @return $this
      */
-    public function setPost(?Post $post): self
+    public function setPhoto(?Photo $photo): self
     {
-        $this->post = $post;
+        $this->photo = $photo;
 
         return $this;
     }

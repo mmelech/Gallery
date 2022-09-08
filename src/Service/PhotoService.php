@@ -1,24 +1,24 @@
 <?php
 /**
- * Post service.
+ * Photo service.
  */
 
 namespace App\Service;
 
-use App\Entity\Post;
-use App\Repository\PostRepository;
+use App\Entity\Photo;
+use App\Repository\PhotoRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
 /**
- * Class PostService.
+ * Class PhotoService.
  */
-class PostService implements PostServiceInterface
+class PhotoService implements PhotoServiceInterface
 {
     /**
-     * Post repository.
+     * Photo repository.
      */
-    private PostRepository $postRepository;
+    private PhotoRepository $photoRepository;
 
     /**
      * Paginator.
@@ -28,12 +28,12 @@ class PostService implements PostServiceInterface
     /**
      * Constructor.
      *
-     * @param PostRepository     $postRepository Post repository
+     * @param PhotoRepository     $photoRepository Photo repository
      * @param PaginatorInterface $paginator      Paginator
      */
-    public function __construct(PostRepository $postRepository, PaginatorInterface $paginator)
+    public function __construct(PhotoRepository $photoRepository, PaginatorInterface $paginator)
     {
-        $this->postRepository = $postRepository;
+        $this->photoRepository = $photoRepository;
         $this->paginator = $paginator;
     }
 
@@ -47,29 +47,29 @@ class PostService implements PostServiceInterface
     public function getPaginatedList(int $page): PaginationInterface
     {
         return $this->paginator->paginate(
-            $this->postRepository->queryAll(),
+            $this->photoRepository->queryAll(),
             $page,
-            PostRepository::PAGINATOR_ITEMS_PER_PAGE
+            PhotoRepository::PAGINATOR_ITEMS_PER_PAGE
         );
     }
 
     /**
      * Save entity.
      *
-     * @param Post $post Post entity
+     * @param Photo $photo Photo entity
      */
-    public function save(Post $post): void
+    public function save(Photo $photo): void
     {
-        $this->postRepository->save($post);
+        $this->photoRepository->save($photo);
     }
 
     /**
      * Delete entity.
      *
-     * @param Post $post Post entity
+     * @param Photo $photo Photo entity
      */
-    public function delete(Post $post): void
+    public function delete(Photo $photo): void
     {
-        $this->postRepository->delete($post);
+        $this->photoRepository->delete($photo);
     }
 }

@@ -1,12 +1,12 @@
 <?php
 /**
- * Post fixtures.
+ * Photo fixtures.
  */
 
 namespace App\DataFixtures;
 
-use App\Entity\Category;
-use App\Entity\Post;
+use App\Entity\Gallery;
+use App\Entity\Photo;
 use App\Entity\Tag;
 use App\Entity\User;
 use App\DataFixtures\AbstractBaseFixtures;
@@ -14,9 +14,9 @@ use DateTimeImmutable;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 /**
- * Class PostFixtures.
+ * Class PhotoFixtures.
  */
-class PostFixtures extends AbstractBaseFixtures implements DependentFixtureInterface
+class PhotoFixtures extends AbstractBaseFixtures implements DependentFixtureInterface
 {
     /**
      * Load data.
@@ -27,23 +27,23 @@ class PostFixtures extends AbstractBaseFixtures implements DependentFixtureInter
             return;
         }
 
-        $this->createMany(30, 'posts', function (int $i) {
-            $post = new Post();
-            $post->setTitle($this->faker->sentence);
-            $post->setContent($this->faker->paragraph);
-            $post->setDate(
+        $this->createMany(30, 'photos', function (int $i) {
+            $photo = new Photo();
+            $photo->setTitle($this->faker->sentence);
+            $photo->setContent($this->faker->paragraph);
+            $photo->setDate(
                 DateTimeImmutable::createFromMutable($this->faker->dateTimeBetween('-100 days', '-1 days')));
 
-            /** @var Category $category */
-            $category = $this->getRandomReference('categories');
-            $post->setCategory($category);
+            /** @var Gallery $gallery */
+            $gallery = $this->getRandomReference('galleries');
+            $photo->setGallery($gallery);
 
             /** @var array<array-key, Tag> $tags */
             $tags = $this->getRandomReferences(
                 'tags',
                 $this->faker->numberBetween(0, 5));
 
-            return $post;
+            return $photo;
         });
 
         $this->manager->flush();
@@ -55,10 +55,10 @@ class PostFixtures extends AbstractBaseFixtures implements DependentFixtureInter
      *
      * @return string[] of dependencies
      *
-     * @psalm-return array{0: CategoryFixtures::class}
+     * @psalm-return array{0: GalleryFixtures::class}
      */
     public function getDependencies(): array
     {
-        return [CategoryFixtures::class, TagFixtures::class, UserFixtures::class];
+        return [GalleryFixtures::class, TagFixtures::class, UserFixtures::class];
     }
 }
