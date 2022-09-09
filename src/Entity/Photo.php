@@ -146,8 +146,6 @@ class Photo
 
     /**
      * Getter for Title.
-     *
-     * @return string|null
      */
     public function getTitle(): ?string
     {
@@ -156,8 +154,6 @@ class Photo
 
     /**
      * Setter for Title.
-     *
-     * @param string $title
      */
     public function setTitle(string $title): void
     {

@@ -17,28 +17,20 @@ use Doctrine\Persistence\ManagerRegistry;
 class UserDataRepository extends ServiceEntityRepository
 {
     /**
-    * Items per page.
-    *
-    * @constant int
-    */
+     * Items per page.
+     *
+     * @constant int
+     */
     public const PAGINATOR_ITEMS_PER_PAGE = 10;
-
-
 
     /**
      * Constructor.
-     *
-     * @param ManagerRegistry $registry
      */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, UserData::class);
     }
 
-    /**
-     * @param UserData $userData
-     * @return void
-     */
     public function save(UserData $userData): void
     {
         $this->_em->persist($userData);

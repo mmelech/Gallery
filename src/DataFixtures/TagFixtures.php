@@ -6,7 +6,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\Tag;
-use DateTimeImmutable;
 
 /**
  * Class TagFixtures.

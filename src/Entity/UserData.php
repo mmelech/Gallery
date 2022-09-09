@@ -42,8 +42,6 @@ class UserData
 
     /**
      * Getter for Id.
-     *
-     * @return int|null
      */
     public function getId(): ?int
     {
@@ -52,8 +50,6 @@ class UserData
 
     /**
      * Getter for login.
-     *
-     * @return string|null
      */
     public function getLogin(): ?string
     {
@@ -62,8 +58,6 @@ class UserData
 
     /**
      * Setter for login.
-     *
-     * @param string $login
      */
     public function setLogin(string $login): void
     {
@@ -72,8 +66,6 @@ class UserData
 
     /**
      * Getter for firstname.
-     *
-     * @return string|null
      */
     public function getFirstname(): ?string
     {
@@ -82,8 +74,6 @@ class UserData
 
     /**
      * Setter for firstname.
-     *
-     * @param string|null $firstname
      */
     public function setFirstname(?string $firstname): void
     {

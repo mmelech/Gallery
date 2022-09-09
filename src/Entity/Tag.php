@@ -7,7 +7,6 @@ namespace App\Entity;
 
 use App\Repository\TagRepository;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,9 +34,6 @@ class Tag
     #[ORM\Column(type: 'string', length: 45)]
     private ?string $title = null;
 
-    /**
-     *
-     */
     #[ORM\ManyToMany(targetEntity: Photo::class, mappedBy: 'tags')]
     private $photos;
 

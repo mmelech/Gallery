@@ -3,8 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\Gallery;
-use App\Entity\Tag;
 use App\Entity\Photo;
+use App\Entity\Tag;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
@@ -68,8 +68,6 @@ class PhotoRepository extends ServiceEntityRepository
 //            ->join('photo.gallery', 'gallery')
 //            ->orderBy('photo.date', 'DESC');
 //    }
-
-
 
     /**
      * Apply filters to paginated list.

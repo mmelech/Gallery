@@ -5,7 +5,6 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\User;
 use App\Entity\UserData;
 
 /**

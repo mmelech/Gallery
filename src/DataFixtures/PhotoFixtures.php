@@ -8,8 +8,6 @@ namespace App\DataFixtures;
 use App\Entity\Gallery;
 use App\Entity\Photo;
 use App\Entity\Tag;
-use App\Entity\User;
-use App\DataFixtures\AbstractBaseFixtures;
 use DateTimeImmutable;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
