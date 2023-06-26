@@ -95,7 +95,7 @@ class Gallery
     /**
      * Add photo.
      *
-     * @param Photo $photo Photo
+     * @param Photo $photo Photo entity
      */
     public function addPhoto(Photo $photo): void
     {
@@ -108,7 +108,7 @@ class Gallery
     /**
      * Remove photo.
      *
-     * @param Photo $photo Photo
+     * @param Photo $photo Photo entity
      */
     public function removePhoto(Photo $photo): void
     {

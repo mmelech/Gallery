@@ -8,8 +8,12 @@ namespace App\Service;
 use App\Entity\Photo;
 use App\Entity\User;
 use App\Repository\PhotoRepository;
+use App\Repository\TagRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Class PhotoService.
@@ -17,9 +21,19 @@ use Knp\Component\Pager\PaginatorInterface;
 class PhotoService implements PhotoServiceInterface
 {
     /**
+     * Target directory.
+     */
+    private string $targetDirectory;
+
+    /**
      * Photo repository.
      */
     private PhotoRepository $photoRepository;
+
+    /**
+     * File upload service.
+     */
+    private FileUploadServiceInterface $fileUploadService;
 
     /**
      * Paginator.
@@ -42,26 +56,43 @@ class PhotoService implements PhotoServiceInterface
     private TagRepository $tagRepository;
 
     /**
+     * File system service.
+     */
+    private Filesystem $filesystem;
+
+    /**
      * Constructor.
      *
-     * @param GalleryServiceInterface $galleryService Gallery service
-     * @param PhotoRepository     $photoRepository Photo repository
-     * @param PaginatorInterface $paginator      Paginator
-     * @param TagServiceInterface      $tagService      Tag service
+     * @param GalleryServiceInterface    $galleryService    Gallery service
+     * @param PhotoRepository            $photoRepository   Photo repository
+     * @param PaginatorInterface         $paginator         Paginator
+     * @param TagServiceInterface        $tagService        Tag service
+     * @param FileUploadServiceInterface $fileUploadService File Upload service
+     * @param Filesystem                 $filesystem        Filesystem component
      */
-    public function __construct(PhotoRepository $photoRepository, PaginatorInterface $paginator,
-                                TagServiceInterface $tagService,GalleryServiceInterface $galleryService)
+    public function __construct(
+        string $targetDirectory,
+        PhotoRepository $photoRepository,
+        PaginatorInterface $paginator,
+        TagServiceInterface $tagService,
+        GalleryServiceInterface $galleryService,
+        FileUploadServiceInterface $fileUploadService,
+        Filesystem $filesystem
+    )
     {
+        $this->targetDirectory = $targetDirectory;
         $this->photoRepository = $photoRepository;
         $this->paginator = $paginator;
         $this->tagService = $tagService;
         $this->galleryService = $galleryService;
+        $this->fileUploadService = $fileUploadService;
+        $this->filesystem = $filesystem;
     }
 
     /**
      * Get paginated list.
      *
-     * @param int $page Page number
+     * @param int                $page    Page number
      * @param array<string, int> $filters Filters array
      *
      * @return PaginationInterface<string, mixed> Paginated list
@@ -69,6 +100,7 @@ class PhotoService implements PhotoServiceInterface
     public function getPaginatedList(int $page, array $filters = []): PaginationInterface
     {
         $filters = $this->prepareFilters($filters);
+
         return $this->paginator->paginate(
             $this->photoRepository->queryAll($filters),
             $page,
@@ -121,5 +153,41 @@ class PhotoService implements PhotoServiceInterface
         }
 
         return $resultFilters;
+    }
+
+    /**
+     * Create photo.
+     *
+     * @param UploadedFile  $uploadedFile Uploaded file
+     * @param Photo         $photo        Photo entity
+     * @param UserInterface $user         User interface
+     */
+    public function create(UploadedFile $uploadedFile, Photo $photo, UserInterface $user): void
+    {
+        $photoFilename = $this->fileUploadService->upload($uploadedFile);
+
+        $photo->setAuthor($user);
+        $photo->setFilename($photoFilename);
+        $this->photoRepository->save($photo);
+    }
+
+    /**
+     * Update photo.
+     *
+     * @param UploadedFile $uploadedFile Uploaded file
+     * @param Photo        $photo        Photo entity
+     * @param User         $user         User entity
+     */
+    public function update(UploadedFile $uploadedFile, Photo $photo, UserInterface $user): void
+    {
+        $filename = $photo->getFilename();
+
+        if (null !== $filename) {
+            $this->filesystem->remove(
+                $this->targetDirectory.'/'.$filename
+            );
+
+            $this->create($uploadedFile, $photo, $user);
+        }
     }
 }

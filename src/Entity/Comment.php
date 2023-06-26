@@ -10,8 +10,6 @@ use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 
 /**
  * Class Comment.
@@ -94,6 +92,8 @@ class Comment
 
     /**
      * Getter for date.
+     *
+     * @return DateTimeImmutable|null Date
      */
     public function getDate(): ?DateTimeImmutable
     {
@@ -102,6 +102,8 @@ class Comment
 
     /**
      * Setter for date.
+     *
+     * @param DateTimeImmutable $date Date
      */
     public function setDate(DateTimeImmutable $date): void
     {
@@ -109,7 +111,9 @@ class Comment
     }
 
     /**
-     * @return Photo|null
+     * Getter for photo.
+     *
+     * @return Photo|null Photo
      */
     public function getPhoto(): ?Photo
     {
@@ -119,7 +123,8 @@ class Comment
     /**
      * Setter for Photo.
      *
-     * @param Photo|null $photo
+     * @param Photo|null $photo Photo entity
+     *
      * @return $this
      */
     public function setPhoto(?Photo $photo): self
@@ -129,11 +134,23 @@ class Comment
         return $this;
     }
 
+    /**
+     * Getter for Author.
+     *
+     * @return User|null author
+     */
     public function getAuthor(): ?User
     {
         return $this->author;
     }
 
+    /**
+     * Setter for Author.
+     *
+     * @param User|null $author Author
+     *
+     * @return $this
+     */
     public function setAuthor(?User $author): self
     {
         $this->author = $author;

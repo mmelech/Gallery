@@ -58,6 +58,15 @@ class Photo
     private ?string $content = null;
 
     /**
+     * Filename.
+     *
+     * @var string|null
+     */
+    #[ORM\Column(type: 'string', length: 191, nullable: true)]
+    #[Assert\Type('string')]
+    private ?string $filename;
+
+    /**
      * Gallery.
      *
      * @var Gallery
@@ -84,6 +93,12 @@ class Photo
      */
     #[ORM\OneToMany(mappedBy: 'photo', targetEntity: Comment::class, fetch: 'EXTRA_LAZY', orphanRemoval: true)]
     private $comments;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $author;
 
     /**
      * Constructor.
@@ -146,6 +161,8 @@ class Photo
 
     /**
      * Getter for Title.
+     *
+     * @return string|null Title
      */
     public function getTitle(): ?string
     {
@@ -154,6 +171,8 @@ class Photo
 
     /**
      * Setter for Title.
+     *
+     * @param string $title Title
      */
     public function setTitle(string $title): void
     {
@@ -162,6 +181,8 @@ class Photo
 
     /**
      * Getter for gallery.
+     *
+     * @return Gallery|null Gallery
      */
     public function getGallery(): ?Gallery
     {
@@ -170,6 +191,8 @@ class Photo
 
     /**
      * Setter for gallery.
+     *
+     * @param Gallery|null $gallery Gallery
      */
     public function setGallery(?Gallery $gallery): void
     {
@@ -200,6 +223,8 @@ class Photo
 
     /**
      * Remove tag.
+     *
+     * @param Tag $tag Tag entity
      */
     public function removeTag(Tag $tag): void
     {
@@ -246,5 +271,45 @@ class Photo
         }
 
         return $this;
+    }
+
+    /**
+     * Setter for author.
+     *
+     * @param User|null $author Author
+     */
+    public function setAuthor(?User $author): void
+    {
+        $this->author = $author;
+    }
+
+    /**
+     * Getter for author.
+     *
+     * @return User|null Author
+     */
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    /**
+     * Getter for filename.
+     *
+     * @return string|null Filename
+     */
+    public function getFilename(): ?string
+    {
+        return $this->filename;
+    }
+
+    /**
+     * Setter for filename.
+     *
+     * @param string|null $filename Filename
+     */
+    public function setFilename(?string $filename): void
+    {
+        $this->filename = $filename;
     }
 }

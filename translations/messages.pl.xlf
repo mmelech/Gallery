@@ -10,6 +10,10 @@
          <source>label.title.gallery</source>
          <target>Nazwa galerii</target>
       </trans-unit>
+      <trans-unit id="edit">
+         <source>edit</source>
+         <target>Edytuj zdjęcie</target>
+      </trans-unit>
       <trans-unit id="label.id">
         <source>label.id</source>
         <target>Numer</target>
@@ -20,6 +24,14 @@
       </trans-unit>
       <trans-unit id="label.title">
         <source>label.title</source>
+        <target>Nazwa</target>
+      </trans-unit>
+      <trans-unit id="label.photo">
+        <source>label.photo</source>
+        <target>Plik zdjęciowy</target>
+      </trans-unit>
+      <trans-unit id="label_title">
+        <source>label_title</source>
         <target>Nazwa</target>
       </trans-unit>
       <trans-unit id="label.content">
@@ -141,6 +153,14 @@
       <trans-unit id="action.edit">
         <source>action.edit</source>
         <target>Edytuj</target>
+      </trans-unit>
+      <trans-unit id="message.password_edited_successfully">
+        <source>message.password_edited_successfully</source>
+        <target>Zmieniono hasło</target>
+      </trans-unit>
+      <trans-unit id="message_updated_successfully">
+        <source>message_updated_successfully</source>
+        <target>Zmieniono dane</target>
       </trans-unit>
       <trans-unit id="action.delete">
         <source>action.delete</source>

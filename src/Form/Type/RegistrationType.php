@@ -19,6 +19,10 @@ class RegistrationType extends AbstractType
     /**
      * Builds the form.
      *
+     * This method is called for each type in the hierarchy starting from the
+     * top most type. Type extensions can further modify the form.
+     *
+     * @param FormBuilderInterface $builder The form builder
      * @param array<string, mixed> $options
      *
      * @see FormTypeExtensionInterface::buildForm()
@@ -32,7 +36,8 @@ class RegistrationType extends AbstractType
                 'label' => 'label.email',
                 'required' => true,
                 'attr' => ['max_length' => 128],
-            ]);
+            ]
+        );
 
         $builder->add(
             'password',
@@ -42,6 +47,7 @@ class RegistrationType extends AbstractType
                 'invalid_message' => 'label.different_pass',
                 'first_options' => ['label' => 'new.password'],
                 'second_options' => ['label' => 'repeat.password'],
-            ]);
+            ]
+        );
     }
 }

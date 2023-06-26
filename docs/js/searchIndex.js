@@ -6,36 +6,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Kernel.html"
         },                {
-            "fqsen": "\\App\\Controller\\AvatarController",
-            "name": "AvatarController",
-            "summary": "Class\u0020AvatarController.",
-            "url": "classes/App-Controller-AvatarController.html"
-        },                {
-            "fqsen": "\\App\\Controller\\AvatarController\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor.",
-            "url": "classes/App-Controller-AvatarController.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Controller\\AvatarController\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
-            "summary": "Create\u0020action.",
-            "url": "classes/App-Controller-AvatarController.html#method_create"
-        },                {
-            "fqsen": "\\App\\Controller\\AvatarController\u003A\u003Aedit\u0028\u0029",
-            "name": "edit",
-            "summary": "Edit\u0020action.",
-            "url": "classes/App-Controller-AvatarController.html#method_edit"
-        },                {
-            "fqsen": "\\App\\Controller\\AvatarController\u003A\u003A\u0024avatarService",
-            "name": "avatarService",
-            "summary": "Avatar\u0020service.",
-            "url": "classes/App-Controller-AvatarController.html#property_avatarService"
-        },                {
-            "fqsen": "\\App\\Controller\\AvatarController\u003A\u003A\u0024translator",
-            "name": "translator",
-            "summary": "Translator.",
-            "url": "classes/App-Controller-AvatarController.html#property_translator"
-        },                {
             "fqsen": "\\App\\Controller\\CommentController",
             "name": "CommentController",
             "summary": "Class\u0020CommentController.",
@@ -188,8 +158,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\SecurityController",
             "name": "SecurityController",
-            "summary": "",
+            "summary": "class\u0020SecurityController.",
             "url": "classes/App-Controller-SecurityController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\SecurityController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor.",
+            "url": "classes/App-Controller-SecurityController.html#method___construct"
         },                {
             "fqsen": "\\App\\Controller\\SecurityController\u003A\u003Alogin\u0028\u0029",
             "name": "login",
@@ -200,6 +175,11 @@ Search.appendIndex(
             "name": "logout",
             "summary": "",
             "url": "classes/App-Controller-SecurityController.html#method_logout"
+        },                {
+            "fqsen": "\\App\\Controller\\SecurityController\u003A\u003A\u0024translator",
+            "name": "translator",
+            "summary": "Translator.",
+            "url": "classes/App-Controller-SecurityController.html#property_translator"
         },                {
             "fqsen": "\\App\\Controller\\TagController",
             "name": "TagController",
@@ -358,12 +338,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\DataFixtures\\AppFixtures",
             "name": "AppFixtures",
-            "summary": "",
+            "summary": "Class\u0020AppFixtures.",
             "url": "classes/App-DataFixtures-AppFixtures.html"
         },                {
             "fqsen": "\\App\\DataFixtures\\AppFixtures\u003A\u003Aload\u0028\u0029",
             "name": "load",
-            "summary": "",
+            "summary": "Load\u0020data.",
             "url": "classes/App-DataFixtures-AppFixtures.html#method_load"
         },                {
             "fqsen": "\\App\\DataFixtures\\CommentFixtures",
@@ -378,7 +358,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\DataFixtures\\CommentFixtures\u003A\u003AgetDependencies\u0028\u0029",
             "name": "getDependencies",
-            "summary": "",
+            "summary": "This\u0020method\u0020must\u0020return\u0020an\u0020array\u0020of\u0020fixtures\u0020classes\non\u0020which\u0020the\u0020implementing\u0020class\u0020depends\u0020on.",
             "url": "classes/App-DataFixtures-CommentFixtures.html#method_getDependencies"
         },                {
             "fqsen": "\\App\\DataFixtures\\GalleryFixtures",
@@ -433,7 +413,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\DataFixtures\\UserFixtures\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "UserFixtures\u0020constructor.",
             "url": "classes/App-DataFixtures-UserFixtures.html#method___construct"
         },                {
             "fqsen": "\\App\\DataFixtures\\UserFixtures\u003A\u003AloadData\u0028\u0029",
@@ -450,51 +430,6 @@ Search.appendIndex(
             "name": "passwordHasher",
             "summary": "Password\u0020hasher.",
             "url": "classes/App-DataFixtures-UserFixtures.html#property_passwordHasher"
-        },                {
-            "fqsen": "\\App\\Entity\\Avatar",
-            "name": "Avatar",
-            "summary": "",
-            "url": "classes/App-Entity-Avatar.html"
-        },                {
-            "fqsen": "\\App\\Entity\\Avatar\u003A\u003AgetId\u0028\u0029",
-            "name": "getId",
-            "summary": "",
-            "url": "classes/App-Entity-Avatar.html#method_getId"
-        },                {
-            "fqsen": "\\App\\Entity\\Avatar\u003A\u003AgetUser\u0028\u0029",
-            "name": "getUser",
-            "summary": "",
-            "url": "classes/App-Entity-Avatar.html#method_getUser"
-        },                {
-            "fqsen": "\\App\\Entity\\Avatar\u003A\u003AsetUser\u0028\u0029",
-            "name": "setUser",
-            "summary": "",
-            "url": "classes/App-Entity-Avatar.html#method_setUser"
-        },                {
-            "fqsen": "\\App\\Entity\\Avatar\u003A\u003AgetFileName\u0028\u0029",
-            "name": "getFileName",
-            "summary": "",
-            "url": "classes/App-Entity-Avatar.html#method_getFileName"
-        },                {
-            "fqsen": "\\App\\Entity\\Avatar\u003A\u003AsetFileName\u0028\u0029",
-            "name": "setFileName",
-            "summary": "",
-            "url": "classes/App-Entity-Avatar.html#method_setFileName"
-        },                {
-            "fqsen": "\\App\\Entity\\Avatar\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "",
-            "url": "classes/App-Entity-Avatar.html#property_id"
-        },                {
-            "fqsen": "\\App\\Entity\\Avatar\u003A\u003A\u0024user",
-            "name": "user",
-            "summary": "",
-            "url": "classes/App-Entity-Avatar.html#property_user"
-        },                {
-            "fqsen": "\\App\\Entity\\Avatar\u003A\u003A\u0024fileName",
-            "name": "fileName",
-            "summary": "",
-            "url": "classes/App-Entity-Avatar.html#property_fileName"
         },                {
             "fqsen": "\\App\\Entity\\Comment",
             "name": "Comment",
@@ -528,7 +463,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AgetPhoto\u0028\u0029",
             "name": "getPhoto",
-            "summary": "",
+            "summary": "Getter\u0020for\u0020photo.",
             "url": "classes/App-Entity-Comment.html#method_getPhoto"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AsetPhoto\u0028\u0029",
@@ -538,12 +473,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AgetAuthor\u0028\u0029",
             "name": "getAuthor",
-            "summary": "",
+            "summary": "Getter\u0020for\u0020Author.",
             "url": "classes/App-Entity-Comment.html#method_getAuthor"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003AsetAuthor\u0028\u0029",
             "name": "setAuthor",
-            "summary": "",
+            "summary": "Setter\u0020for\u0020Author.",
             "url": "classes/App-Entity-Comment.html#method_setAuthor"
         },                {
             "fqsen": "\\App\\Entity\\Comment\u003A\u003A\u0024id",
@@ -583,12 +518,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Enum\\UserRole\u003A\u003AROLE_USER",
             "name": "ROLE_USER",
-            "summary": "",
+            "summary": "role\u0020user",
             "url": ""
         },                {
             "fqsen": "\\App\\Entity\\Enum\\UserRole\u003A\u003AROLE_ADMIN",
             "name": "ROLE_ADMIN",
-            "summary": "",
+            "summary": "role\u0020admin",
             "url": ""
         },                {
             "fqsen": "\\App\\Entity\\Gallery",
@@ -731,6 +666,26 @@ Search.appendIndex(
             "summary": "Remove\u0020comment.",
             "url": "classes/App-Entity-Photo.html#method_removeComment"
         },                {
+            "fqsen": "\\App\\Entity\\Photo\u003A\u003AsetAuthor\u0028\u0029",
+            "name": "setAuthor",
+            "summary": "Setter\u0020for\u0020author.",
+            "url": "classes/App-Entity-Photo.html#method_setAuthor"
+        },                {
+            "fqsen": "\\App\\Entity\\Photo\u003A\u003AgetAuthor\u0028\u0029",
+            "name": "getAuthor",
+            "summary": "Getter\u0020for\u0020author.",
+            "url": "classes/App-Entity-Photo.html#method_getAuthor"
+        },                {
+            "fqsen": "\\App\\Entity\\Photo\u003A\u003AgetFilename\u0028\u0029",
+            "name": "getFilename",
+            "summary": "Getter\u0020for\u0020filename.",
+            "url": "classes/App-Entity-Photo.html#method_getFilename"
+        },                {
+            "fqsen": "\\App\\Entity\\Photo\u003A\u003AsetFilename\u0028\u0029",
+            "name": "setFilename",
+            "summary": "Setter\u0020for\u0020filename.",
+            "url": "classes/App-Entity-Photo.html#method_setFilename"
+        },                {
             "fqsen": "\\App\\Entity\\Photo\u003A\u003A\u0024id",
             "name": "id",
             "summary": "Primary\u0020key.",
@@ -751,6 +706,11 @@ Search.appendIndex(
             "summary": "Content.",
             "url": "classes/App-Entity-Photo.html#property_content"
         },                {
+            "fqsen": "\\App\\Entity\\Photo\u003A\u003A\u0024filename",
+            "name": "filename",
+            "summary": "Filename.",
+            "url": "classes/App-Entity-Photo.html#property_filename"
+        },                {
             "fqsen": "\\App\\Entity\\Photo\u003A\u003A\u0024gallery",
             "name": "gallery",
             "summary": "Gallery.",
@@ -765,6 +725,11 @@ Search.appendIndex(
             "name": "comments",
             "summary": "Comments.",
             "url": "classes/App-Entity-Photo.html#property_comments"
+        },                {
+            "fqsen": "\\App\\Entity\\Photo\u003A\u003A\u0024author",
+            "name": "author",
+            "summary": "",
+            "url": "classes/App-Entity-Photo.html#property_author"
         },                {
             "fqsen": "\\App\\Entity\\Tag",
             "name": "Tag",
@@ -878,23 +843,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\User\u003A\u003AgetUserData\u0028\u0029",
             "name": "getUserData",
-            "summary": "",
+            "summary": "Setter\u0020for\u0020userData.",
             "url": "classes/App-Entity-User.html#method_getUserData"
         },                {
             "fqsen": "\\App\\Entity\\User\u003A\u003AsetUserData\u0028\u0029",
             "name": "setUserData",
-            "summary": "",
+            "summary": "Setter\u0020for\u0020userData",
             "url": "classes/App-Entity-User.html#method_setUserData"
-        },                {
-            "fqsen": "\\App\\Entity\\User\u003A\u003AgetAvatar\u0028\u0029",
-            "name": "getAvatar",
-            "summary": "",
-            "url": "classes/App-Entity-User.html#method_getAvatar"
-        },                {
-            "fqsen": "\\App\\Entity\\User\u003A\u003AsetAvatar\u0028\u0029",
-            "name": "setAvatar",
-            "summary": "",
-            "url": "classes/App-Entity-User.html#method_setAvatar"
         },                {
             "fqsen": "\\App\\Entity\\User\u003A\u003AROLE_USER",
             "name": "ROLE_USER",
@@ -930,11 +885,6 @@ Search.appendIndex(
             "name": "userData",
             "summary": "",
             "url": "classes/App-Entity-User.html#property_userData"
-        },                {
-            "fqsen": "\\App\\Entity\\User\u003A\u003A\u0024avatar",
-            "name": "avatar",
-            "summary": "",
-            "url": "classes/App-Entity-User.html#property_avatar"
         },                {
             "fqsen": "\\App\\Entity\\UserData",
             "name": "UserData",
@@ -1006,26 +956,6 @@ Search.appendIndex(
             "summary": "Tag\u0020service.",
             "url": "classes/App-Form-DataTransformer-TagsDataTransformer.html#property_tagService"
         },                {
-            "fqsen": "\\App\\Form\\Type\\AvatarType",
-            "name": "AvatarType",
-            "summary": "Class\u0020AvatarType.",
-            "url": "classes/App-Form-Type-AvatarType.html"
-        },                {
-            "fqsen": "\\App\\Form\\Type\\AvatarType\u003A\u003AbuildForm\u0028\u0029",
-            "name": "buildForm",
-            "summary": "Builds\u0020the\u0020form.",
-            "url": "classes/App-Form-Type-AvatarType.html#method_buildForm"
-        },                {
-            "fqsen": "\\App\\Form\\Type\\AvatarType\u003A\u003AconfigureOptions\u0028\u0029",
-            "name": "configureOptions",
-            "summary": "Configures\u0020the\u0020options\u0020for\u0020this\u0020type.",
-            "url": "classes/App-Form-Type-AvatarType.html#method_configureOptions"
-        },                {
-            "fqsen": "\\App\\Form\\Type\\AvatarType\u003A\u003AgetBlockPrefix\u0028\u0029",
-            "name": "getBlockPrefix",
-            "summary": "Returns\u0020the\u0020prefix\u0020of\u0020the\u0020template\u0020block\u0020name\u0020for\u0020this\u0020type.",
-            "url": "classes/App-Form-Type-AvatarType.html#method_getBlockPrefix"
-        },                {
             "fqsen": "\\App\\Form\\Type\\ChangePasswordType",
             "name": "ChangePasswordType",
             "summary": "Class\u0020ChangePasswordType.",
@@ -1033,7 +963,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Form\\Type\\ChangePasswordType\u003A\u003AbuildForm\u0028\u0029",
             "name": "buildForm",
-            "summary": "",
+            "summary": "Builds\u0020the\u0020form.",
             "url": "classes/App-Form-Type-ChangePasswordType.html#method_buildForm"
         },                {
             "fqsen": "\\App\\Form\\Type\\CommentType",
@@ -1116,16 +1046,6 @@ Search.appendIndex(
             "summary": "Builds\u0020the\u0020form.",
             "url": "classes/App-Form-Type-RegistrationType.html#method_buildForm"
         },                {
-            "fqsen": "\\App\\Form\\TagFiltrType",
-            "name": "TagFiltrType",
-            "summary": "Class\u0020TagFiltrType.",
-            "url": "classes/App-Form-TagFiltrType.html"
-        },                {
-            "fqsen": "\\App\\Form\\TagFiltrType\u003A\u003AbuildForm\u0028\u0029",
-            "name": "buildForm",
-            "summary": "Builds\u0020the\u0020form.",
-            "url": "classes/App-Form-TagFiltrType.html#method_buildForm"
-        },                {
             "fqsen": "\\App\\Form\\Type\\TagType",
             "name": "TagType",
             "summary": "Class\u0020TagType.",
@@ -1146,59 +1066,34 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020prefix\u0020of\u0020the\u0020template\u0020block\u0020name\u0020for\u0020this\u0020type.",
             "url": "classes/App-Form-Type-TagType.html#method_getBlockPrefix"
         },                {
-            "fqsen": "\\App\\Form\\UserDataType",
+            "fqsen": "\\App\\Form\\Type\\UserDataType",
             "name": "UserDataType",
             "summary": "Class\u0020UserDataType.",
-            "url": "classes/App-Form-UserDataType.html"
+            "url": "classes/App-Form-Type-UserDataType.html"
         },                {
-            "fqsen": "\\App\\Form\\UserDataType\u003A\u003AbuildForm\u0028\u0029",
+            "fqsen": "\\App\\Form\\Type\\UserDataType\u003A\u003AbuildForm\u0028\u0029",
             "name": "buildForm",
             "summary": "Builds\u0020the\u0020form.",
-            "url": "classes/App-Form-UserDataType.html#method_buildForm"
+            "url": "classes/App-Form-Type-UserDataType.html#method_buildForm"
         },                {
-            "fqsen": "\\App\\Form\\UserDataType\u003A\u003AconfigureOptions\u0028\u0029",
+            "fqsen": "\\App\\Form\\Type\\UserDataType\u003A\u003AconfigureOptions\u0028\u0029",
             "name": "configureOptions",
             "summary": "Configures\u0020the\u0020options\u0020for\u0020this\u0020type.",
-            "url": "classes/App-Form-UserDataType.html#method_configureOptions"
+            "url": "classes/App-Form-Type-UserDataType.html#method_configureOptions"
         },                {
-            "fqsen": "\\App\\Form\\UserDataType\u003A\u003AgetBlockPrefix\u0028\u0029",
+            "fqsen": "\\App\\Form\\Type\\UserDataType\u003A\u003AgetBlockPrefix\u0028\u0029",
             "name": "getBlockPrefix",
             "summary": "Returns\u0020the\u0020prefix\u0020of\u0020the\u0020template\u0020block\u0020name\u0020for\u0020this\u0020type.",
-            "url": "classes/App-Form-UserDataType.html#method_getBlockPrefix"
-        },                {
-            "fqsen": "\\App\\Repository\\AvatarRepository",
-            "name": "AvatarRepository",
-            "summary": "",
-            "url": "classes/App-Repository-AvatarRepository.html"
-        },                {
-            "fqsen": "\\App\\Repository\\AvatarRepository\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/App-Repository-AvatarRepository.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Repository\\AvatarRepository\u003A\u003Aadd\u0028\u0029",
-            "name": "add",
-            "summary": "",
-            "url": "classes/App-Repository-AvatarRepository.html#method_add"
-        },                {
-            "fqsen": "\\App\\Repository\\AvatarRepository\u003A\u003Asave\u0028\u0029",
-            "name": "save",
-            "summary": "",
-            "url": "classes/App-Repository-AvatarRepository.html#method_save"
-        },                {
-            "fqsen": "\\App\\Repository\\AvatarRepository\u003A\u003Aremove\u0028\u0029",
-            "name": "remove",
-            "summary": "",
-            "url": "classes/App-Repository-AvatarRepository.html#method_remove"
+            "url": "classes/App-Form-Type-UserDataType.html#method_getBlockPrefix"
         },                {
             "fqsen": "\\App\\Repository\\CommentRepository",
             "name": "CommentRepository",
-            "summary": "",
+            "summary": "Class\u0020CommentRepository.",
             "url": "classes/App-Repository-CommentRepository.html"
         },                {
             "fqsen": "\\App\\Repository\\CommentRepository\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor.",
             "url": "classes/App-Repository-CommentRepository.html#method___construct"
         },                {
             "fqsen": "\\App\\Repository\\CommentRepository\u003A\u003Asave\u0028\u0029",
@@ -1213,7 +1108,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Repository\\GalleryRepository",
             "name": "GalleryRepository",
-            "summary": "",
+            "summary": "Class\u0020GalleryRepository.",
             "url": "classes/App-Repository-GalleryRepository.html"
         },                {
             "fqsen": "\\App\\Repository\\GalleryRepository\u003A\u003A__construct\u0028\u0029",
@@ -1248,7 +1143,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Repository\\PhotoRepository",
             "name": "PhotoRepository",
-            "summary": "",
+            "summary": "Class\u0020PhotoRepository.",
             "url": "classes/App-Repository-PhotoRepository.html"
         },                {
             "fqsen": "\\App\\Repository\\PhotoRepository\u003A\u003A__construct\u0028\u0029",
@@ -1283,7 +1178,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Repository\\PhotoRepository\u003A\u003Asave\u0028\u0029",
             "name": "save",
-            "summary": "",
+            "summary": "Save\u0020entity.",
             "url": "classes/App-Repository-PhotoRepository.html#method_save"
         },                {
             "fqsen": "\\App\\Repository\\PhotoRepository\u003A\u003Adelete\u0028\u0029",
@@ -1333,7 +1228,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Repository\\UserDataRepository",
             "name": "UserDataRepository",
-            "summary": "",
+            "summary": "Class\u0020UserDataRepository.",
             "url": "classes/App-Repository-UserDataRepository.html"
         },                {
             "fqsen": "\\App\\Repository\\UserDataRepository\u003A\u003A__construct\u0028\u0029",
@@ -1343,7 +1238,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Repository\\UserDataRepository\u003A\u003Asave\u0028\u0029",
             "name": "save",
-            "summary": "",
+            "summary": "Save\u0020entity.",
             "url": "classes/App-Repository-UserDataRepository.html#method_save"
         },                {
             "fqsen": "\\App\\Repository\\UserDataRepository\u003A\u003APAGINATOR_ITEMS_PER_PAGE",
@@ -1353,7 +1248,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Repository\\UserRepository",
             "name": "UserRepository",
-            "summary": "",
+            "summary": "Class\u0020UserRepository.",
             "url": "classes/App-Repository-UserRepository.html"
         },                {
             "fqsen": "\\App\\Repository\\UserRepository\u003A\u003A__construct\u0028\u0029",
@@ -1388,93 +1283,38 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Security\\LoginFormAuthenticator",
             "name": "LoginFormAuthenticator",
-            "summary": "",
+            "summary": "Class\u0020LoginFormAuthenticator.",
             "url": "classes/App-Security-LoginFormAuthenticator.html"
         },                {
             "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor.",
             "url": "classes/App-Security-LoginFormAuthenticator.html#method___construct"
         },                {
             "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003Aauthenticate\u0028\u0029",
             "name": "authenticate",
-            "summary": "",
+            "summary": "Create\u0020a\u0020passport\u0020for\u0020the\u0020current\u0020request.",
             "url": "classes/App-Security-LoginFormAuthenticator.html#method_authenticate"
         },                {
             "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003AonAuthenticationSuccess\u0028\u0029",
             "name": "onAuthenticationSuccess",
-            "summary": "",
+            "summary": "Called\u0020when\u0020authentication\u0020executed\u0020and\u0020was\u0020successful\u0021",
             "url": "classes/App-Security-LoginFormAuthenticator.html#method_onAuthenticationSuccess"
         },                {
             "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003AgetLoginUrl\u0028\u0029",
             "name": "getLoginUrl",
-            "summary": "",
+            "summary": "Get\u0020login\u0020URL.",
             "url": "classes/App-Security-LoginFormAuthenticator.html#method_getLoginUrl"
         },                {
             "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003ALOGIN_ROUTE",
             "name": "LOGIN_ROUTE",
-            "summary": "",
+            "summary": "Login\u0020route.",
             "url": "classes/App-Security-LoginFormAuthenticator.html#constant_LOGIN_ROUTE"
         },                {
             "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003A\u0024urlGenerator",
             "name": "urlGenerator",
-            "summary": "",
+            "summary": "URL\u0020Generator.",
             "url": "classes/App-Security-LoginFormAuthenticator.html#property_urlGenerator"
-        },                {
-            "fqsen": "\\App\\Service\\AvatarService",
-            "name": "AvatarService",
-            "summary": "Class\u0020AvatarService.",
-            "url": "classes/App-Service-AvatarService.html"
-        },                {
-            "fqsen": "\\App\\Service\\AvatarService\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor.",
-            "url": "classes/App-Service-AvatarService.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Service\\AvatarService\u003A\u003Aupdate\u0028\u0029",
-            "name": "update",
-            "summary": "Update\u0020avatar.",
-            "url": "classes/App-Service-AvatarService.html#method_update"
-        },                {
-            "fqsen": "\\App\\Service\\AvatarService\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
-            "summary": "Create\u0020avatar.",
-            "url": "classes/App-Service-AvatarService.html#method_create"
-        },                {
-            "fqsen": "\\App\\Service\\AvatarService\u003A\u003A\u0024targetDirectory",
-            "name": "targetDirectory",
-            "summary": "Target\u0020directory.",
-            "url": "classes/App-Service-AvatarService.html#property_targetDirectory"
-        },                {
-            "fqsen": "\\App\\Service\\AvatarService\u003A\u003A\u0024avatarRepository",
-            "name": "avatarRepository",
-            "summary": "Avatar\u0020repository.",
-            "url": "classes/App-Service-AvatarService.html#property_avatarRepository"
-        },                {
-            "fqsen": "\\App\\Service\\AvatarService\u003A\u003A\u0024fileUploadService",
-            "name": "fileUploadService",
-            "summary": "File\u0020upload\u0020service.",
-            "url": "classes/App-Service-AvatarService.html#property_fileUploadService"
-        },                {
-            "fqsen": "\\App\\Service\\AvatarService\u003A\u003A\u0024filesystem",
-            "name": "filesystem",
-            "summary": "File\u0020system\u0020service.",
-            "url": "classes/App-Service-AvatarService.html#property_filesystem"
-        },                {
-            "fqsen": "\\App\\Service\\AvatarServiceInterface",
-            "name": "AvatarServiceInterface",
-            "summary": "Class\u0020Avatar\u0020service.",
-            "url": "classes/App-Service-AvatarServiceInterface.html"
-        },                {
-            "fqsen": "\\App\\Service\\AvatarServiceInterface\u003A\u003Acreate\u0028\u0029",
-            "name": "create",
-            "summary": "Create\u0020avatar.",
-            "url": "classes/App-Service-AvatarServiceInterface.html#method_create"
-        },                {
-            "fqsen": "\\App\\Service\\AvatarServiceInterface\u003A\u003Aupdate\u0028\u0029",
-            "name": "update",
-            "summary": "Update\u0020avatar.",
-            "url": "classes/App-Service-AvatarServiceInterface.html#method_update"
         },                {
             "fqsen": "\\App\\Service\\CommentService",
             "name": "CommentService",
@@ -1651,10 +1491,30 @@ Search.appendIndex(
             "summary": "Prepare\u0020filters\u0020for\u0020the\u0020tags\u0020list.",
             "url": "classes/App-Service-PhotoService.html#method_prepareFilters"
         },                {
+            "fqsen": "\\App\\Service\\PhotoService\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Create\u0020photo.",
+            "url": "classes/App-Service-PhotoService.html#method_create"
+        },                {
+            "fqsen": "\\App\\Service\\PhotoService\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "Update\u0020photo.",
+            "url": "classes/App-Service-PhotoService.html#method_update"
+        },                {
+            "fqsen": "\\App\\Service\\PhotoService\u003A\u003A\u0024targetDirectory",
+            "name": "targetDirectory",
+            "summary": "Target\u0020directory.",
+            "url": "classes/App-Service-PhotoService.html#property_targetDirectory"
+        },                {
             "fqsen": "\\App\\Service\\PhotoService\u003A\u003A\u0024photoRepository",
             "name": "photoRepository",
             "summary": "Photo\u0020repository.",
             "url": "classes/App-Service-PhotoService.html#property_photoRepository"
+        },                {
+            "fqsen": "\\App\\Service\\PhotoService\u003A\u003A\u0024fileUploadService",
+            "name": "fileUploadService",
+            "summary": "File\u0020upload\u0020service.",
+            "url": "classes/App-Service-PhotoService.html#property_fileUploadService"
         },                {
             "fqsen": "\\App\\Service\\PhotoService\u003A\u003A\u0024paginator",
             "name": "paginator",
@@ -1676,6 +1536,11 @@ Search.appendIndex(
             "summary": "Tag\u0020repository.",
             "url": "classes/App-Service-PhotoService.html#property_tagRepository"
         },                {
+            "fqsen": "\\App\\Service\\PhotoService\u003A\u003A\u0024filesystem",
+            "name": "filesystem",
+            "summary": "File\u0020system\u0020service.",
+            "url": "classes/App-Service-PhotoService.html#property_filesystem"
+        },                {
             "fqsen": "\\App\\Service\\PhotoServiceInterface",
             "name": "PhotoServiceInterface",
             "summary": "Interface\u0020PhotoServiceInterface.",
@@ -1691,6 +1556,11 @@ Search.appendIndex(
             "summary": "Save\u0020entity.",
             "url": "classes/App-Service-PhotoServiceInterface.html#method_save"
         },                {
+            "fqsen": "\\App\\Service\\PhotoServiceInterface\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Create\u0020photo",
+            "url": "classes/App-Service-PhotoServiceInterface.html#method_create"
+        },                {
             "fqsen": "\\App\\Service\\PhotoServiceInterface\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
             "summary": "Delete\u0020entity.",
@@ -1700,6 +1570,11 @@ Search.appendIndex(
             "name": "prepareFilters",
             "summary": "",
             "url": "classes/App-Service-PhotoServiceInterface.html#method_prepareFilters"
+        },                {
+            "fqsen": "\\App\\Service\\PhotoServiceInterface\u003A\u003Aupdate\u0028\u0029",
+            "name": "update",
+            "summary": "Update\u0020avatar.",
+            "url": "classes/App-Service-PhotoServiceInterface.html#method_update"
         },                {
             "fqsen": "\\App\\Service\\TagService",
             "name": "TagService",
@@ -1766,11 +1641,6 @@ Search.appendIndex(
             "summary": "Delete\u0020entity.",
             "url": "classes/App-Service-TagServiceInterface.html#method_delete"
         },                {
-            "fqsen": "\\App\\Service\\TagServiceInterface\u003A\u003AfindOneByTitle\u0028\u0029",
-            "name": "findOneByTitle",
-            "summary": "Find\u0020by\u0020title.",
-            "url": "classes/App-Service-TagServiceInterface.html#method_findOneByTitle"
-        },                {
             "fqsen": "\\App\\Service\\UserDataService",
             "name": "UserDataService",
             "summary": "Class\u0020UserDataService.",
@@ -1778,7 +1648,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Service\\UserDataService\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "UserDataService\u0020constructor.",
+            "summary": "Constructor.",
             "url": "classes/App-Service-UserDataService.html#method___construct"
         },                {
             "fqsen": "\\App\\Service\\UserDataService\u003A\u003AcreatePaginatedList\u0028\u0029",
@@ -1856,15 +1726,45 @@ Search.appendIndex(
             "summary": "Delete\u0020entity.",
             "url": "classes/App-Service-UserServiceInterface.html#method_delete"
         },                {
-            "fqsen": "\\App\\Util\\Calculator",
-            "name": "Calculator",
-            "summary": "Class\u0020Calculator.",
-            "url": "classes/App-Util-Calculator.html"
+            "fqsen": "\\App\\Form\\Type\\TagFiltrType",
+            "name": "TagFiltrType",
+            "summary": "Class\u0020TagFiltrType.",
+            "url": "classes/App-Form-Type-TagFiltrType.html"
         },                {
-            "fqsen": "\\App\\Util\\Calculator\u003A\u003Aadd\u0028\u0029",
-            "name": "add",
-            "summary": "Add\u0020two\u0020integers.",
-            "url": "classes/App-Util-Calculator.html#method_add"
+            "fqsen": "\\App\\Form\\Type\\TagFiltrType\u003A\u003AbuildForm\u0028\u0029",
+            "name": "buildForm",
+            "summary": "Builds\u0020the\u0020form.",
+            "url": "classes/App-Form-Type-TagFiltrType.html#method_buildForm"
+        },                {
+            "fqsen": "\\App\\Form\\Type\\PhotoEditType",
+            "name": "PhotoEditType",
+            "summary": "Class\u0020PhotoEditType",
+            "url": "classes/App-Form-Type-PhotoEditType.html"
+        },                {
+            "fqsen": "\\App\\Form\\Type\\PhotoEditType\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "PhotoEditType\u0020constructor.",
+            "url": "classes/App-Form-Type-PhotoEditType.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Form\\Type\\PhotoEditType\u003A\u003AbuildForm\u0028\u0029",
+            "name": "buildForm",
+            "summary": "Form\u0020builder.",
+            "url": "classes/App-Form-Type-PhotoEditType.html#method_buildForm"
+        },                {
+            "fqsen": "\\App\\Form\\Type\\PhotoEditType\u003A\u003AconfigureOptions\u0028\u0029",
+            "name": "configureOptions",
+            "summary": "Configure\u0020options.",
+            "url": "classes/App-Form-Type-PhotoEditType.html#method_configureOptions"
+        },                {
+            "fqsen": "\\App\\Form\\Type\\PhotoEditType\u003A\u003AgetBlockPrefix\u0028\u0029",
+            "name": "getBlockPrefix",
+            "summary": "Prefix.",
+            "url": "classes/App-Form-Type-PhotoEditType.html#method_getBlockPrefix"
+        },                {
+            "fqsen": "\\App\\Form\\Type\\PhotoEditType\u003A\u003A\u0024tagsDataTransformer",
+            "name": "tagsDataTransformer",
+            "summary": "data\u0020transformer.",
+            "url": "classes/App-Form-Type-PhotoEditType.html#property_tagsDataTransformer"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -1896,15 +1796,15 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/app-form-datatransformer.html"
         },                {
-            "fqsen": "\\App\\Form\\Type",
-            "name": "Type",
-            "summary": "",
-            "url": "namespaces/app-form-type.html"
-        },                {
             "fqsen": "\\App\\Form",
             "name": "Form",
             "summary": "",
             "url": "namespaces/app-form.html"
+        },                {
+            "fqsen": "\\App\\Form\\Type",
+            "name": "Type",
+            "summary": "",
+            "url": "namespaces/app-form-type.html"
         },                {
             "fqsen": "\\App",
             "name": "App",
@@ -1925,10 +1825,5 @@ Search.appendIndex(
             "name": "Service",
             "summary": "",
             "url": "namespaces/app-service.html"
-        },                {
-            "fqsen": "\\App\\Util",
-            "name": "Util",
-            "summary": "",
-            "url": "namespaces/app-util.html"
         }            ]
 );

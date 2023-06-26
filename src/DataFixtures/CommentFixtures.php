@@ -29,7 +29,8 @@ class CommentFixtures extends AbstractBaseFixtures implements DependentFixtureIn
             $comment = new Comment();
             $comment->setContent($this->faker->sentence);
             $comment->setDate(
-                DateTimeImmutable::createFromMutable($this->faker->dateTimeBetween('-100 days', '-1 days')));
+                DateTimeImmutable::createFromMutable($this->faker->dateTimeBetween('-100 days', '-1 days'))
+            );
 
             /** @var User @author */
             $author = $this->getRandomReference('users');
@@ -46,7 +47,10 @@ class CommentFixtures extends AbstractBaseFixtures implements DependentFixtureIn
     }
 
     /**
-     * @return string[] of dependencies
+     * This method must return an array of fixtures classes
+     * on which the implementing class depends on.
+     *
+     * @return array Array of dependencies
      */
     public function getDependencies(): array
     {

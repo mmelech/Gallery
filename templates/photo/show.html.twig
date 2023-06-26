@@ -33,6 +33,8 @@
         </dl>
         <br>
 
+        <img id="photo" src="{{ asset('uploads/photos/'~ photo.filename) }}">
+
         <h4>
             {{ 'label_comments'|trans }}
         </h4>
@@ -62,8 +64,8 @@
             </tbody>
         </table>
         <p>
-            {% if app.user.avatar.filename is defined and app.user.avatar.filename|length %}
-                <img class="nav-profile-img" src="{{ asset(avatars_directory~app.user.avatar.filename) }}">
+            {% if app.user.photo.filename is defined and app.user.photo.filename|length %}
+                <img class="nav-profile-img" src="{{ asset(photos_directory~app.user.photo.filename) }}">
             {% endif %}
         </p>
         <p>

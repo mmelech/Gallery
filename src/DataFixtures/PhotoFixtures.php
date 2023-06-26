@@ -30,7 +30,8 @@ class PhotoFixtures extends AbstractBaseFixtures implements DependentFixtureInte
             $photo->setTitle($this->faker->sentence);
             $photo->setContent($this->faker->paragraph);
             $photo->setDate(
-                DateTimeImmutable::createFromMutable($this->faker->dateTimeBetween('-100 days', '-1 days')));
+                DateTimeImmutable::createFromMutable($this->faker->dateTimeBetween('-100 days', '-1 days'))
+            );
 
             /** @var Gallery $gallery */
             $gallery = $this->getRandomReference('galleries');
@@ -39,7 +40,8 @@ class PhotoFixtures extends AbstractBaseFixtures implements DependentFixtureInte
             /** @var array<array-key, Tag> $tags */
             $tags = $this->getRandomReferences(
                 'tags',
-                $this->faker->numberBetween(0, 5));
+                $this->faker->numberBetween(0, 5)
+            );
 
             return $photo;
         });
@@ -51,7 +53,7 @@ class PhotoFixtures extends AbstractBaseFixtures implements DependentFixtureInte
      * This method must return an array of fixtures classes
      * on which the implementing class depends on.
      *
-     * @return string[] of dependencies
+     * @return array Array of dependencies
      *
      * @psalm-return array{0: GalleryFixtures::class}
      */

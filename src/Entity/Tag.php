@@ -89,6 +89,8 @@ class Tag
 
     /**
      * Remove photo.
+     *
+     * @param Photo $photo Photo entity
      */
     public function removePhoto(Photo $photo): void
     {

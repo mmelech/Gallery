@@ -1,6 +1,24 @@
-{% include 'default/_form.html.twig' with {
-    page_title: 'title.photo_edit'|trans({'%id%': photo.id|default('')}),
-    form: form,
-    submit_label: 'action.edit'|trans,
-    back_to_list_path: 'photo_index',
-} %}
+{#{% include 'default/_form.html.twig' with {#}
+{#    page_title: 'title.photo_edit'|trans({'%id%': photo.id|default('')}),#}
+{#    form: form,#}
+{#    submit_label: 'action.edit'|trans,#}
+{#    back_to_list_path: 'photo_index',#}
+{#} %}#}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'edit'|trans({'%id%': photo.id|default('')}) }}
+{% endblock %}
+{% block body %}
+
+    <h1>{{ 'edit'|trans({'%id%': photo.id|default('')}) }}</h1>
+    {{ form_start(form, { method: 'PUT', action: url('photo_edit', {id: photo.id}) }) }}
+    {{ form_widget(form) }}
+    <div class="form-group row float-sm-right">
+        <input type="submit" value="{{ 'action.save'|trans }}" class="btn btn-outline-success" />
+    </div>
+    <div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

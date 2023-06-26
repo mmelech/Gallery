@@ -5,17 +5,17 @@
 
 namespace App\Controller;
 
-use App\Entity\Comment;
+use App\Entity\Gallery;
 use App\Entity\Photo;
-use App\Entity\User;
-use App\Entity\UserData;
-use App\Form\Type\CommentType;
 use DateTimeImmutable;
 use App\Form\Type\PhotoType;
+use App\Form\Type\PhotoEditType;
 use App\Repository\CommentRepository;
 use App\Service\PhotoServiceInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -41,7 +41,7 @@ class PhotoController extends AbstractController
      * Constructor.
      *
      * @param PhotoServiceInterface $photoService Photo service
-     * @param TranslatorInterface  $translator  Translator
+     * @param TranslatorInterface   $translator   Translator
      */
     public function __construct(PhotoServiceInterface $photoService, TranslatorInterface $translator)
     {
@@ -77,7 +77,8 @@ class PhotoController extends AbstractController
     /**
      * Show action.
      *
-     * @param Photo $photo Photo entity
+     * @param Photo             $photo             Photo entity
+     * @param CommentRepository $commentRepository CommentRepository entity
      *
      * @return Response HTTP response
      */
@@ -92,7 +93,6 @@ class PhotoController extends AbstractController
         return $this->render(
             'photo/show.html.twig',
             ['photo' => $photo]
-// $form->createView()]
         );
     }
 
@@ -103,6 +103,7 @@ class PhotoController extends AbstractController
      *
      * @return Response HTTP response
      */
+    #[IsGranted('ROLE_USER')]
     #[Route(
         '/create',
         name: 'photo_create',
@@ -116,7 +117,14 @@ class PhotoController extends AbstractController
         $photo->setDate(new DateTimeImmutable());
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->photoService->save($photo);
+            /** @var UploadedFile $file */
+            $file = $form->get('file')->getData();
+            $user = $this->getUser();
+            $this->photoService->create(
+                $file,
+                $photo,
+                $user
+            );
 
             $this->addFlash(
                 'success',
@@ -136,28 +144,38 @@ class PhotoController extends AbstractController
      * Edit action.
      *
      * @param Request $request HTTP request
-     * @param Photo    $photo    Photo entity
+     * @param Photo   $photo   Photo entity
      *
      * @return Response HTTP response
      */
-    #[Route('/{id}/edit',
+    #[Route(
+        '/{id}/edit',
         name: 'photo_edit',
         requirements: ['id' => '[1-9]\d*'],
-        methods: 'GET|PUT')]
+        methods: 'GET|PUT'
+    )]
     public function edit(Request $request, Photo $photo): Response
     {
-        $form = $this->createForm(PhotoType::class, $photo, [
+        $user = $this->getUser();
+
+        $form = $this->createForm(PhotoEditType::class, $photo, [
             'method' => 'PUT',
             'action' => $this->generateUrl('photo_edit', ['id' => $photo->getId()]),
         ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->photoService->save($photo);
+            /** @var UploadedFile $file */
+            $file = $form->get('file')->getData();
+            $this->photoService->update(
+                $file,
+                $photo,
+                $user,
+            );
 
             $this->addFlash(
                 'success',
-                $this->translator->trans('message.created_successfully')
+                $this->translator->trans('message.edited_successfully')
             );
 
             return $this->redirectToRoute('photo_index');
@@ -176,14 +194,16 @@ class PhotoController extends AbstractController
      * Delete action.
      *
      * @param Request $request HTTP request
-     * @param Photo    $photo    Photo entity
+     * @param Photo   $photo   Photo entity
      *
      * @return Response HTTP response
      */
-    #[Route('/{id}/delete',
+    #[Route(
+        '/{id}/delete',
         name: 'photo_delete',
         requirements: ['id' => '[1-9]\d*'],
-        methods: 'GET|DELETE')]
+        methods: 'GET|DELETE'
+    )]
     public function delete(Request $request, Photo $photo): Response
     {
         $form = $this->createForm(FormType::class, $photo, [

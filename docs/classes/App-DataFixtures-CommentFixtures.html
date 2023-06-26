@@ -87,10 +87,6 @@
                 <a href="namespaces/app-service.html" class="">Service</a>
                 
             </li>
-                    <li>
-                <a href="namespaces/app-util.html" class="">Util</a>
-                
-            </li>
             </ul>
 
                         </section>
@@ -201,9 +197,10 @@
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-DataFixtures-CommentFixtures.html#method_getDependencies">getDependencies()</a>
     <span>
-                                &nbsp;: array&lt;string|int, string&gt;    </span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>This method must return an array of fixtures classes
+on which the implementing class depends on.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-DataFixtures-AbstractBaseFixtures.html#method_load">load()</a>
@@ -302,7 +299,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/DataFixtures/AbstractBaseFixtures.php"><a href="files/src-datafixtures-abstractbasefixtures.html"><abbr title="src/DataFixtures/AbstractBaseFixtures.php">AbstractBaseFixtures.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
@@ -336,7 +333,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/DataFixtures/AbstractBaseFixtures.php"><a href="files/src-datafixtures-abstractbasefixtures.html"><abbr title="src/DataFixtures/AbstractBaseFixtures.php">AbstractBaseFixtures.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 
     </aside>
 
@@ -373,23 +370,25 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/DataFixtures/CommentFixtures.php"><a href="files/src-datafixtures-commentfixtures.html"><abbr title="src/DataFixtures/CommentFixtures.php">CommentFixtures.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">This method must return an array of fixtures classes
+on which the implementing class depends on.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getDependencies</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+                <span class="phpdocumentor-signature__name">getDependencies</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>of dependencies</p>
+            <section class="phpdocumentor-description"><p>Array of dependencies</p>
 </section>
 
     
@@ -407,7 +406,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/DataFixtures/AbstractBaseFixtures.php"><a href="files/src-datafixtures-abstractbasefixtures.html"><abbr title="src/DataFixtures/AbstractBaseFixtures.php">AbstractBaseFixtures.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
@@ -485,7 +484,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/DataFixtures/AbstractBaseFixtures.php"><a href="files/src-datafixtures-abstractbasefixtures.html"><abbr title="src/DataFixtures/AbstractBaseFixtures.php">AbstractBaseFixtures.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 
     </aside>
 
@@ -572,7 +571,7 @@ to fetch only from this specific group</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/DataFixtures/AbstractBaseFixtures.php"><a href="files/src-datafixtures-abstractbasefixtures.html"><abbr title="src/DataFixtures/AbstractBaseFixtures.php">AbstractBaseFixtures.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">101</span>
+    <span class="phpdocumentor-element-found-in__line">98</span>
 
     </aside>
 
@@ -643,7 +642,7 @@ to fetch only from this specific group</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/DataFixtures/AbstractBaseFixtures.php"><a href="files/src-datafixtures-abstractbasefixtures.html"><abbr title="src/DataFixtures/AbstractBaseFixtures.php">AbstractBaseFixtures.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">132</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 
     </aside>
 

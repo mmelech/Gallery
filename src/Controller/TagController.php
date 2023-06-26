@@ -7,8 +7,8 @@ namespace App\Controller;
 
 use App\Entity\Tag;
 use App\Form\Type\TagType;
-use App\Service\TagService;
 use App\Service\TagServiceInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
@@ -35,7 +35,7 @@ class TagController extends AbstractController
     /**
      * Constructor.
      *
-     * @param TagService          $tagService Tag service
+     * @param TagServiceInterface $tagService Tag service
      * @param TranslatorInterface $translator Translator
      */
     public function __construct(TagServiceInterface $tagService, TranslatorInterface $translator)
@@ -122,10 +122,12 @@ class TagController extends AbstractController
      *
      * @return Response HTTP response
      */
-    #[Route('/{id}/edit',
+    #[Route(
+        '/{id}/edit',
         name: 'tag_edit',
         requirements: ['id' => '[1-9]\d*'],
-        methods: 'GET|PUT')]
+        methods: 'GET|PUT'
+    )]
     public function edit(Request $request, Tag $tag): Response
     {
         $form = $this->createForm(TagType::class, $tag, [
@@ -162,10 +164,13 @@ class TagController extends AbstractController
      *
      * @return Response HTTP response
      */
-    #[Route('/{id}/delete',
+    #[IsGranted('ROLE_USER')]
+    #[Route(
+        '/{id}/delete',
         name: 'tag_delete',
         requirements: ['id' => '[1-9]\d*'],
-        methods: 'GET|DELETE')]
+        methods: 'GET|DELETE'
+    )]
     public function delete(Request $request, Tag $tag): Response
     {
         $form = $this->createForm(FormType::class, $tag, [
@@ -198,40 +203,19 @@ class TagController extends AbstractController
      * Delete action.
      *
      * @param Request $request HTTP request
-     * @param Tag     $tag     Tag entity
      *
-//     * @return Response HTTP response
+     * @return Response HTTP response
      */
-    #[Route('/filtrate',
+    #[Route(
+        '/filtrate',
         name: 'tags_filtrate',
-        requirements: ['id' => '[1-9]\d*'])
+        requirements: ['id' => '[1-9]\d*']
+    )
     ]
-//        methods: 'GET|DELETE')]
     public function filtrate(Request $request): Response
     {
-//        $form = $this->createForm(FormType::class, $tag, [
-//            'method' => 'DELETE',
-//            'action' => $this->generateUrl('tag_filtrate', ['id' => $tag->getId()]),
-//        ]);
-//        $form->handleRequest($request);
-//
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            $this->tagService->delete($tag);
-//
-//            $this->addFlash(
-//                'success',
-//                $this->translator->trans('message.deleted_successfully')
-//            );
-//
-//            return $this->redirectToRoute('tag_index');
-//        }
-
         return $this->render(
             'tag/filtrate.html.twig',
-            [
-//                'form' => $form->createView(),
-//                'tag' => $tag,
-            ]
         );
     }
 }

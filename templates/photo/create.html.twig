@@ -4,3 +4,36 @@
     submit_label: 'action.save'|trans,
     back_to_list_path: 'photo_index',
 } %}
+{#{% extends 'base.html.twig' %}#}
+
+{#{% block title %}#}
+{#    {{ 'title.photo_create'|trans}}#}
+{#    {{ 'title.photo_create'|trans}}#}
+{#{% endblock %}#}
+
+{#{% block body %}#}
+{#    <h1>{{ 'title.photo_create'|trans}}</h1>#}
+{#    {{ form_start(form) }}#}
+{#    {% if false == form.vars.valid %}#}
+{#        {% include 'default/_single_alert_message.html.twig' with {#}
+{#            type: 'danger',#}
+{#            message: 'message.form_error'|trans,#}
+{#        }%}#}
+{#    {% endif %}#}
+{#    {{ form_widget(form) }}#}
+
+{#    {{ form_row(form.file) }}#}
+{#    {{ form_widget(form) }}#}
+{#    <div class="form-group row float-sm-right">#}
+{#        <input type="submit" value="{{ 'action.save'|trans }}" class="btn btn-primary"/>#}
+{#    </div>#}
+
+{#    {% if photo_index|default(false) %}#}
+{#        <div class="form-group row float-sm-left">#}
+{#            <a href="{{ url(back_to_list_path) }}" class="btn btn-link">#}
+{#                {{ 'action.back_to_list'|trans }}#}
+{#            </a>#}
+{#        </div>#}
+{#    {% endif %}#}
+{#    {{ form_end(form) }}#}
+{#{% endblock %}#}

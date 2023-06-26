@@ -1,4 +1,7 @@
 <?php
+/**
+ * UserData entity.
+ */
 
 namespace App\Entity;
 
@@ -42,6 +45,8 @@ class UserData
 
     /**
      * Getter for Id.
+     *
+     * @return int|null Id
      */
     public function getId(): ?int
     {
@@ -50,6 +55,8 @@ class UserData
 
     /**
      * Getter for login.
+     *
+     * @return string|null Login
      */
     public function getLogin(): ?string
     {
@@ -58,6 +65,8 @@ class UserData
 
     /**
      * Setter for login.
+     *
+     * @param string $login Login
      */
     public function setLogin(string $login): void
     {
@@ -66,6 +75,8 @@ class UserData
 
     /**
      * Getter for firstname.
+     *
+     * @return string|null Firstname
      */
     public function getFirstname(): ?string
     {
@@ -74,6 +85,8 @@ class UserData
 
     /**
      * Setter for firstname.
+     *
+     * @param string|null $firstname Firstname
      */
     public function setFirstname(?string $firstname): void
     {

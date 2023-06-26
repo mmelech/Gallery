@@ -25,14 +25,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      *
      * @var string
      */
-    const ROLE_USER = 'ROLE_USER';
+    public const ROLE_USER = 'ROLE_USER';
 
     /**
      * Role admin.
      *
      * @var string
      */
-    const ROLE_ADMIN = 'ROLE_ADMIN';
+    public const ROLE_ADMIN = 'ROLE_ADMIN';
 
     /**
      * Primary key.
@@ -74,9 +74,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToOne(targetEntity: UserData::class, cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
     private $userData;
-
-    #[ORM\OneToOne(mappedBy: 'user', targetEntity: Avatar::class, cascade: ['persist', 'remove'])]
-    private $avatar;
 
     /**
      * Getter for id.
@@ -200,31 +197,26 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
+    /**
+     * Setter for userData.
+     *
+     * return UserData|null User Data
+     */
     public function getUserData(): ?UserData
     {
         return $this->userData;
     }
 
+    /**
+     * Setter for userData.
+     *
+     * @param UserData $userData User Data
+     *
+     * return $this
+     */
     public function setUserData(UserData $userData): self
     {
         $this->userData = $userData;
-
-        return $this;
-    }
-
-    public function getAvatar(): ?Avatar
-    {
-        return $this->avatar;
-    }
-
-    public function setAvatar(Avatar $avatar): self
-    {
-        // set the owning side of the relation if necessary
-        if ($avatar->getUser() !== $this) {
-            $avatar->setUser($this);
-        }
-
-        $this->avatar = $avatar;
 
         return $this;
     }

@@ -8,6 +8,8 @@ namespace App\Service;
 use App\Entity\Photo;
 use App\Entity\User;
 use Knp\Component\Pager\Pagination\PaginationInterface;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Interface PhotoServiceInterface.
@@ -31,6 +33,15 @@ interface PhotoServiceInterface
     public function save(Photo $photo): void;
 
     /**
+     * Create photo.
+     *
+     * @param UploadedFile  $uploadedFile Uploaded file
+     * @param Photo         $photo        Photo entity
+     * @param UserInterface $user         User interface
+     */
+    public function create(UploadedFile $uploadedFile, Photo $photo, UserInterface $user): void;
+
+    /**
      * Delete entity.
      *
      * @param Photo $photo Photo entity
@@ -38,4 +49,13 @@ interface PhotoServiceInterface
     public function delete(Photo $photo): void;
 
     public function prepareFilters(array $filters): array;
+
+    /**
+     * Update avatar.
+     *
+     * @param UploadedFile  $uploadedFile Uploaded file
+     * @param Photo         $photo        Photo entity
+     * @param UserInterface $user         User interface
+     */
+    public function update(UploadedFile $uploadedFile, Photo $photo, UserInterface $user): void;
 }

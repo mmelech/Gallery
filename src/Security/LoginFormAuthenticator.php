@@ -1,4 +1,7 @@
 <?php
+/**
+ * Login form authenticator.
+ */
 
 namespace App\Security;
 
@@ -15,19 +18,52 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordC
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 
+/**
+ * Class LoginFormAuthenticator.
+ */
 class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
 {
     use TargetPathTrait;
 
+    /**
+     * Login route.
+     *
+     * @const string
+     */
     public const LOGIN_ROUTE = 'app_login';
 
+    /**
+     * URL Generator.
+     */
     private UrlGeneratorInterface $urlGenerator;
 
+    /**
+     * Constructor.
+     *
+     * @param UrlGeneratorInterface $urlGenerator urlGenerator
+     */
     public function __construct(UrlGeneratorInterface $urlGenerator)
     {
         $this->urlGenerator = $urlGenerator;
     }
 
+    /**
+     * Create a passport for the current request.
+     *
+     * The passport contains the user, credentials and any additional information
+     * that has to be checked by the Symfony Security system. For example, a login
+     * form authenticator will probably return a passport containing the user, the
+     * presented password and the CSRF token value.
+     *
+     * You may throw any AuthenticationException in this method in case of error (e.g.
+     * a UserNotFoundException when the user cannot be found).
+     *
+     * @param Request $request standard request
+     *
+     * @return Passport Passport
+     *
+     * @throws AuthenticationException error autentication
+     */
     public function authenticate(Request $request): Passport
     {
         $email = $request->request->get('email', '');
@@ -43,6 +79,23 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
         );
     }
 
+    /**
+     * Called when authentication executed and was successful!
+     *
+     * This should return the Response sent back to the user, like a
+     * RedirectResponse to the last page they visited.
+     *
+     * If you return null, the current request will continue, and the user
+     * will be authenticated. This makes sense, for example, with an API.
+     *
+     * @param Request        $request      HTTP request
+     * @param TokenInterface $token        Token
+     * @param string         $firewallName Firewall name
+     *
+     * @return Response|null HTTP response
+     *
+     * @throws Exception
+     */
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
@@ -54,6 +107,13 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
 //        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
+    /**
+     * Get login URL.
+     *
+     * @param Request $request HTTP request
+     *
+     * @return string Login URL
+     */
     protected function getLoginUrl(Request $request): string
     {
         return $this->urlGenerator->generate(self::LOGIN_ROUTE);

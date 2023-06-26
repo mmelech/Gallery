@@ -7,8 +7,6 @@ namespace App\Controller;
 
 use App\Entity\Comment;
 use App\Entity\Photo;
-use App\Entity\User;
-use App\Entity\UserData;
 use DateTimeImmutable;
 use App\Form\Type\CommentType;
 use App\Repository\CommentRepository;
@@ -51,7 +49,9 @@ class CommentController extends AbstractController
     /**
      * Create action.
      *
-     * @param Request $request HTTP request
+     * @param Request           $request           HTTP request
+     * @param Photo             $photo             Photo entity
+     * @param CommentRepository $commentRepository CommentRepository entity
      *
      * @return Response HTTP response
      */
@@ -69,7 +69,7 @@ class CommentController extends AbstractController
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $comment->setPhoto($photo);
             $comment->setAuthor($author);
             $comment->setDate(new DateTimeImmutable());
@@ -97,10 +97,12 @@ class CommentController extends AbstractController
      *
      * @return Response HTTP response
      */
-    #[Route('/{id}/edit',
+    #[Route(
+        '/{id}/edit',
         name: 'comment_edit',
         requirements: ['id' => '[1-9]\d*'],
-        methods: 'GET|PUT')]
+        methods: 'GET|PUT'
+    )]
     public function edit(Request $request, Comment $comment): Response
     {
         $form = $this->createForm(CommentType::class, $comment, [
@@ -137,10 +139,12 @@ class CommentController extends AbstractController
      *
      * @return Response HTTP response
      */
-    #[Route('/{id}/delete',
+    #[Route(
+        '/{id}/delete',
         name: 'comment_delete',
         requirements: ['id' => '[1-9]\d*'],
-        methods: 'GET|DELETE')]
+        methods: 'GET|DELETE'
+    )]
     public function delete(Request $request, Comment $comment): Response
     {
         $form = $this->createForm(FormType::class, $comment, [

@@ -10,7 +10,15 @@ namespace App\Entity\Enum;
  */
 enum UserRole: string
 {
+    /*
+     *
+     * role user
+     */
     case ROLE_USER = 'ROLE_USER';
+    /*
+     *
+     * role admin
+     */
     case ROLE_ADMIN = 'ROLE_ADMIN';
     /**
      * Get the role label.

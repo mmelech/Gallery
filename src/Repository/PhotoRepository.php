@@ -1,4 +1,7 @@
 <?php
+/**
+ * Photo repository.
+ */
 
 namespace App\Repository;
 
@@ -12,12 +15,13 @@ use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Photo>
+ * Class PhotoRepository.
  *
  * @method Photo|null find($id, $lockMode = null, $lockVersion = null)
  * @method Photo|null findOneBy(array $criteria, array $orderBy = null)
  * @method Photo[]    findAll()
  * @method Photo[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @extends ServiceEntityRepository<Photo>
  */
 class PhotoRepository extends ServiceEntityRepository
 {
@@ -61,13 +65,6 @@ class PhotoRepository extends ServiceEntityRepository
 
         return $this->applyFiltersToList($queryBuilder, $filters);
     }
-
-//    {
-//        return $this->getOrCreateQueryBuilder()
-//            ->select('photo', 'gallery')
-//            ->join('photo.gallery', 'gallery')
-//            ->orderBy('photo.date', 'DESC');
-//    }
 
     /**
      * Apply filters to paginated list.
@@ -134,17 +131,7 @@ class PhotoRepository extends ServiceEntityRepository
         }
     }
 
-    /***
-    * public function remove(Post $entity, bool $flush = false): void
-    * {
-        * $this->getEntityManager()->remove($entity);
- *
-* if ($flush) {
-            * $this->getEntityManager()->flush();
-        * }
-    * }
- *
-* /**
+    /**
      * Save entity.
      *
      * @param Photo $Photo Photo entity

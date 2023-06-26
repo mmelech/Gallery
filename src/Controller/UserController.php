@@ -9,8 +9,8 @@ use App\Entity\User;
 use App\Form\Type\ChangePasswordType;
 use App\Form\Type\UserType;
 use App\Service\UserServiceInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -20,6 +20,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 /**
  * Class UserController.
  */
+// #[IsGranted('ROLE_ADMIN')]
 #[Route('/user')]
 class UserController extends AbstractController
 {
@@ -37,7 +38,7 @@ class UserController extends AbstractController
      * Constructor.
      *
      * @param UserServiceInterface $userService User service
-     * @param TranslatorInterface      $translator      Translator
+     * @param TranslatorInterface  $translator  Translator
      */
     public function __construct(UserServiceInterface $userService, TranslatorInterface $translator)
     {
@@ -52,6 +53,7 @@ class UserController extends AbstractController
      *
      * @return Response HTTP response
      */
+    #[IsGranted('ROLE_ADMIN')]
     #[Route(name: 'user_index', methods: 'GET')]
     public function index(Request $request): Response
     {
@@ -69,6 +71,7 @@ class UserController extends AbstractController
      *
      * @return Response HTTP response
      */
+    #[IsGranted('ROLE_USER')]
     #[Route(
         '/{id}',
         name: 'user_show',
@@ -115,89 +118,16 @@ class UserController extends AbstractController
         );
     }
 
-//    /**
-//     * Edit action.
-//     *
-//     * @param Request  $request  HTTP request
-//     * @param User $index.html.twig User entity
-//     *
-//     * @return Response HTTP response
-//     */
-//    #[Route('/{id}/edit', name: 'user_edit', requirements: ['id' => '[1-9]\d*'], methods: 'GET|PUT')]
-//    public function edit(Request $request, User $index.html.twig): Response
-//    {
-//        $form = $this->createForm(UserType::class, $index.html.twig, [
-//            'method' => 'PUT',
-//            'action' => $this->generateUrl('user_edit', ['id' => $index.html.twig->getId()]),
-//        ]);
-//        $form->handleRequest($request);
-//
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            $this->userService->save($index.html.twig);
-//
-//            $this->addFlash(
-//                'success',
-//                $this->translator->trans('message.created_successfully')
-//            );
-//
-//            return $this->redirectToRoute('user_index');
-//        }
-//
-//        return $this->render(
-//            'index.html.twig/show.html.twig',
-//            [
-//                'form' => $form->createView(),
-//                'index.html.twig' => $index.html.twig,
-//            ]
-//        );
-//    }
-//
-//    /**
-//     * Delete action.
-//     *
-//     * @param Request  $request  HTTP request
-//     * @param User $index.html.twig User entity
-//     *
-//     * @return Response HTTP response
-//     */
-//    #[Route('/{id}/delete', name: 'user_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
-//    public function delete(Request $request, User $index.html.twig): Response
-//    {
-//        $form = $this->createForm(FormType::class, $index.html.twig, [
-//            'method' => 'DELETE',
-//            'action' => $this->generateUrl('user_delete', ['id' => $index.html.twig->getId()]),
-//        ]);
-//        $form->handleRequest($request);
-//
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            $this->userService->delete($index.html.twig);
-//
-//            $this->addFlash(
-//                'success',
-//                $this->translator->trans('message.deleted_successfully')
-//            );
-//
-//            return $this->redirectToRoute('user_index');
-//        }
-//
-//        return $this->render(
-//            'index.html.twig/delete.html.twig',
-//            [
-//                'form' => $form->createView(),
-//                'index.html.twig' => $index.html.twig,
-//            ]
-//        );
-//    }
-
     /**
      * Change password action.
      *
-     * @param Request $request
-     * @param User $user
+     * @param Request                     $request
+     * @param User                        $user
      * @param UserPasswordHasherInterface $passwordHasher
      *
      * @return Response
      */
+    #[IsGranted('ROLE_USER')]
     #[Route('/{id}/change_password', name: 'change_password', requirements: ['id' => '[1-9]\d*'], methods: 'GET|PUT')]
     public function changePassword(Request $request, User $user, UserPasswordHasherInterface $passwordHasher): Response
     {
@@ -206,8 +136,7 @@ class UserController extends AbstractController
             ]);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             $user->setPassword($passwordHasher->hashPassword($user, $form->get('password')->getData()));
 
             $this->userService->save($user);
@@ -224,7 +153,7 @@ class UserController extends AbstractController
             'user/change_password.html.twig',
             [
                 'form' => $form->createView(),
-                'user' => $user
+                'user' => $user,
             ]
         );
     }

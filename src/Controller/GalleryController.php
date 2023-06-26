@@ -8,6 +8,7 @@ namespace App\Controller;
 use App\Entity\Gallery;
 use App\Form\Type\GalleryType;
 use App\Service\GalleryServiceInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
@@ -35,7 +36,7 @@ class GalleryController extends AbstractController
      * Constructor.
      *
      * @param GalleryServiceInterface $galleryService Gallery service
-     * @param TranslatorInterface      $translator      Translator
+     * @param TranslatorInterface     $translator     Translator
      */
     public function __construct(GalleryServiceInterface $galleryService, TranslatorInterface $translator)
     {
@@ -52,7 +53,8 @@ class GalleryController extends AbstractController
      */
     #[Route(
         name: 'gallery_index',
-        methods: 'GET')]
+        methods: 'GET'
+    )]
     public function index(Request $request): Response
     {
         $pagination = $this->galleryService->getPaginatedList(
@@ -87,6 +89,7 @@ class GalleryController extends AbstractController
      *
      * @return Response HTTP response
      */
+    #[IsGranted('ROLE_USER')]
     #[Route(
         '/create',
         name: 'gallery_create',
@@ -118,11 +121,12 @@ class GalleryController extends AbstractController
     /**
      * Edit action.
      *
-     * @param Request  $request  HTTP request
+     * @param Request $request HTTP request
      * @param Gallery $gallery Gallery entity
      *
      * @return Response HTTP response
      */
+    #[IsGranted('ROLE_USER')]
     #[Route('/{id}/edit', name: 'gallery_edit', requirements: ['id' => '[1-9]\d*'], methods: 'GET|PUT')]
     public function edit(Request $request, Gallery $gallery): Response
     {
@@ -155,11 +159,12 @@ class GalleryController extends AbstractController
     /**
      * Delete action.
      *
-     * @param Request  $request  HTTP request
+     * @param Request $request HTTP request
      * @param Gallery $gallery Gallery entity
      *
      * @return Response HTTP response
      */
+    #[IsGranted('ROLE_USER')]
     #[Route('/{id}/delete', name: 'gallery_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
     public function delete(Request $request, Gallery $gallery): Response
     {
