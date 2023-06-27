@@ -28,7 +28,9 @@ class PhotoEditType extends AbstractType
     private $tagsDataTransformer;
 
     /**
-     * PhotoEditType constructor.
+     * Constructor.
+     *
+     * @param TagsDataTransformer $tagsDataTransformer Tags Data Transformer
      */
     public function __construct(TagsDataTransformer $tagsDataTransformer)
     {
@@ -37,6 +39,9 @@ class PhotoEditType extends AbstractType
 
     /**
      * Form builder.
+     *
+     * @param FormBuilderInterface $builder Form Builder Interface
+     * @param array                $options Options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -106,6 +111,8 @@ class PhotoEditType extends AbstractType
 
     /**
      * Configure options.
+     *
+     * @param OptionsResolver $resolver Options Resolver
      */
     public function configureOptions(OptionsResolver $resolver): void
     {

@@ -31,6 +31,14 @@ class UserFixtures extends AbstractBaseFixtures implements DependentFixtureInter
     }
 
     /**
+     * @return string[]
+     */
+    public function getDependencies(): array
+    {
+        return [UserDataFixtures::class];
+    }
+
+    /**
      * Load data.
      */
     protected function loadData(): void
@@ -72,13 +80,5 @@ class UserFixtures extends AbstractBaseFixtures implements DependentFixtureInter
         });
 
         $this->manager->flush();
-    }
-
-    /**
-     * @return string[]
-     */
-    public function getDependencies(): array
-    {
-        return [UserDataFixtures::class];
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" datatype="plaintext" original="file.ext">
+  <file source-language="pl" datatype="plaintext" original="file.ext">
     <body>
       <trans-unit id="label.actions">
         <source>label.actions</source>
@@ -238,6 +238,14 @@
       <trans-unit id="title.user_details">
         <source>title.user_details</source>
         <target>Dane użytkownika</target>
+      </trans-unit>
+      <trans-unit id="message.edited_successfully">
+        <source>message.edited_successfully</source>
+        <target>Zedytowano</target>
+      </trans-unit>
+      <trans-unit id="title.user_create">
+        <source>title.user_create</source>
+        <target>Utwórz użytkownika</target>
       </trans-unit>
       <trans-unit id="label.email">
         <source>label.email</source>

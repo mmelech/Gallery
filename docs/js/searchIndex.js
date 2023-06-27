@@ -3,7 +3,7 @@ Search.appendIndex(
                 {
             "fqsen": "\\App\\Kernel",
             "name": "Kernel",
-            "summary": "",
+            "summary": "Kernel.",
             "url": "classes/App-Kernel.html"
         },                {
             "fqsen": "\\App\\Controller\\CommentController",
@@ -416,15 +416,15 @@ Search.appendIndex(
             "summary": "UserFixtures\u0020constructor.",
             "url": "classes/App-DataFixtures-UserFixtures.html#method___construct"
         },                {
-            "fqsen": "\\App\\DataFixtures\\UserFixtures\u003A\u003AloadData\u0028\u0029",
-            "name": "loadData",
-            "summary": "Load\u0020data.",
-            "url": "classes/App-DataFixtures-UserFixtures.html#method_loadData"
-        },                {
             "fqsen": "\\App\\DataFixtures\\UserFixtures\u003A\u003AgetDependencies\u0028\u0029",
             "name": "getDependencies",
             "summary": "",
             "url": "classes/App-DataFixtures-UserFixtures.html#method_getDependencies"
+        },                {
+            "fqsen": "\\App\\DataFixtures\\UserFixtures\u003A\u003AloadData\u0028\u0029",
+            "name": "loadData",
+            "summary": "Load\u0020data.",
+            "url": "classes/App-DataFixtures-UserFixtures.html#method_loadData"
         },                {
             "fqsen": "\\App\\DataFixtures\\UserFixtures\u003A\u003A\u0024passwordHasher",
             "name": "passwordHasher",
@@ -518,12 +518,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Enum\\UserRole\u003A\u003AROLE_USER",
             "name": "ROLE_USER",
-            "summary": "role\u0020user",
+            "summary": "",
             "url": ""
         },                {
             "fqsen": "\\App\\Entity\\Enum\\UserRole\u003A\u003AROLE_ADMIN",
             "name": "ROLE_ADMIN",
-            "summary": "role\u0020admin",
+            "summary": "",
             "url": ""
         },                {
             "fqsen": "\\App\\Entity\\Gallery",
@@ -848,7 +848,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\User\u003A\u003AsetUserData\u0028\u0029",
             "name": "setUserData",
-            "summary": "Setter\u0020for\u0020userData",
+            "summary": "Setter\u0020for\u0020userData.",
             "url": "classes/App-Entity-User.html#method_setUserData"
         },                {
             "fqsen": "\\App\\Entity\\User\u003A\u003AROLE_USER",
@@ -1121,11 +1121,6 @@ Search.appendIndex(
             "summary": "Query\u0020all\u0020records.",
             "url": "classes/App-Repository-GalleryRepository.html#method_queryAll"
         },                {
-            "fqsen": "\\App\\Repository\\GalleryRepository\u003A\u003AgetOrCreateQueryBuilder\u0028\u0029",
-            "name": "getOrCreateQueryBuilder",
-            "summary": "Get\u0020or\u0020create\u0020new\u0020query\u0020builder.",
-            "url": "classes/App-Repository-GalleryRepository.html#method_getOrCreateQueryBuilder"
-        },                {
             "fqsen": "\\App\\Repository\\GalleryRepository\u003A\u003Asave\u0028\u0029",
             "name": "save",
             "summary": "Save\u0020entity.",
@@ -1135,6 +1130,11 @@ Search.appendIndex(
             "name": "delete",
             "summary": "Delete\u0020entity.",
             "url": "classes/App-Repository-GalleryRepository.html#method_delete"
+        },                {
+            "fqsen": "\\App\\Repository\\GalleryRepository\u003A\u003AgetOrCreateQueryBuilder\u0028\u0029",
+            "name": "getOrCreateQueryBuilder",
+            "summary": "Get\u0020or\u0020create\u0020new\u0020query\u0020builder.",
+            "url": "classes/App-Repository-GalleryRepository.html#method_getOrCreateQueryBuilder"
         },                {
             "fqsen": "\\App\\Repository\\GalleryRepository\u003A\u003APAGINATOR_ITEMS_PER_PAGE",
             "name": "PAGINATOR_ITEMS_PER_PAGE",
@@ -1156,16 +1156,6 @@ Search.appendIndex(
             "summary": "Query\u0020all\u0020records.",
             "url": "classes/App-Repository-PhotoRepository.html#method_queryAll"
         },                {
-            "fqsen": "\\App\\Repository\\PhotoRepository\u003A\u003AapplyFiltersToList\u0028\u0029",
-            "name": "applyFiltersToList",
-            "summary": "Apply\u0020filters\u0020to\u0020paginated\u0020list.",
-            "url": "classes/App-Repository-PhotoRepository.html#method_applyFiltersToList"
-        },                {
-            "fqsen": "\\App\\Repository\\PhotoRepository\u003A\u003AgetOrCreateQueryBuilder\u0028\u0029",
-            "name": "getOrCreateQueryBuilder",
-            "summary": "Get\u0020or\u0020create\u0020new\u0020query\u0020builder.",
-            "url": "classes/App-Repository-PhotoRepository.html#method_getOrCreateQueryBuilder"
-        },                {
             "fqsen": "\\App\\Repository\\PhotoRepository\u003A\u003AcountByGallery\u0028\u0029",
             "name": "countByGallery",
             "summary": "Count\u0020photos\u0020by\u0020gallery.",
@@ -1173,7 +1163,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Repository\\PhotoRepository\u003A\u003Aadd\u0028\u0029",
             "name": "add",
-            "summary": "",
+            "summary": "Add\u0020photo.",
             "url": "classes/App-Repository-PhotoRepository.html#method_add"
         },                {
             "fqsen": "\\App\\Repository\\PhotoRepository\u003A\u003Asave\u0028\u0029",
@@ -1185,6 +1175,16 @@ Search.appendIndex(
             "name": "delete",
             "summary": "Delete\u0020entity.",
             "url": "classes/App-Repository-PhotoRepository.html#method_delete"
+        },                {
+            "fqsen": "\\App\\Repository\\PhotoRepository\u003A\u003AapplyFiltersToList\u0028\u0029",
+            "name": "applyFiltersToList",
+            "summary": "Apply\u0020filters\u0020to\u0020paginated\u0020list.",
+            "url": "classes/App-Repository-PhotoRepository.html#method_applyFiltersToList"
+        },                {
+            "fqsen": "\\App\\Repository\\PhotoRepository\u003A\u003AgetOrCreateQueryBuilder\u0028\u0029",
+            "name": "getOrCreateQueryBuilder",
+            "summary": "Get\u0020or\u0020create\u0020new\u0020query\u0020builder.",
+            "url": "classes/App-Repository-PhotoRepository.html#method_getOrCreateQueryBuilder"
         },                {
             "fqsen": "\\App\\Repository\\PhotoRepository\u003A\u003APAGINATOR_ITEMS_PER_PAGE",
             "name": "PAGINATOR_ITEMS_PER_PAGE",
@@ -1206,11 +1206,6 @@ Search.appendIndex(
             "summary": "Query\u0020all\u0020records.",
             "url": "classes/App-Repository-TagRepository.html#method_queryAll"
         },                {
-            "fqsen": "\\App\\Repository\\TagRepository\u003A\u003AgetOrCreateQueryBuilder\u0028\u0029",
-            "name": "getOrCreateQueryBuilder",
-            "summary": "Get\u0020or\u0020create\u0020new\u0020query\u0020builder.",
-            "url": "classes/App-Repository-TagRepository.html#method_getOrCreateQueryBuilder"
-        },                {
             "fqsen": "\\App\\Repository\\TagRepository\u003A\u003Asave\u0028\u0029",
             "name": "save",
             "summary": "Save\u0020entity.",
@@ -1220,6 +1215,11 @@ Search.appendIndex(
             "name": "delete",
             "summary": "Delete\u0020entity.",
             "url": "classes/App-Repository-TagRepository.html#method_delete"
+        },                {
+            "fqsen": "\\App\\Repository\\TagRepository\u003A\u003AgetOrCreateQueryBuilder\u0028\u0029",
+            "name": "getOrCreateQueryBuilder",
+            "summary": "Get\u0020or\u0020create\u0020new\u0020query\u0020builder.",
+            "url": "classes/App-Repository-TagRepository.html#method_getOrCreateQueryBuilder"
         },                {
             "fqsen": "\\App\\Repository\\TagRepository\u003A\u003APAGINATOR_ITEMS_PER_PAGE",
             "name": "PAGINATOR_ITEMS_PER_PAGE",
@@ -1261,11 +1261,6 @@ Search.appendIndex(
             "summary": "Query\u0020all\u0020records.",
             "url": "classes/App-Repository-UserRepository.html#method_queryAll"
         },                {
-            "fqsen": "\\App\\Repository\\UserRepository\u003A\u003AgetOrCreateQueryBuilder\u0028\u0029",
-            "name": "getOrCreateQueryBuilder",
-            "summary": "Get\u0020or\u0020create\u0020new\u0020query\u0020builder.",
-            "url": "classes/App-Repository-UserRepository.html#method_getOrCreateQueryBuilder"
-        },                {
             "fqsen": "\\App\\Repository\\UserRepository\u003A\u003Asave\u0028\u0029",
             "name": "save",
             "summary": "Save\u0020entity.",
@@ -1275,6 +1270,11 @@ Search.appendIndex(
             "name": "delete",
             "summary": "Delete\u0020entity.",
             "url": "classes/App-Repository-UserRepository.html#method_delete"
+        },                {
+            "fqsen": "\\App\\Repository\\UserRepository\u003A\u003AgetOrCreateQueryBuilder\u0028\u0029",
+            "name": "getOrCreateQueryBuilder",
+            "summary": "Get\u0020or\u0020create\u0020new\u0020query\u0020builder.",
+            "url": "classes/App-Repository-UserRepository.html#method_getOrCreateQueryBuilder"
         },                {
             "fqsen": "\\App\\Repository\\UserRepository\u003A\u003APAGINATOR_ITEMS_PER_PAGE",
             "name": "PAGINATOR_ITEMS_PER_PAGE",
@@ -1290,6 +1290,11 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "Constructor.",
             "url": "classes/App-Security-LoginFormAuthenticator.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003Asupports\u0028\u0029",
+            "name": "supports",
+            "summary": "Does\u0020the\u0020authenticator\u0020support\u0020the\u0020given\u0020Request\u003F",
+            "url": "classes/App-Security-LoginFormAuthenticator.html#method_supports"
         },                {
             "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003Aauthenticate\u0028\u0029",
             "name": "authenticate",
@@ -1310,6 +1315,11 @@ Search.appendIndex(
             "name": "LOGIN_ROUTE",
             "summary": "Login\u0020route.",
             "url": "classes/App-Security-LoginFormAuthenticator.html#constant_LOGIN_ROUTE"
+        },                {
+            "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003ADEFAULT_ROUTE",
+            "name": "DEFAULT_ROUTE",
+            "summary": "Default\u0020route.",
+            "url": "classes/App-Security-LoginFormAuthenticator.html#constant_DEFAULT_ROUTE"
         },                {
             "fqsen": "\\App\\Security\\LoginFormAuthenticator\u003A\u003A\u0024urlGenerator",
             "name": "urlGenerator",
@@ -1558,7 +1568,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Service\\PhotoServiceInterface\u003A\u003Acreate\u0028\u0029",
             "name": "create",
-            "summary": "Create\u0020photo",
+            "summary": "Create\u0020photo.",
             "url": "classes/App-Service-PhotoServiceInterface.html#method_create"
         },                {
             "fqsen": "\\App\\Service\\PhotoServiceInterface\u003A\u003Adelete\u0028\u0029",
@@ -1568,7 +1578,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Service\\PhotoServiceInterface\u003A\u003AprepareFilters\u0028\u0029",
             "name": "prepareFilters",
-            "summary": "",
+            "summary": "Prepare\u0020filters.",
             "url": "classes/App-Service-PhotoServiceInterface.html#method_prepareFilters"
         },                {
             "fqsen": "\\App\\Service\\PhotoServiceInterface\u003A\u003Aupdate\u0028\u0029",
@@ -1738,12 +1748,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Form\\Type\\PhotoEditType",
             "name": "PhotoEditType",
-            "summary": "Class\u0020PhotoEditType",
+            "summary": "Class\u0020PhotoEditType.",
             "url": "classes/App-Form-Type-PhotoEditType.html"
         },                {
             "fqsen": "\\App\\Form\\Type\\PhotoEditType\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "PhotoEditType\u0020constructor.",
+            "summary": "Constructor.",
             "url": "classes/App-Form-Type-PhotoEditType.html#method___construct"
         },                {
             "fqsen": "\\App\\Form\\Type\\PhotoEditType\u003A\u003AbuildForm\u0028\u0029",

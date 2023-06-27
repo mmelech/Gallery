@@ -5,11 +5,13 @@
 
 namespace App\Security;
 
+use Exception;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Http\Authenticator\AbstractLoginFormAuthenticator;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\CsrfTokenBadge;
@@ -33,6 +35,13 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
     public const LOGIN_ROUTE = 'app_login';
 
     /**
+     * Default route.
+     *
+     * @const string
+     */
+    public const DEFAULT_ROUTE = 'gallery_index';
+
+    /**
      * URL Generator.
      */
     private UrlGeneratorInterface $urlGenerator;
@@ -40,11 +49,26 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
     /**
      * Constructor.
      *
-     * @param UrlGeneratorInterface $urlGenerator urlGenerator
+     * @param UrlGeneratorInterface $urlGenerator Url generator
      */
     public function __construct(UrlGeneratorInterface $urlGenerator)
     {
         $this->urlGenerator = $urlGenerator;
+    }
+
+    /**
+     * Does the authenticator support the given Request?
+     *
+     * If this returns false, the authenticator will be skipped.
+     *
+     * @param Request $request HTTP request
+     *
+     * @return bool Result
+     */
+    public function supports(Request $request): bool
+    {
+        return 'app_login' === $request->attributes->get('_route')
+            && $request->isMethod('POST');
     }
 
     /**
@@ -58,11 +82,11 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
      * You may throw any AuthenticationException in this method in case of error (e.g.
      * a UserNotFoundException when the user cannot be found).
      *
-     * @param Request $request standard request
+     * @param Request $request HTTP request
      *
      * @return Passport Passport
      *
-     * @throws AuthenticationException error autentication
+     * @throws AuthenticationException
      */
     public function authenticate(Request $request): Passport
     {
@@ -102,9 +126,7 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        // For example:
-        return new RedirectResponse($this->urlGenerator->generate('photo_index'));
-//        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        return new RedirectResponse($this->urlGenerator->generate(self::DEFAULT_ROUTE));
     }
 
     /**

@@ -206,7 +206,6 @@
         <source>action.filtrate</source>
         <target>Filtr</target>
       </trans-unit>
-
       <trans-unit id="action.change_userData">
         <source>action.change_userData</source>
         <target>Change data</target>
@@ -266,6 +265,22 @@
       <trans-unit id="title.user_list">
         <source>title.user_list</source>
         <target>List of users</target>
+      </trans-unit>
+      <trans-unit id="message.edited_successfully">
+        <source>message.edited_successfully</source>
+        <target>Edited</target>
+      </trans-unit>
+      <trans-unit id="message.password_edited_successfully">
+        <source>message.password_edited_successfully</source>
+        <target>Password edited</target>
+      </trans-unit>
+      <trans-unit id="title.user_create">
+        <source>title.user_create</source>
+        <target>Create user</target>
+      </trans-unit>
+      <trans-unit id="edit">
+        <source>edit</source>
+        <target>Edit</target>
       </trans-unit>
     </body>
   </file>

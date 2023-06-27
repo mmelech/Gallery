@@ -63,22 +63,15 @@ class PhotoService implements PhotoServiceInterface
     /**
      * Constructor.
      *
-     * @param GalleryServiceInterface    $galleryService    Gallery service
+     * @param string                     $targetDirectory   Target Directory
      * @param PhotoRepository            $photoRepository   Photo repository
      * @param PaginatorInterface         $paginator         Paginator
      * @param TagServiceInterface        $tagService        Tag service
+     * @param GalleryServiceInterface    $galleryService    Gallery service
      * @param FileUploadServiceInterface $fileUploadService File Upload service
      * @param Filesystem                 $filesystem        Filesystem component
      */
-    public function __construct(
-        string $targetDirectory,
-        PhotoRepository $photoRepository,
-        PaginatorInterface $paginator,
-        TagServiceInterface $tagService,
-        GalleryServiceInterface $galleryService,
-        FileUploadServiceInterface $fileUploadService,
-        Filesystem $filesystem
-    )
+    public function __construct(string $targetDirectory, PhotoRepository $photoRepository, PaginatorInterface $paginator, TagServiceInterface $tagService, GalleryServiceInterface $galleryService, FileUploadServiceInterface $fileUploadService, Filesystem $filesystem)
     {
         $this->targetDirectory = $targetDirectory;
         $this->photoRepository = $photoRepository;

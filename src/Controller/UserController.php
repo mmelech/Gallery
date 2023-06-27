@@ -20,7 +20,6 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 /**
  * Class UserController.
  */
-// #[IsGranted('ROLE_ADMIN')]
 #[Route('/user')]
 class UserController extends AbstractController
 {
@@ -133,7 +132,7 @@ class UserController extends AbstractController
     {
         $form = $this->createForm(ChangePasswordType::class, $user, ['method' => 'PUT',
             'action' => $this->generateUrl('change_password', ['id' => $user->getId()]),
-            ]);
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

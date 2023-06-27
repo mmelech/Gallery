@@ -19,7 +19,8 @@ interface PhotoServiceInterface
     /**
      * Get paginated list.
      *
-     * @param int $page Page number
+     * @param int   $page    Page number
+     * @param array $filters Filters
      *
      * @return PaginationInterface<string, mixed> Paginated list
      */
@@ -48,6 +49,11 @@ interface PhotoServiceInterface
      */
     public function delete(Photo $photo): void;
 
+    /**
+     * Prepare filters.
+     *
+     * @param array $filters Filters
+     */
     public function prepareFilters(array $filters): array;
 
     /**

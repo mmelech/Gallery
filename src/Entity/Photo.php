@@ -244,6 +244,8 @@ class Photo
     /**
      * Add comment.
      *
+     * @param Comment $comment Comment
+     *
      * @return $this
      */
     public function addComment(Comment $comment): self
@@ -258,6 +260,8 @@ class Photo
 
     /**
      * Remove comment.
+     *
+     * @param Comment $comment Comment
      *
      * @return $this
      */

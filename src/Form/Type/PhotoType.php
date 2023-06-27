@@ -8,12 +8,12 @@ namespace App\Form\Type;
 use App\Entity\Photo;
 use App\Form\DataTransformer\TagsDataTransformer;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Validator\Constraints\Image;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Image;
 
 /**
  * Class PhotoType.
@@ -117,7 +117,7 @@ class PhotoType extends AbstractType
     /**
      * Configures the options for this type.
      *
-     * * @param OptionsResolver $resolver The resolver for the options
+     * @param OptionsResolver $resolver The resolver for the options
      */
     public function configureOptions(OptionsResolver $resolver): void
     {

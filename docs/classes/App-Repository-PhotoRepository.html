@@ -138,7 +138,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/PhotoRepository.php"><a href="files/src-repository-photorepository.html"><abbr title="src/Repository/PhotoRepository.php">PhotoRepository.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 
     </aside>
 
@@ -190,9 +190,9 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Repository-PhotoRepository.html#method_add">add()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: int    </span>
 </dt>
-<dd></dd>
+<dd>Add photo.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Repository-PhotoRepository.html#method_countByGallery">countByGallery()</a>
@@ -283,7 +283,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/PhotoRepository.php"><a href="files/src-repository-photorepository.html"><abbr title="src/Repository/PhotoRepository.php">PhotoRepository.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 
     </aside>
 
@@ -344,7 +344,7 @@ See https://symfony.com/doc/current/best_practices.html#configuration</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/PhotoRepository.php"><a href="files/src-repository-photorepository.html"><abbr title="src/Repository/PhotoRepository.php">PhotoRepository.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
@@ -389,17 +389,17 @@ See https://symfony.com/doc/current/best_practices.html#configuration</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/PhotoRepository.php"><a href="files/src-repository-photorepository.html"><abbr title="src/Repository/PhotoRepository.php">PhotoRepository.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">125</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Add photo.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">add</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Entity-Photo.html"><abbr title="\App\Entity\Photo">Photo</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$entity</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$flush</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">add</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Entity-Photo.html"><abbr title="\App\Entity\Photo">Photo</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$entity</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$flush</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -407,7 +407,8 @@ See https://symfony.com/doc/current/best_practices.html#configuration</p>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Entity-Photo.html"><abbr title="\App\Entity\Photo">Photo</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Photo entity</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
@@ -415,17 +416,42 @@ See https://symfony.com/doc/current/best_practices.html#configuration</p>
                 : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                  = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Flush</p>
+</section>
 
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\Doctrine\ORM\NoResultException">NoResultException</abbr></span>
+                                                            
+                                             
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\Doctrine\ORM\NonUniqueResultException">NonUniqueResultException</abbr></span>
+                                                            
+                                             
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
+    <span class="phpdocumentor-signature__response_type">int</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Number of photos in gallery</p>
+</section>
+
     
 </article>
                     <article
@@ -441,7 +467,7 @@ See https://symfony.com/doc/current/best_practices.html#configuration</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/PhotoRepository.php"><a href="files/src-repository-photorepository.html"><abbr title="src/Repository/PhotoRepository.php">PhotoRepository.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">114</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -510,7 +536,7 @@ See https://symfony.com/doc/current/best_practices.html#configuration</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/PhotoRepository.php"><a href="files/src-repository-photorepository.html"><abbr title="src/Repository/PhotoRepository.php">PhotoRepository.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">150</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 
     </aside>
 
@@ -764,7 +790,7 @@ See https://symfony.com/doc/current/best_practices.html#configuration</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/PhotoRepository.php"><a href="files/src-repository-photorepository.html"><abbr title="src/Repository/PhotoRepository.php">PhotoRepository.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -782,7 +808,8 @@ See https://symfony.com/doc/current/best_practices.html#configuration</p>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Filters</p>
+</section>
 
             </dd>
             </dl>
@@ -810,7 +837,7 @@ See https://symfony.com/doc/current/best_practices.html#configuration</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/PhotoRepository.php"><a href="files/src-repository-photorepository.html"><abbr title="src/Repository/PhotoRepository.php">PhotoRepository.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">139</span>
+    <span class="phpdocumentor-element-found-in__line">118</span>
 
     </aside>
 
@@ -828,7 +855,8 @@ See https://symfony.com/doc/current/best_practices.html#configuration</p>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Entity-Photo.html"><abbr title="\App\Entity\Photo">Photo</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Photo entity</p>
+</section>
 
             </dd>
             </dl>
@@ -854,7 +882,7 @@ See https://symfony.com/doc/current/best_practices.html#configuration</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/PhotoRepository.php"><a href="files/src-repository-photorepository.html"><abbr title="src/Repository/PhotoRepository.php">PhotoRepository.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">143</span>
 
     </aside>
 
@@ -910,7 +938,7 @@ See https://symfony.com/doc/current/best_practices.html#configuration</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/PhotoRepository.php"><a href="files/src-repository-photorepository.html"><abbr title="src/Repository/PhotoRepository.php">PhotoRepository.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">99</span>
+    <span class="phpdocumentor-element-found-in__line">165</span>
 
     </aside>
 

@@ -7,11 +7,11 @@ namespace App\Controller;
 
 use App\Entity\Gallery;
 use App\Entity\Photo;
-use DateTimeImmutable;
-use App\Form\Type\PhotoType;
 use App\Form\Type\PhotoEditType;
+use App\Form\Type\PhotoType;
 use App\Repository\CommentRepository;
 use App\Service\PhotoServiceInterface;
+use DateTimeImmutable;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;

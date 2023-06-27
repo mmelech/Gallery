@@ -21,6 +21,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Photo|null findOneBy(array $criteria, array $orderBy = null)
  * @method Photo[]    findAll()
  * @method Photo[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ *
  * @extends ServiceEntityRepository<Photo>
  */
 class PhotoRepository extends ServiceEntityRepository
@@ -49,6 +50,8 @@ class PhotoRepository extends ServiceEntityRepository
     /**
      * Query all records.
      *
+     * @param array $filters Filters
+     *
      * @return QueryBuilder Query builder
      */
     public function queryAll(array $filters): QueryBuilder
@@ -64,6 +67,69 @@ class PhotoRepository extends ServiceEntityRepository
             ->orderBy('photo.date', 'DESC');
 
         return $this->applyFiltersToList($queryBuilder, $filters);
+    }
+
+    /**
+     * Count photos by gallery.
+     *
+     * @param Gallery $gallery Gallery
+     *
+     * @return int Number of photos in gallery
+     *
+     * @throws NoResultException
+     * @throws NonUniqueResultException
+     */
+    public function countByGallery(Gallery $gallery): int
+    {
+        $qb = $this->getOrCreateQueryBuilder();
+
+        return $qb->select($qb->expr()->countDistinct('photo.id'))
+            ->where('photo.gallery = :gallery')
+            ->setParameter(':gallery', $gallery)
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
+    /**
+     * Add photo.
+     *
+     * @param Photo $entity Photo entity
+     * @param bool  $flush  Flush
+     *
+     * @return int Number of photos in gallery
+     *
+     * @throws NoResultException
+     * @throws NonUniqueResultException
+     */
+    public function add(Photo $entity, bool $flush = false): void
+    {
+        $this->getEntityManager()->persist($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+
+    /**
+     * Save entity.
+     *
+     * @param Photo $photo Photo entity
+     */
+    public function save(Photo $photo): void
+    {
+        $this->_em->persist($photo);
+        $this->_em->flush();
+    }
+
+    /**
+     * Delete entity.
+     *
+     * @param Photo $photo Photo entity
+     */
+    public function delete(Photo $photo): void
+    {
+        $this->_em->remove($photo);
+        $this->_em->flush();
     }
 
     /**
@@ -99,57 +165,5 @@ class PhotoRepository extends ServiceEntityRepository
     private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
     {
         return $queryBuilder ?? $this->createQueryBuilder('photo');
-    }
-
-    /**
-     * Count photos by gallery.
-     *
-     * @param Gallery $gallery Gallery
-     *
-     * @return int Number of photos in gallery
-     *
-     * @throws NoResultException
-     * @throws NonUniqueResultException
-     */
-    public function countByGallery(Gallery $gallery): int
-    {
-        $qb = $this->getOrCreateQueryBuilder();
-
-        return $qb->select($qb->expr()->countDistinct('photo.id'))
-            ->where('photo.gallery = :gallery')
-            ->setParameter(':gallery', $gallery)
-            ->getQuery()
-            ->getSingleScalarResult();
-    }
-
-    public function add(Photo $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->persist($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
-
-    /**
-     * Save entity.
-     *
-     * @param Photo $Photo Photo entity
-     */
-    public function save(Photo $photo): void
-    {
-        $this->_em->persist($photo);
-        $this->_em->flush();
-    }
-
-    /**
-     * Delete entity.
-     *
-     * @param Photo $photo Photo entity
-     */
-    public function delete(Photo $photo): void
-    {
-        $this->_em->remove($photo);
-        $this->_em->flush();
     }
 }

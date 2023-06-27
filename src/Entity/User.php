@@ -67,7 +67,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      *
      * @var string|null
      */
-    #[ORM\Column(type: 'string')]
+    #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank]
     private ?string $password;
 
@@ -200,7 +200,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * Setter for userData.
      *
-     * return UserData|null User Data
+     * @return UserData|null User Data
      */
     public function getUserData(): ?UserData
     {
@@ -212,7 +212,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      *
      * @param UserData $userData User Data
      *
-     * return $this
+     * @return $this
      */
     public function setUserData(UserData $userData): self
     {
