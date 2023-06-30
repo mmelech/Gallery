@@ -39,8 +39,9 @@ class UserDataController extends AbstractController
     /**
      * Edit action.
      *
-     * @param Request $request HTTP request
-     * @param Request $request HTTP reques
+     * @param Request  $request  HTTP request
+     * @param User     $user     User entity
+     * @param UserData $userdata User Data entity
      *
      * @return Response HTTP response
      */

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /home/wwwroot/app/src/Entity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../_css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../_css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href="../_css/style.css" rel="stylesheet" type="text/css">
+  <link href="../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../index.html">/home/wwwroot/app/src</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Entity</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Gallery.php.html#17">App\Entity\Gallery</a></td><td class="text-right">45%</td></tr>
+       <tr><td><a href="Photo.php.html#19">App\Entity\Photo</a></td><td class="text-right">57%</td></tr>
+       <tr><td><a href="Tag.php.html#15">App\Entity\Tag</a></td><td class="text-right">57%</td></tr>
+       <tr><td><a href="Comment.php.html#17">App\Entity\Comment</a></td><td class="text-right">72%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Photo.php.html#19">App\Entity\Photo</a></td><td class="text-right">69</td></tr>
+       <tr><td><a href="Gallery.php.html#17">App\Entity\Gallery</a></td><td class="text-right">26</td></tr>
+       <tr><td><a href="Tag.php.html#15">App\Entity\Tag</a></td><td class="text-right">10</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Comment.php.html#98"><abbr title="App\Entity\Comment::getDate">getDate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Comment.php.html#118"><abbr title="App\Entity\Comment::getPhoto">getPhoto</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Comment.php.html#142"><abbr title="App\Entity\Comment::getAuthor">getAuthor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Gallery.php.html#100"><abbr title="App\Entity\Gallery::addPhoto">addPhoto</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Gallery.php.html#113"><abbr title="App\Entity\Gallery::removePhoto">removePhoto</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Photo.php.html#217"><abbr title="App\Entity\Photo::addTag">addTag</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Photo.php.html#229"><abbr title="App\Entity\Photo::removeTag">removeTag</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Photo.php.html#251"><abbr title="App\Entity\Photo::addComment">addComment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Photo.php.html#268"><abbr title="App\Entity\Photo::removeComment">removeComment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Photo.php.html#295"><abbr title="App\Entity\Photo::getAuthor">getAuthor</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Tag.php.html#83"><abbr title="App\Entity\Tag::addPhoto">addPhoto</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Tag.php.html#95"><abbr title="App\Entity\Tag::removePhoto">removePhoto</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#125"><abbr title="App\Entity\User::getUsername">getUsername</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Gallery.php.html#113"><abbr title="App\Entity\Gallery::removePhoto">removePhoto</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Photo.php.html#268"><abbr title="App\Entity\Photo::removeComment">removeComment</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Gallery.php.html#100"><abbr title="App\Entity\Gallery::addPhoto">addPhoto</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Photo.php.html#217"><abbr title="App\Entity\Photo::addTag">addTag</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Photo.php.html#251"><abbr title="App\Entity\Photo::addComment">addComment</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Tag.php.html#83"><abbr title="App\Entity\Tag::addPhoto">addPhoto</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 9.2.15</a> using <a href="https://secure.php.net/" target="_top">PHP 8.1.5</a> and <a href="https://phpunit.de/">PHPUnit 9.5.20</a> at Tue Jun 27 18:37:47 UTC 2023.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../_js/jquery.min.js" type="text/javascript"></script>
+  <script src="../_js/d3.min.js" type="text/javascript"></script>
+  <script src="../_js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([0,0,0,0,0,1,2,0,1,0,1,2], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([13,0,0,0,0,0,0,0,0,0,0,48], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[72.72727272727273,9,"<a href=\"Comment.php.html#17\">App\\Entity\\Comment<\/a>"],[45.45454545454545,10,"<a href=\"Gallery.php.html#17\">App\\Entity\\Gallery<\/a>"],[57.14285714285714,24,"<a href=\"Photo.php.html#19\">App\\Entity\\Photo<\/a>"],[57.14285714285714,7,"<a href=\"Tag.php.html#15\">App\\Entity\\Tag<\/a>"],[93.33333333333333,13,"<a href=\"User.php.html#18\">App\\Entity\\User<\/a>"],[100,5,"<a href=\"UserData.php.html#15\">App\\Entity\\UserData<\/a>"],[100,1,"<a href=\"Enum\/UserRole.php.html#11\">App\\Entity\\Enum\\UserRole<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"Comment.php.html#68\">App\\Entity\\Comment::getId<\/a>"],[100,1,"<a href=\"Comment.php.html#78\">App\\Entity\\Comment::getContent<\/a>"],[100,1,"<a href=\"Comment.php.html#88\">App\\Entity\\Comment::setContent<\/a>"],[0,1,"<a href=\"Comment.php.html#98\">App\\Entity\\Comment::getDate<\/a>"],[100,1,"<a href=\"Comment.php.html#108\">App\\Entity\\Comment::setDate<\/a>"],[0,1,"<a href=\"Comment.php.html#118\">App\\Entity\\Comment::getPhoto<\/a>"],[100,1,"<a href=\"Comment.php.html#130\">App\\Entity\\Comment::setPhoto<\/a>"],[0,1,"<a href=\"Comment.php.html#142\">App\\Entity\\Comment::getAuthor<\/a>"],[100,1,"<a href=\"Comment.php.html#154\">App\\Entity\\Comment::setAuthor<\/a>"],[100,1,"<a href=\"Gallery.php.html#50\">App\\Entity\\Gallery::__construct<\/a>"],[100,1,"<a href=\"Gallery.php.html#60\">App\\Entity\\Gallery::getId<\/a>"],[100,1,"<a href=\"Gallery.php.html#70\">App\\Entity\\Gallery::getTitle<\/a>"],[100,1,"<a href=\"Gallery.php.html#80\">App\\Entity\\Gallery::setTitle<\/a>"],[100,1,"<a href=\"Gallery.php.html#90\">App\\Entity\\Gallery::getPhotos<\/a>"],[0,2,"<a href=\"Gallery.php.html#100\">App\\Entity\\Gallery::addPhoto<\/a>"],[0,3,"<a href=\"Gallery.php.html#113\">App\\Entity\\Gallery::removePhoto<\/a>"],[100,1,"<a href=\"Photo.php.html#106\">App\\Entity\\Photo::__construct<\/a>"],[100,1,"<a href=\"Photo.php.html#117\">App\\Entity\\Photo::getId<\/a>"],[100,1,"<a href=\"Photo.php.html#127\">App\\Entity\\Photo::getDate<\/a>"],[100,1,"<a href=\"Photo.php.html#137\">App\\Entity\\Photo::setDate<\/a>"],[100,1,"<a href=\"Photo.php.html#147\">App\\Entity\\Photo::getContent<\/a>"],[100,1,"<a href=\"Photo.php.html#157\">App\\Entity\\Photo::setContent<\/a>"],[100,1,"<a href=\"Photo.php.html#167\">App\\Entity\\Photo::getTitle<\/a>"],[100,1,"<a href=\"Photo.php.html#177\">App\\Entity\\Photo::setTitle<\/a>"],[100,1,"<a href=\"Photo.php.html#187\">App\\Entity\\Photo::getGallery<\/a>"],[100,1,"<a href=\"Photo.php.html#197\">App\\Entity\\Photo::setGallery<\/a>"],[100,1,"<a href=\"Photo.php.html#207\">App\\Entity\\Photo::getTags<\/a>"],[0,2,"<a href=\"Photo.php.html#217\">App\\Entity\\Photo::addTag<\/a>"],[0,1,"<a href=\"Photo.php.html#229\">App\\Entity\\Photo::removeTag<\/a>"],[100,1,"<a href=\"Photo.php.html#239\">App\\Entity\\Photo::getComments<\/a>"],[0,2,"<a href=\"Photo.php.html#251\">App\\Entity\\Photo::addComment<\/a>"],[0,3,"<a href=\"Photo.php.html#268\">App\\Entity\\Photo::removeComment<\/a>"],[100,1,"<a href=\"Photo.php.html#285\">App\\Entity\\Photo::setAuthor<\/a>"],[0,1,"<a href=\"Photo.php.html#295\">App\\Entity\\Photo::getAuthor<\/a>"],[100,1,"<a href=\"Photo.php.html#305\">App\\Entity\\Photo::getFilename<\/a>"],[100,1,"<a href=\"Photo.php.html#315\">App\\Entity\\Photo::setFilename<\/a>"],[100,1,"<a href=\"Tag.php.html#43\">App\\Entity\\Tag::__construct<\/a>"],[100,1,"<a href=\"Tag.php.html#53\">App\\Entity\\Tag::getId<\/a>"],[100,1,"<a href=\"Tag.php.html#63\">App\\Entity\\Tag::getTitle<\/a>"],[100,1,"<a href=\"Tag.php.html#73\">App\\Entity\\Tag::setTitle<\/a>"],[0,2,"<a href=\"Tag.php.html#83\">App\\Entity\\Tag::addPhoto<\/a>"],[0,1,"<a href=\"Tag.php.html#95\">App\\Entity\\Tag::removePhoto<\/a>"],[100,1,"<a href=\"User.php.html#83\">App\\Entity\\User::getId<\/a>"],[100,1,"<a href=\"User.php.html#93\">App\\Entity\\User::getEmail<\/a>"],[100,1,"<a href=\"User.php.html#103\">App\\Entity\\User::setEmail<\/a>"],[100,1,"<a href=\"User.php.html#115\">App\\Entity\\User::getUserIdentifier<\/a>"],[0,1,"<a href=\"User.php.html#125\">App\\Entity\\User::getUsername<\/a>"],[100,1,"<a href=\"User.php.html#137\">App\\Entity\\User::getRoles<\/a>"],[100,1,"<a href=\"User.php.html#151\">App\\Entity\\User::setRoles<\/a>"],[100,1,"<a href=\"User.php.html#163\">App\\Entity\\User::getPassword<\/a>"],[100,1,"<a href=\"User.php.html#173\">App\\Entity\\User::setPassword<\/a>"],[100,1,"<a href=\"User.php.html#184\">App\\Entity\\User::getSalt<\/a>"],[100,1,"<a href=\"User.php.html#194\">App\\Entity\\User::eraseCredentials<\/a>"],[100,1,"<a href=\"User.php.html#205\">App\\Entity\\User::getUserData<\/a>"],[100,1,"<a href=\"User.php.html#217\">App\\Entity\\User::setUserData<\/a>"],[100,1,"<a href=\"UserData.php.html#51\">App\\Entity\\UserData::getId<\/a>"],[100,1,"<a href=\"UserData.php.html#61\">App\\Entity\\UserData::getLogin<\/a>"],[100,1,"<a href=\"UserData.php.html#71\">App\\Entity\\UserData::setLogin<\/a>"],[100,1,"<a href=\"UserData.php.html#81\">App\\Entity\\UserData::getFirstname<\/a>"],[100,1,"<a href=\"UserData.php.html#91\">App\\Entity\\UserData::setFirstname<\/a>"],[100,1,"<a href=\"Enum\/UserRole.php.html#28\">App\\Entity\\Enum\\UserRole::label<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

@@ -7,7 +7,6 @@ namespace App\Controller;
 
 use App\Entity\Gallery;
 use App\Entity\Photo;
-use App\Form\Type\PhotoEditType;
 use App\Form\Type\PhotoType;
 use App\Repository\CommentRepository;
 use App\Service\PhotoServiceInterface;
