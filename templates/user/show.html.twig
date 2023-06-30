@@ -6,7 +6,7 @@
 
 {% block body %}
     <h1>{{ 'title.user_details'|trans({'%id%': user.id|default('')}) }}</h1>
-    {% if user is defined and user|length %}
+    {% if user is defined%}
         <dl>
             <dt>{{ 'label.id'|trans }}</dt>
             <dd>{{ user.id }}</dd>
@@ -24,7 +24,6 @@
                 {{ 'action.change_userData'|trans }}
             </a>
         </p>
-
         <p>
             <a href="{{ url('change_password', {id: user.id}) }}" title="{{ 'action.change_password'|trans }}">
                 {{ 'action.change_password'|trans }}

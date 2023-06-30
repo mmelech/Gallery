@@ -39,10 +39,15 @@ class Gallery
     private ?string $title = null;
 
     /**
-     * @var ArrayCollection
+     * Photos collection.
+     *
+     * @ORM\Column(nullable=true)
+     *
+     * @var Collection|ArrayCollection
      */
-    #[ORM\OneToMany(mappedBy: 'gallery', targetEntity: Photo::class)]
-    private $photos;
+    #[ORM\OneToMany(mappedBy: 'gallery', targetEntity: Photo::class, fetch: 'EXTRA_LAZY')]
+    #[ORM\JoinColumn(name: 'id', referencedColumnName: 'gallery_id', nullable: true)]
+    private Collection $photos;
 
     /**
      * Constructor.

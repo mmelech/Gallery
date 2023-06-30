@@ -282,6 +282,10 @@
         <source>edit</source>
         <target>Edit</target>
       </trans-unit>
+      <trans-unit id="message_action_impossible">
+        <source>message_action_impossible</source>
+        <target>Impossible action</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

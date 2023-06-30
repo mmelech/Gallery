@@ -7,7 +7,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\Type\ChangePasswordType;
-use App\Form\Type\UserType;
+use App\Form\Type\UserDataType;
 use App\Service\UserServiceInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -52,15 +52,21 @@ class UserController extends AbstractController
      *
      * @return Response HTTP response
      */
-    #[IsGranted('ROLE_ADMIN')]
     #[Route(name: 'user_index', methods: 'GET')]
     public function index(Request $request): Response
     {
-        $pagination = $this->userService->getPaginatedList(
-            $request->query->getInt('page', 1)
-        );
+        if (!$this->isGranted('ROLE_ADMIN')) {
+            $this->addFlash('warning', $this->translator->trans('message_action_impossible'));
 
-        return $this->render('user/index.html.twig', ['pagination' => $pagination]);
+            return $this->redirectToRoute('photo_index');
+        }
+        $page = $request->query->getInt('page', 1);
+        $pagination = $this->userService->getPaginatedList($page);
+
+        return $this->render(
+            'user/index.html.twig',
+            ['pagination' => $pagination]
+        );
     }
 
     /**
@@ -79,7 +85,25 @@ class UserController extends AbstractController
     )]
     public function show(User $user): Response
     {
-        return $this->render('user/show.html.twig', ['user' => $user]);
+        $loggedInUser = $this->getUser();
+
+        if ($this->isGranted('ROLE_ADMIN')) {
+            return $this->render(
+                'user/show.html.twig',
+                ['user' => $user]
+            );
+        }
+
+        if ($user === $loggedInUser) {
+            return $this->render(
+                'user/show.html.twig',
+                ['user' => $loggedInUser]
+            );
+        }
+
+        $this->addFlash('warning', $this->translator->trans('message_action_impossible'));
+
+        return $this->redirectToRoute('photo_index');
     }
 
     /**
@@ -97,7 +121,7 @@ class UserController extends AbstractController
     public function create(Request $request): Response
     {
         $user = new User();
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserDataType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -126,10 +150,22 @@ class UserController extends AbstractController
      *
      * @return Response
      */
-    #[IsGranted('ROLE_USER')]
     #[Route('/{id}/change_password', name: 'change_password', requirements: ['id' => '[1-9]\d*'], methods: 'GET|PUT')]
     public function changePassword(Request $request, User $user, UserPasswordHasherInterface $passwordHasher): Response
     {
+        $loggedInUser = $this->getUser();
+        // Check if the logged-in user is not null and has the necessary permissions
+        if (!$this->isGranted('ROLE_ADMIN') && $loggedInUser !== $user) {
+            // Handle the case when the user is not authorized to edit this user
+            // Redirect or show an error message
+            // For example:
+            $this->addFlash(
+                'warning',
+                $this->translator->trans('message_action_impossible')
+            );
+
+            return $this->redirectToRoute('photo_index');
+        }
         $form = $this->createForm(ChangePasswordType::class, $user, ['method' => 'PUT',
             'action' => $this->generateUrl('change_password', ['id' => $user->getId()]),
         ]);

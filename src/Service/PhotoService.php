@@ -158,7 +158,6 @@ class PhotoService implements PhotoServiceInterface
     public function create(UploadedFile $uploadedFile, Photo $photo, UserInterface $user): void
     {
         $photoFilename = $this->fileUploadService->upload($uploadedFile);
-
         $photo->setAuthor($user);
         $photo->setFilename($photoFilename);
         $this->photoRepository->save($photo);
@@ -167,19 +166,22 @@ class PhotoService implements PhotoServiceInterface
     /**
      * Update photo.
      *
-     * @param UploadedFile $uploadedFile Uploaded file
-     * @param Photo        $photo        Photo entity
-     * @param User         $user         User entity
+     * @param UploadedFile|null $uploadedFile Uploaded file
+     * @param Photo             $photo        Photo entity
+     * @param User              $user         User entity
      */
-    public function update(UploadedFile $uploadedFile, Photo $photo, UserInterface $user): void
+    public function update(?UploadedFile $uploadedFile, Photo $photo, UserInterface $user): void
     {
+        $this->photoRepository->save($photo);
         $filename = $photo->getFilename();
 
         if (null !== $filename) {
             $this->filesystem->remove(
                 $this->targetDirectory.'/'.$filename
             );
+        }
 
+        if (null !== $uploadedFile && $uploadedFile->isValid()) {
             $this->create($uploadedFile, $photo, $user);
         }
     }

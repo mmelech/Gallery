@@ -25,13 +25,10 @@
                 <th scope="col">{{ 'label.gallery'|trans }}</th>
                 <th scope="col">{{ 'label.tag'|trans }}</th>
 
-            </tr>
-            </thead>
-            <tbody>
             {% for photo in pagination.items %}
                 <tr>
                     <td>{{ photo.id }}</td>
-                    <td>{{ photo.date|date('d/m/Y') }}</td>
+                    <td>{{ photo.date|format_date('long') }}</td>
                     <td>{{ photo.title }}</td>
                     <td>
                         <a href="{{ url('photo_show', {id: photo.id}) }}" title="{{ 'action.view'|trans }}">

@@ -11,7 +11,7 @@
             <dt>{{ 'label.id'|trans }}</dt>
             <dd>{{ photo.id }}</dd>
             <dt>{{ 'label.date'|trans }}</dt>
-            <dd>{{ photo.date|date('d/m/Y') }}</dd>
+            <dd>{{ photo.date|format_date('long') }}</dd>
             <dt>{{ 'label.title'|trans }}</dt>
             <dd>{{  photo.title }}</dd>
             <dt>{{ 'label.content'|trans }}</dt>
@@ -32,9 +32,13 @@
             </dd>
         </dl>
         <br>
-
-        <img id="photo" src="{{ asset('uploads/photos/'~ photo.filename) }}">
-
+        {% if photo|length %}
+            <div class="row justify-content-around">
+                    <div style="float: center">
+                        <img src="{{ asset('uploads/photos/'~photo.filename) }}" alt="{{ photo.filename }}">
+                    </div>
+            </div>
+        {% endif %}
         <h4>
             {{ 'label_comments'|trans }}
         </h4>

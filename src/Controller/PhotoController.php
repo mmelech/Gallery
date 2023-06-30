@@ -157,11 +157,7 @@ class PhotoController extends AbstractController
     public function edit(Request $request, Photo $photo): Response
     {
         $user = $this->getUser();
-
-        $form = $this->createForm(PhotoEditType::class, $photo, [
-            'method' => 'PUT',
-            'action' => $this->generateUrl('photo_edit', ['id' => $photo->getId()]),
-        ]);
+        $form = $this->createForm(PhotoType::class, $photo, ['method' => 'PUT', 'required' => false]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -173,10 +169,7 @@ class PhotoController extends AbstractController
                 $user,
             );
 
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.edited_successfully')
-            );
+            $this->addFlash('success', 'message_updated_successfully');
 
             return $this->redirectToRoute('photo_index');
         }
