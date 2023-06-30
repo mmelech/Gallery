@@ -184,5 +184,8 @@ class PhotoService implements PhotoServiceInterface
         if (null !== $uploadedFile && $uploadedFile->isValid()) {
             $this->create($uploadedFile, $photo, $user);
         }
+	if (null !== $uploadedFile && $uploadedFile->isValid()) {
+            $this->create($uploadedFile, $photo, $user);
+    	}
     }
 }
