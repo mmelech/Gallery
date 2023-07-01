@@ -278,7 +278,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\UserDataController\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "UserDataController\u0020constructor.",
+            "summary": "Constructor.",
             "url": "classes/App-Controller-UserDataController.html#method___construct"
         },                {
             "fqsen": "\\App\\Controller\\UserDataController\u003A\u003Aedit\u0028\u0029",
@@ -290,6 +290,11 @@ Search.appendIndex(
             "name": "userDataService",
             "summary": "UserData\u0020service.",
             "url": "classes/App-Controller-UserDataController.html#property_userDataService"
+        },                {
+            "fqsen": "\\App\\Controller\\UserDataController\u003A\u003A\u0024translator",
+            "name": "translator",
+            "summary": "Translator.",
+            "url": "classes/App-Controller-UserDataController.html#property_translator"
         },                {
             "fqsen": "\\App\\DataFixtures\\AbstractBaseFixtures",
             "name": "AbstractBaseFixtures",
@@ -578,7 +583,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Entity\\Gallery\u003A\u003A\u0024photos",
             "name": "photos",
-            "summary": "",
+            "summary": "Photos\u0020collection.",
             "url": "classes/App-Entity-Gallery.html#property_photos"
         },                {
             "fqsen": "\\App\\Entity\\Photo",
@@ -1776,6 +1781,61 @@ Search.appendIndex(
             "summary": "data\u0020transformer.",
             "url": "classes/App-Form-Type-PhotoEditType.html#property_tagsDataTransformer"
         },                {
+            "fqsen": "\\App\\Security\\Voter\\UserVoter",
+            "name": "UserVoter",
+            "summary": "User\u0020Voter\u0020class.",
+            "url": "classes/App-Security-Voter-UserVoter.html"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\UserVoter\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "OrderVoter\u0020constructor.",
+            "url": "classes/App-Security-Voter-UserVoter.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\UserVoter\u003A\u003Asupports\u0028\u0029",
+            "name": "supports",
+            "summary": "Determines\u0020if\u0020the\u0020attribute\u0020and\u0020subject\u0020are\u0020supported\u0020by\u0020this\u0020voter.",
+            "url": "classes/App-Security-Voter-UserVoter.html#method_supports"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\UserVoter\u003A\u003AvoteOnAttribute\u0028\u0029",
+            "name": "voteOnAttribute",
+            "summary": "Perform\u0020a\u0020single\u0020access\u0020check\u0020operation\u0020on\u0020a\u0020given\u0020attribute,\u0020subject\u0020and\u0020token.",
+            "url": "classes/App-Security-Voter-UserVoter.html#method_voteOnAttribute"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\UserVoter\u003A\u003AcanEdit\u0028\u0029",
+            "name": "canEdit",
+            "summary": "Checks\u0020if\u0020user\u0020can\u0020edit\u0020credentials.",
+            "url": "classes/App-Security-Voter-UserVoter.html#method_canEdit"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\UserVoter\u003A\u003AcanEditRole\u0028\u0029",
+            "name": "canEditRole",
+            "summary": "Checks\u0020if\u0020user\u0020can\u0020edit\u0020roles.",
+            "url": "classes/App-Security-Voter-UserVoter.html#method_canEditRole"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\UserVoter\u003A\u003AcanBlock\u0028\u0029",
+            "name": "canBlock",
+            "summary": "Checks\u0020if\u0020user\u0020can\u0020block.",
+            "url": "classes/App-Security-Voter-UserVoter.html#method_canBlock"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\UserVoter\u003A\u003AEDIT",
+            "name": "EDIT",
+            "summary": "Edit\u0020user\u0020password.",
+            "url": "classes/App-Security-Voter-UserVoter.html#constant_EDIT"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\UserVoter\u003A\u003ABLOCK",
+            "name": "BLOCK",
+            "summary": "Block\u0020user.",
+            "url": "classes/App-Security-Voter-UserVoter.html#constant_BLOCK"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\UserVoter\u003A\u003AEDIT_ROLE",
+            "name": "EDIT_ROLE",
+            "summary": "Edit\u0020user\u0020roles.",
+            "url": "classes/App-Security-Voter-UserVoter.html#constant_EDIT_ROLE"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\UserVoter\u003A\u003A\u0024security",
+            "name": "security",
+            "summary": "Security\u0020helper.",
+            "url": "classes/App-Security-Voter-UserVoter.html#property_security"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -1830,6 +1890,11 @@ Search.appendIndex(
             "name": "Security",
             "summary": "",
             "url": "namespaces/app-security.html"
+        },                {
+            "fqsen": "\\App\\Security\\Voter",
+            "name": "Voter",
+            "summary": "",
+            "url": "namespaces/app-security-voter.html"
         },                {
             "fqsen": "\\App\\Service",
             "name": "Service",

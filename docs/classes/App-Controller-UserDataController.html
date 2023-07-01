@@ -138,7 +138,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/UserDataController.php"><a href="files/src-controller-userdatacontroller.html"><abbr title="src/Controller/UserDataController.php">UserDataController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -159,6 +159,13 @@
 
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/App-Controller-UserDataController.html#property_translator">$translator</a>
+    <span>
+                        &nbsp;: <abbr title="\Symfony\Contracts\Translation\TranslatorInterface">TranslatorInterface</abbr>            </span>
+</dt>
+<dd>Translator.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Controller-UserDataController.html#property_userDataService">$userDataService</a>
     <span>
                         &nbsp;: mixed            </span>
@@ -170,7 +177,7 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>UserDataController constructor.</dd>
+<dd>Constructor.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Controller-UserDataController.html#method_edit">edit()</a>
@@ -198,6 +205,40 @@
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_translator">
+        $translator
+        <a href="classes/App-Controller-UserDataController.html#property_translator" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/UserDataController.php"><a href="files/src-controller-userdatacontroller.html"><abbr title="src/Controller/UserDataController.php">UserDataController.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">32</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Translator.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\Symfony\Contracts\Translation\TranslatorInterface">TranslatorInterface</abbr></span>
+    <span class="phpdocumentor-signature__name">$translator</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_userDataService">
         $userDataService
         <a href="classes/App-Controller-UserDataController.html#property_userDataService" class="headerlink"><i class="fas fa-link"></i></a>
@@ -207,7 +248,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/UserDataController.php"><a href="files/src-controller-userdatacontroller.html"><abbr title="src/Controller/UserDataController.php">UserDataController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 
     </aside>
 
@@ -245,15 +286,15 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/UserDataController.php"><a href="files/src-controller-userdatacontroller.html"><abbr title="src/Controller/UserDataController.php">UserDataController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">UserDataController constructor.</p>
+        <p class="phpdocumentor-summary">Constructor.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Service-UserDataService.html"><abbr title="\App\Service\UserDataService">UserDataService</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userDataService</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Service-UserDataService.html"><abbr title="\App\Service\UserDataService">UserDataService</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userDataService</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Contracts\Translation\TranslatorInterface">TranslatorInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$translator</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -264,6 +305,15 @@
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>UserData service</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$translator</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Contracts\Translation\TranslatorInterface">TranslatorInterface</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Translator</p>
 </section>
 
             </dd>
@@ -290,7 +340,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Controller/UserDataController.php"><a href="files/src-controller-userdatacontroller.html"><abbr title="src/Controller/UserDataController.php">UserDataController.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -298,7 +348,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">edit</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Entity-UserData.html"><abbr title="\App\Entity\UserData">UserData</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userdata</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
+                <span class="phpdocumentor-signature__name">edit</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Symfony\Component\HttpFoundation\Request">Request</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Entity-User.html"><abbr title="\App\Entity\User">User</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Entity-UserData.html"><abbr title="\App\Entity\UserData">UserData</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userData</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Symfony\Component\HttpFoundation\Response">Response</abbr></span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -313,11 +363,20 @@
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$userdata</span>
+                <span class="phpdocumentor-signature__argument__name">$user</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Entity-User.html"><abbr title="\App\Entity\User">User</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>User entity</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$userData</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Entity-UserData.html"><abbr title="\App\Entity\UserData">UserData</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>UserData entity</p>
+                    <section class="phpdocumentor-description"><p>User Data entity</p>
 </section>
 
             </dd>
