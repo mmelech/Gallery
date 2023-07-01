@@ -71,10 +71,9 @@ class Photo
      *
      * @var Gallery
      **/
-    #[ORM\ManyToOne(targetEntity: Gallery::class)]
-    #[Assert\NotBlank]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Gallery $gallery;
+    #[ORM\ManyToOne(targetEntity: Gallery::class, inversedBy: 'photos')]
+    #[ORM\JoinColumn(name: 'gallery_id', referencedColumnName: 'id')]
+    private Gallery $gallery;
 
     /**
      * Tags.

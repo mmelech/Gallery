@@ -135,7 +135,6 @@ class GalleryController extends AbstractController
             'action' => $this->generateUrl('gallery_edit', ['id' => $gallery->getId()]),
         ]);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $this->galleryService->save($gallery);
 
