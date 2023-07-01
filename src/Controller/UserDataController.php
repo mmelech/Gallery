@@ -9,11 +9,11 @@ use App\Entity\User;
 use App\Entity\UserData;
 use App\Form\Type\UserDataType;
 use App\Service\UserDataService;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
  /**
   * Class UserDataController.
@@ -27,13 +27,20 @@ class UserDataController extends AbstractController
     private $userDataService;
 
     /**
-     * UserDataController constructor.
-     *
-     * @param UserDataService $userDataService UserData service
+     * Translator.
      */
-    public function __construct(UserDataService $userDataService)
+    private TranslatorInterface $translator;
+
+    /**
+     * Constructor.
+     *
+     * @param UserDataService     $userDataService UserData service
+     * @param TranslatorInterface $translator      Translator
+     */
+    public function __construct(UserDataService $userDataService, TranslatorInterface $translator)
     {
         $this->userDataService = $userDataService;
+        $this->translator = $translator;
     }
 
     /**
@@ -41,13 +48,12 @@ class UserDataController extends AbstractController
      *
      * @param Request  $request  HTTP request
      * @param User     $user     User entity
-     * @param UserData $userdata User Data entity
+     * @param UserData $userData User Data entity
      *
      * @return Response HTTP response
      */
-    #[IsGranted('ROLE_ADMIN')]
-    #[Route('/{id}/edit', name: 'userData_edit', methods: 'GET|PUT', requirements: ['id' => '[1-9]\d*'])]
-    public function edit(Request $request, User $user, UserData $userdata): Response
+    #[Route('/{id}/edit', name: 'userData_edit', methods: ['GET', 'PUT'], requirements: ['id' => '[1-9]\d*'])]
+    public function edit(Request $request, User $user, UserData $userData): Response
     {
         $loggedInUser = $this->getUser();
 
@@ -63,11 +69,11 @@ class UserDataController extends AbstractController
 
             return $this->redirectToRoute('photo_index');
         }
-        $form = $this->createForm(UserDataType::class, $userdata, ['method' => 'PUT']);
+        $form = $this->createForm(UserDataType::class, $userData, ['method' => 'PUT']);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->userDataService->save($userdata);
+            $this->userDataService->save($userData);
             $this->addFlash('success', 'message_updated_successfully');
 
             return $this->redirectToRoute('photo_index');
@@ -77,7 +83,7 @@ class UserDataController extends AbstractController
             'userData/edit.html.twig',
             [
                 'form' => $form->createView(),
-                'userData' => $userdata,
+                'userData' => $userData,
             ]
         );
     }
