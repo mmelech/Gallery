@@ -1,0 +1,64 @@
+   1) src/Form/Type/PhotoEditType.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+   2) src/Entity/User.php (no_superfluous_phpdoc_tags, phpdoc_trim)
+
+Checked all files in 5.269 seconds, 18.000 MB memory used
+
+FILE: /home/wwwroot/app/src/DataFixtures/AbstractBaseFixtures.php
+------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
+------------------------------------------------------------------------------
+ 79 | WARNING | Always use identical comparison unless you need type juggling
+------------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/Form/DataTransformer/TagsDataTransformer.php
+------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
+------------------------------------------------------------------------------
+ 73 | WARNING | Always use identical comparison unless you need type juggling
+------------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/Controller/SecurityController.php
+----------------------------------------------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
+----------------------------------------------------------------------------------------------------------------------
+ 3 | WARNING | The license block has to be present at the top
+   |         |                 of every PHP file, before the namespace
+----------------------------------------------------------------------------------------------------------------------
+
+
+FILE: /home/wwwroot/app/src/Service/CommentService.php
+------------------------------------------------------------------------------
+FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
+------------------------------------------------------------------------------
+ 41 | WARNING | Always use identical comparison unless you need type juggling
+------------------------------------------------------------------------------
+
+Time: 8.93 secs; Memory: 12MB
+
+ ------- -------- ---- ---------------------- 
+  State   Domain   Id   Message Preview (en)  
+ ------- -------- ---- ---------------------- 
+
+ ------- -------- ---- ---------------------- ------------------------------- 
+  State   Domain   Id   Message Preview (pl)   Fallback Message Preview (en)  
+ ------- -------- ---- ---------------------- ------------------------------- 
+
+
+ Dropping database schema...
+
+ [OK] Database schema dropped successfully!                                                                             
+
+[notice] Migrating up to DoctrineMigrations\Version20230701125424
+[notice] finished in 645.9ms, used 24M memory, 7 migrations executed, 209 sql queries
+
+
+   > purging database
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\UserDataFixtures
+   > loading App\DataFixtures\GalleryFixtures
+   > loading App\DataFixtures\TagFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PhotoFixtures
+   > loading App\DataFixtures\CommentFixtures
