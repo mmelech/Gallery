@@ -1,7 +1,7 @@
    1) src/Form/Type/PhotoEditType.php (no_superfluous_phpdoc_tags, phpdoc_trim)
    2) src/Entity/User.php (no_superfluous_phpdoc_tags, phpdoc_trim)
 
-Checked all files in 5.269 seconds, 18.000 MB memory used
+Checked all files in 3.016 seconds, 18.000 MB memory used
 
 FILE: /home/wwwroot/app/src/DataFixtures/AbstractBaseFixtures.php
 ------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ FOUND 0 ERRORS AND 1 WARNING AFFECTING 1 LINE
  41 | WARNING | Always use identical comparison unless you need type juggling
 ------------------------------------------------------------------------------
 
-Time: 8.93 secs; Memory: 12MB
+Time: 6.16 secs; Memory: 12MB
 
  ------- -------- ---- ---------------------- 
   State   Domain   Id   Message Preview (en)  
@@ -50,8 +50,8 @@ Time: 8.93 secs; Memory: 12MB
 
  [OK] Database schema dropped successfully!                                                                             
 
-[notice] Migrating up to DoctrineMigrations\Version20230701125424
-[notice] finished in 645.9ms, used 24M memory, 7 migrations executed, 209 sql queries
+[notice] Migrating up to DoctrineMigrations\Version20230708210907
+[notice] finished in 160.1ms, used 22M memory, 1 migrations executed, 15 sql queries
 
 
    > purging database

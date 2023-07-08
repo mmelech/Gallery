@@ -76,7 +76,7 @@ abstract class AbstractBaseFixtures extends Fixture
             /** @var object|null $entity */
             $entity = $factory($i);
 
-            if (null == $entity) {
+            if (null === $entity) {
                 throw new LogicException('Did you forget to return the entity object from your callback to BaseFixture::createMany()?');
             }
 

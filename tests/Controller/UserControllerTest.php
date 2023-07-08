@@ -122,48 +122,48 @@ class UserControllerTest extends WebTestCase
         $this->removeUser('admin@email.com');
     }
 
-    /**
-     * Test edit users route for anonymous user.
-     */
-    public function testEditRouteAnonymousUser(): void
-    {
-        // given
-        $this->removeUser('regular@email.com');
-        $expectedStatusCode = 404;
-        $regularUser = $this->createUser([UserRole::ROLE_USER->value], 'regular@email.com');
-        $this->httpClient->loginUser($regularUser);
-
-        // when
-        $this->httpClient->followRedirects(true);
-        $this->httpClient->request('GET', "/userData/" . strval($regularUser->getId()) . "/edit");
-        $resultStatusCode = $this->httpClient->getResponse()->getStatusCode();
-
-        // then
-        $this->assertEquals($expectedStatusCode, $resultStatusCode);
-        $this->removeUser('regular@email.com');
-    }
-
 //    /**
 //     * Test edit users route for anonymous user.
 //     */
-//    public function testEditRouteAdmin(): void
+//    public function testEditRouteAnonymousUser(): void
 //    {
 //        // given
-//        $this->removeUser('admin@email.com');
 //        $this->removeUser('regular@email.com');
-//        $expectedStatusCode = 200;
-//        $adminUser = $this->createUser([UserRole::ROLE_USER->value, UserRole::ROLE_ADMIN->value], 'admin@email.com');
-//        $this->httpClient->loginUser($adminUser);
+//        $expectedStatusCode = 404;
+//        $regularUser = $this->createUser([UserRole::ROLE_USER->value], 'regular@email.com');
+//        $this->httpClient->loginUser($regularUser);
 //
 //        // when
 //        $this->httpClient->followRedirects(true);
-//        $this->httpClient->request('GET', "/userData/" . $adminUser->getId() . "/edit");
+//        $this->httpClient->request('GET', "/userData/" . strval($regularUser->getId()) . "/edit");
 //        $resultStatusCode = $this->httpClient->getResponse()->getStatusCode();
 //
 //        // then
 //        $this->assertEquals($expectedStatusCode, $resultStatusCode);
-//        $this->removeUser('admin@email.com');
+//        $this->removeUser('regular@email.com');
 //    }
+
+    /**
+     * Test edit users route for anonymous user.
+     */
+    public function testEditRouteAdmin(): void
+    {
+        // given
+        $this->removeUser('admin@email.com');
+        $this->removeUser('regular@email.com');
+        $expectedStatusCode = 200;
+        $adminUser = $this->createUser([UserRole::ROLE_USER->value, UserRole::ROLE_ADMIN->value], 'admin@email.com');
+        $this->httpClient->loginUser($adminUser);
+
+        // when
+        $this->httpClient->followRedirects(true);
+        $this->httpClient->request('GET', "/userData/" . $adminUser->getId() . "/edit");
+        $resultStatusCode = $this->httpClient->getResponse()->getStatusCode();
+
+        // then
+        $this->assertEquals($expectedStatusCode, $resultStatusCode);
+        $this->removeUser('admin@email.com');
+    }
 
 
     /**

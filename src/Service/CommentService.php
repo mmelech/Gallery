@@ -38,7 +38,7 @@ class CommentService implements CommentServiceInterface
      */
     public function save(Comment $comment): void
     {
-        if (null == $comment->getId()) {
+        if (null === $comment->getId()) {
             $comment->setDate(new \DateTimeImmutable());
         }
         $this->commentRepository->save($comment);

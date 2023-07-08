@@ -453,3 +453,4 @@ class GalleryControllerTest extends WebTestCase
     }
 
 }
+
