@@ -1778,7 +1778,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Form\\Type\\PhotoEditType\u003A\u003A\u0024tagsDataTransformer",
             "name": "tagsDataTransformer",
-            "summary": "data\u0020transformer.",
+            "summary": "Data\u0020transformer.",
             "url": "classes/App-Form-Type-PhotoEditType.html#property_tagsDataTransformer"
         },                {
             "fqsen": "\\App\\Security\\Voter\\UserVoter",
