@@ -22,28 +22,27 @@ rm -f -- .php-cs-fixer.cache
 
 echo "Running phpcs..."
 ./vendor/bin/phpcs --standard=Symfony src/ --ignore=Kernel.php >> $RESULT_FILE
-
 echo "Running debug:translation..."
 {
-  ./bin/console debug:translation en --only-missing
-  ./bin/console debug:translation pl --only-missing
+  php ./bin/console debug:translation en --only-missing
+  php ./bin/console debug:translation pl --only-missing
 } >> $RESULT_FILE
 
 echo "Running DB schema and data fixtures..."
 {
-  ./bin/console doctrine:schema:drop --no-interaction --full-database --force
-  ./bin/console doctrine:migrations:migrate --no-interaction
-  ./bin/console doctrine:fixtures:load --no-interaction
+  php ./bin/console doctrine:schema:drop --no-interaction --full-database --force
+  php ./bin/console doctrine:migrations:migrate --no-interaction
+  php ./bin/console doctrine:fixtures:load --no-interaction
 }  >> $RESULT_FILE
 
 echo "Running tests..."
 rm -f -- .phpunit.result.cache
-./bin/phpunit --coverage-text
+php ./bin/phpunit --coverage-text
 rm -f -- .phpunit.result.cache
 
 echo "Tear down..."
 {
-  ./bin/console doctrine:schema:drop --no-interaction --full-database --force
+  php ./bin/console doctrine:schema:drop --no-interaction --full-database --force
   rm -rf var
   rm -rf vendor
 } > /dev/null 2>&1

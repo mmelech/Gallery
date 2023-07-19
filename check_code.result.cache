@@ -1,7 +1,5 @@
-   1) src/Form/Type/PhotoEditType.php (no_superfluous_phpdoc_tags, phpdoc_trim)
-   2) src/Entity/User.php (no_superfluous_phpdoc_tags, phpdoc_trim)
 
-Checked all files in 2.953 seconds, 18.000 MB memory used
+Checked all files in 0.621 seconds, 18.000 MB memory used
  ------- -------- ---- ---------------------- 
   State   Domain   Id   Message Preview (en)  
  ------- -------- ---- ---------------------- 
@@ -13,10 +11,10 @@ Checked all files in 2.953 seconds, 18.000 MB memory used
 
  Dropping database schema...
 
- [OK] Database schema dropped successfully!                                                                             
+ [OK] Database schema dropped successfully!                                     
 
-[notice] Migrating up to DoctrineMigrations\Version20230710141048
-[notice] finished in 130.1ms, used 22M memory, 1 migrations executed, 15 sql queries
+[notice] Migrating up to DoctrineMigrations\Version20230719205910
+[notice] finished in 24263.7ms, used 24M memory, 1 migrations executed, 14 sql queries
 
 
    > purging database

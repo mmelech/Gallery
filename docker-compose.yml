@@ -2,6 +2,19 @@ version: '3'
 
 services:
 ###> doctrine/doctrine-bundle ###
+
+  mysql_test:
+    image: mysql
+    ports:
+      - "3308:3306"
+    command: "--default-authentication-plugin=mysql_native_password"
+    container_name: symfony_mysql_test
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: symfony_test
+      MYSQL_USER: symfony_test
+      MYSQL_PASSWORD: symfony_test
+
   database:
     image: postgres:${POSTGRES_VERSION:-13}-alpine
     environment:
