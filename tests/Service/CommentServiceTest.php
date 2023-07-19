@@ -66,7 +66,7 @@ class CommentServiceTest extends KernelTestCase
         $passwordHasher = static::getContainer()->get('security.password_hasher');
         $this->removeUser();
         $user = new User();
-        $user->setEmail('test2@example.com');
+        $user->setEmail('test10@example.com');
         $user->setRoles([UserRole::ROLE_USER->value, UserRole::ROLE_ADMIN->value]);
         $userData = new UserData();
         $userData->setFirstname('user1');
@@ -78,7 +78,7 @@ class CommentServiceTest extends KernelTestCase
                 'p@55w0rd'
             )
         );
-//        $userRepository = static::getContainer()->get(UserRepository::class);
+
         $this->entityManager->persist($user);
         $this->entityManager->flush();
 
@@ -87,39 +87,36 @@ class CommentServiceTest extends KernelTestCase
         $this->entityManager->flush();
 
         $testPhoto = new Photo();
-        $testPhoto->setTitle('Test Photo ');
-//        $testPhoto->setAuthor('Test Author ');
+        $testPhoto->setTitle('Test Photo');
+        $testPhoto->setAuthor($user);
         $testPhoto->setGallery($testGallery);
         $testPhoto->setDate(new DateTimeImmutable());
         $testPhoto->setContent('Content');
+
         $this->entityManager->persist($testPhoto);
         $this->entityManager->flush();
 
-        $expectedComment = new Comment
-        ();
+        $expectedComment = new Comment();
         $expectedComment->setPhoto($testPhoto);
         $expectedComment->setAuthor($user);
-        $expectedComment->setContent('Comment
- Test');
+        $expectedComment->setContent('Comment Test');
 
         //when
         $this->commentService->save($expectedComment);
 
         //then
-        $expectedCommentId = $expectedComment->getId();
-        $resultComment = $this->entityManager->createQueryBuilder()
-            ->select('comment
-')
-            ->from(Comment
-            ::class, 'comment
-')
-            ->where('comment.id = :id')
-            ->setParameter(':id', $expectedCommentId, Types::INTEGER)
-            ->getQuery()
-            ->getSingleResult();
+        $savedCommentId = $expectedComment->getId();
+        $resultComment = $this->entityManager->getRepository(Comment::class)->find($savedCommentId);
 
-        $this->galleryService->delete($testGallery);
         $this->assertEquals($expectedComment->getContent(), $resultComment->getContent());
+        $this->assertEquals($expectedComment->getAuthor(), $resultComment->getAuthor());
+        $this->assertEquals($expectedComment->getPhoto(), $resultComment->getPhoto());
+
+        $this->entityManager->remove($expectedComment);
+        $this->entityManager->remove($testPhoto);
+        $this->entityManager->remove($testGallery);
+        $this->entityManager->remove($user);
+        $this->entityManager->flush();
     }
 
 //    /**

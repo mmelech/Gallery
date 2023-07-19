@@ -2,10 +2,6 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="pl" datatype="plaintext" original="file.ext">
     <body>
-      <trans-unit id="message_action_impossible">
-        <source>message_action_impossible</source>
-        <target>Niemożliwe działanie</target>
-      </trans-unit>
       <trans-unit id="label.actions">
         <source>label.actions</source>
         <target> </target>
@@ -192,7 +188,7 @@
       </trans-unit>
       <trans-unit id="message.deleted_successfully">
         <source>message.deleted_successfully</source>
-        <target>Usunięto!</target>
+        <target>Usunięto</target>
       </trans-unit>
       <trans-unit id="message.form_error">
         <source>message.form_error</source>
@@ -230,7 +226,10 @@
         <source>action.filtrate</source>
         <target>Filtruj</target>
       </trans-unit>
-
+      <trans-unit id="message_action_impossible">
+        <source>message_action_impossible</source>
+        <target>Niemożliwe działanie</target>
+      </trans-unit>
       <trans-unit id="action.change_userData">
         <source>action.change_userData</source>
         <target>Zmiana danych</target>

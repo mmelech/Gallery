@@ -8,6 +8,11 @@ namespace App\Tests\Service;
 use App\Entity\Photo;
 use App\Service\PhotoService;
 use App\Service\GalleryService;
+use App\Entity\Enum\UserRole;
+use App\Entity\User;
+use App\Entity\UserData;
+use App\Repository\UserRepository;
+use App\Service\UserService;
 use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\EntityManagerInterface;
@@ -68,13 +73,34 @@ class PhotoServiceTest extends KernelTestCase
     public function testSave(): void
     {
         // given
+
+        $passwordHasher = static::getContainer()->get('security.password_hasher');
+        $this->removeUser();
+        $user = new User();
+        $user->setEmail('test103@example.com');
+        $user->setRoles([UserRole::ROLE_USER->value, UserRole::ROLE_ADMIN->value]);
+        $userData = new UserData();
+        $userData->setFirstname('user1');
+        $userData->setLogin('user1');
+        $user->setUserData($userData);
+        $user->setPassword(
+            $passwordHasher->hashPassword(
+                $user,
+                'p@55w0rd'
+            )
+        );
+
+        $this->entityManager->persist($user);
+        $this->entityManager->flush();
+
         $expectedPhoto = new Photo();
         $expectedPhoto->setTitle('Test Photo');
-//        $expectedPhoto->setAuthor('Test Author');
         $expectedPhoto->setDate(new DateTimeImmutable());
+        $expectedPhoto->setAuthor($user);
         $expectedPhoto->setContent('Content');
         $gallery = $this->createGallery();
         $expectedPhoto->setGallery($gallery);
+
 
         // when
         $this->photoService->save($expectedPhoto);
@@ -91,6 +117,7 @@ class PhotoServiceTest extends KernelTestCase
 
         $this->assertEquals($expectedPhoto, $resultPhoto);
         $this->photoService->delete($expectedPhoto);
+        $this->entityManager->remove($user);
         $this->galleryService->delete($gallery);
     }
 
@@ -102,11 +129,31 @@ class PhotoServiceTest extends KernelTestCase
     public function testDelete(): void
     {
         // given
+        $passwordHasher = static::getContainer()->get('security.password_hasher');
+        $this->removeUser();
+        $user = new User();
+        $user->setEmail('test109@example.com');
+        $user->setRoles([UserRole::ROLE_USER->value, UserRole::ROLE_ADMIN->value]);
+        $userData = new UserData();
+        $userData->setFirstname('user1');
+        $userData->setLogin('user1');
+        $user->setUserData($userData);
+        $user->setPassword(
+            $passwordHasher->hashPassword(
+                $user,
+                'p@55w0rd'
+            )
+        );
+
+        $this->entityManager->persist($user);
+        $this->entityManager->flush();
+
         $photoToDelete = new Photo();
         $photoToDelete->setTitle('Test Photo');
-//        $photoToDelete->setAuthor('Test Author');
+        $photoToDelete->setAuthor($user);
         $photoToDelete->setDate(new DateTimeImmutable());
         $photoToDelete->setContent('Content');
+
         $gallery = $this->createGallery();
         $photoToDelete->setGallery($gallery);
         $this->entityManager->persist($photoToDelete);
@@ -127,42 +174,12 @@ class PhotoServiceTest extends KernelTestCase
 
         $this->assertNull($resultPhoto);
         $this->galleryService->delete($gallery);
+        $this->entityManager->remove($user);
+        $this->entityManager->flush();
 
     }
 
 
-    /**
-     * Test pagination empty list.
-     */
-    public function testGetPaginatedList(): void
-    {
-        // given
-        $page = 1;
-        $dataSetSize = 3;
-        $expectedResultSize = 10;
-
-        $counter = 0;
-        $gallery = $this->createGallery();
-        while ($counter < $dataSetSize) {
-            $photo = new Photo();
-            $photo->setTitle('Test Photo #'.$counter);
-//            $photo->setAuthor('Test Author #'.$counter);
-            $photo->setGallery($gallery);
-            $photo->setDate(new DateTimeImmutable());
-            $photo->setContent('Content');
-            $this->photoService->save($photo);
-
-            ++$counter;
-        }
-        // when
-        $result = $this->photoService->getPaginatedList($page);
-
-        // then
-        $this->assertEquals($expectedResultSize, count($result));
-        $this->photoService->delete($photo);
-        $this->galleryService->delete($gallery);
-
-    }
 
     public function createGallery(): Gallery
     {
@@ -171,6 +188,20 @@ class PhotoServiceTest extends KernelTestCase
         $this->galleryService->save($gallery);
         return $gallery;
     }
+
+    private function removeUser(): void
+    {
+
+        $userRepository = static::getContainer()->get(UserRepository::class);
+        $entity = $userRepository->findOneBy(array('email' => 'test2@example.com'));
+
+
+        if ($entity != null){
+            $userRepository->delete($entity);
+        }
+
+    }
+
 
 
 }

@@ -158,6 +158,10 @@
         <source>action.create</source>
         <target>Create</target>
       </trans-unit>
+      <trans-unit id="message.deleted_successfully">
+        <source>message.deleted_successfully</source>
+        <target>Deleted</target>
+      </trans-unit>
       <trans-unit id="action.back_to_list">
         <source>action.back_to_list</source>
         <target>Back</target>
@@ -165,10 +169,6 @@
       <trans-unit id="message.created_successfully">
         <source>message.created_successfully</source>
         <target>Added!</target>
-      </trans-unit>
-      <trans-unit id="message.deleted_successfully">
-        <source>message.deleted_successfully</source>
-        <target>Deleted!</target>
       </trans-unit>
       <trans-unit id="message.form_error">
         <source>message.form_error</source>

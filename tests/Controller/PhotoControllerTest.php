@@ -126,8 +126,13 @@ class PhotoControllerTest extends WebTestCase
         $expectedStatusCode = 301;
         $expectedPhoto = new Photo();
         $expectedPhoto->setTitle('Test Photo');
+        $newUserData = new UserData();
         $newUser = new User();
+        $newUser->setEmail('testEmail2@example.com');
+        $newUser->setPassword('test1234');
+        $newUser->setUserData($newUserData);
         $expectedPhoto->setAuthor($newUser);
+        $this->entityManager->persist($newUser);
         $expectedPhoto->setDate(new DateTimeImmutable());
         $gallery = $this->createGallery();
         $expectedPhoto->setContent('Content');
@@ -143,6 +148,9 @@ class PhotoControllerTest extends WebTestCase
         // then
         $this->assertEquals($expectedStatusCode, $resultStatusCode);
         $this->photoService->delete($expectedPhoto);
+
+        $this->entityManager->remove($newUser);
+        $this->entityManager->flush();
         $this->galleryService->delete($gallery);
     }
 
@@ -160,8 +168,13 @@ class PhotoControllerTest extends WebTestCase
         $expectedStatusCode = 200;
         $expectedPhoto = new Photo();
         $expectedPhoto->setTitle('Test Photo');
+        $newUserData = new UserData();
         $newUser = new User();
+        $newUser->setEmail('testEmail1@example.com');
+        $newUser->setPassword('test1234');
+        $newUser->setUserData($newUserData);
         $expectedPhoto->setAuthor($newUser);
+        $this->entityManager->persist($newUser);
         $expectedPhoto->setFilename('abc');
         $expectedPhoto->setDate(new DateTimeImmutable());
         $gallery = $this->createGallery();
@@ -179,6 +192,8 @@ class PhotoControllerTest extends WebTestCase
         // then
         $this->assertEquals($expectedStatusCode, $resultStatusCode);
         $this->photoService->delete($expectedPhoto);
+        $this->entityManager->remove($newUser);
+        $this->entityManager->flush();
         $this->galleryService->delete($gallery);
     }
 
