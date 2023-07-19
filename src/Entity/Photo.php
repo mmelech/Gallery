@@ -69,11 +69,10 @@ class Photo
     /**
      * Gallery.
      *
-     * @var Gallery
      **/
     #[ORM\ManyToOne(targetEntity: Gallery::class, inversedBy: 'photos')]
-    #[ORM\JoinColumn(name: 'gallery_id', referencedColumnName: 'id')]
-    private Gallery $gallery;
+    #[ORM\JoinColumn(nullable: false)]
+    private $gallery;
 
     /**
      * Tags.
@@ -86,18 +85,11 @@ class Photo
     private $tags;
 
     /**
-     * Comments.
-     *
-     * @var ArrayCollection
+     * Author.
      */
-    #[ORM\OneToMany(mappedBy: 'photo', targetEntity: Comment::class, fetch: 'EXTRA_LAZY', orphanRemoval: true)]
-    private $comments;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=User::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $author;
+    #[ORM\ManyToOne(targetEntity: User::class, fetch: 'EXTRA_LAZY')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $author;
 
     /**
      * Constructor.

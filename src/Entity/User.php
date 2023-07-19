@@ -36,8 +36,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Primary key.
-     *
-     * @var int|null
      */
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -46,8 +44,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Email.
-     *
-     * @var string|null
      */
     #[ORM\Column(type: 'string', length: 180, unique: true)]
     #[Assert\NotBlank]
@@ -64,13 +60,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Password.
-     *
-     * @var string|null
      */
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank]
     private ?string $password;
 
+    /**
+     * User Data.
+     *
+     * @var void
+     */
     #[ORM\OneToOne(targetEntity: UserData::class, cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
     private $userData;
@@ -179,9 +178,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Returning a salt is only needed, if you are not using a modern
      * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
      *
-     * @see UserInterface
+     * @return string|null Null
      *
-     * @return string|null
+     * @see UserInterface
      */
     public function getSalt(): ?string
     {

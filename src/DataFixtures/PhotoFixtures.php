@@ -43,6 +43,10 @@ class PhotoFixtures extends AbstractBaseFixtures implements DependentFixtureInte
                 $this->faker->numberBetween(0, 5)
             );
 
+            /** @var User $author */
+            $author = $this->getRandomReference('users');
+            $photo->setAuthor($author);
+
             return $photo;
         });
 

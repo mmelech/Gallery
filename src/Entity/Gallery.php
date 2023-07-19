@@ -22,8 +22,6 @@ class Gallery
 {
     /**
      * Primary key.
-     *
-     * @var int|null
      */
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -32,22 +30,15 @@ class Gallery
 
     /**
      * Title.
-     *
-     * @var string|null
      */
     #[ORM\Column(type: 'string', length: 45)]
     private ?string $title = null;
 
     /**
-     * Photos collection.
-     *
-     * @ORM\Column(nullable=true)
-     *
-     * @var Collection|ArrayCollection
+     * Photo.
      */
-    #[ORM\OneToMany(mappedBy: 'gallery', targetEntity: Photo::class, fetch: 'EXTRA_LAZY')]
-    #[ORM\JoinColumn(name: 'id', referencedColumnName: 'gallery_id', nullable: true)]
-    private Collection $photos;
+    #[ORM\OneToMany(targetEntity: Photo::class, mappedBy: 'gallery', fetch: 'EXTRA_LAZY')]
+    private $photos;
 
     /**
      * Constructor.
@@ -94,34 +85,10 @@ class Gallery
      */
     public function getPhotos(): Collection
     {
+        if (null === $this->photos) {
+            $this->photos = new ArrayCollection();
+        }
+
         return $this->photos;
-    }
-
-    /**
-     * Add photo.
-     *
-     * @param Photo $photo Photo entity
-     */
-    public function addPhoto(Photo $photo): void
-    {
-        if (!$this->photos->contains($photo)) {
-            $this->photos[] = $photo;
-            $photo->setGallery($this);
-        }
-    }
-
-    /**
-     * Remove photo.
-     *
-     * @param Photo $photo Photo entity
-     */
-    public function removePhoto(Photo $photo): void
-    {
-        if ($this->photos->removeElement($photo)) {
-            // set the owning side to null (unless already changed)
-            if ($photo->getGallery() === $this) {
-                $photo->setGallery(null);
-            }
-        }
     }
 }

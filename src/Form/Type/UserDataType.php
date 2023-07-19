@@ -43,7 +43,7 @@ class UserDataType extends AbstractType
             'login',
             TextType::class,
             [
-                'label' => 'login',
+                'label' => 'label.login',
                 'required' => false,
                 'attr' => ['max_length' => 60],
             ]

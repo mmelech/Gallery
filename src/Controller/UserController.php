@@ -56,7 +56,7 @@ class UserController extends AbstractController
     public function index(Request $request): Response
     {
         if (!$this->isGranted('ROLE_ADMIN')) {
-            $this->addFlash('warning', $this->translator->trans('message_action_impossible'));
+            $this->addFlash('warning', 'message_action_impossible');
 
             return $this->redirectToRoute('photo_index');
         }
@@ -101,7 +101,7 @@ class UserController extends AbstractController
             );
         }
 
-        $this->addFlash('warning', $this->translator->trans('message_action_impossible'));
+        $this->addFlash('warning', 'message_action_impossible');
 
         return $this->redirectToRoute('photo_index');
     }
@@ -127,10 +127,7 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->userService->save($user);
 
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.created_successfully')
-            );
+            $this->addFlash('success', 'message.created_successfully');
 
             return $this->redirectToRoute('user_index');
         }
@@ -159,10 +156,7 @@ class UserController extends AbstractController
             // Handle the case when the user is not authorized to edit this user
             // Redirect or show an error message
             // For example:
-            $this->addFlash(
-                'warning',
-                $this->translator->trans('message_action_impossible')
-            );
+            $this->addFlash('warning', 'message_action_impossible');
 
             return $this->redirectToRoute('photo_index');
         }
@@ -176,10 +170,7 @@ class UserController extends AbstractController
 
             $this->userService->save($user);
 
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.password_edited_successfully')
-            );
+            $this->addFlash('success', 'message.password_edited_successfully');
 
             return $this->redirectToRoute('photo_index');
         }

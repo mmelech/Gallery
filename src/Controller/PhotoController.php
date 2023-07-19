@@ -125,10 +125,7 @@ class PhotoController extends AbstractController
                 $user
             );
 
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.created_successfully')
-            );
+            $this->addFlash('success', 'message.created_successfully');
 
             return $this->redirectToRoute('photo_index');
         }
@@ -207,10 +204,7 @@ class PhotoController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->photoService->delete($photo);
 
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.deleted_successfully')
-            );
+            $this->addFlash('success', 'message.deleted_successfully');
 
             return $this->redirectToRoute('photo_index');
         }

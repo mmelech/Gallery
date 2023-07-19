@@ -75,10 +75,7 @@ class CommentController extends AbstractController
             $comment->setDate(new DateTimeImmutable());
             $commentRepository->save($comment);
 
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.created_successfully')
-            );
+            $this->addFlash('success', 'message.created_successfully');
 
             return $this->redirectToRoute('photo_show', ['id' => $id]);
         }
@@ -114,10 +111,7 @@ class CommentController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->commentService->save($comment);
 
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.created_successfully')
-            );
+            $this->addFlash('success', 'message.created_successfully');
 
             return $this->redirectToRoute('photo_index');
         }
@@ -156,10 +150,7 @@ class CommentController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->commentService->delete($comment);
 
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.deleted_successfully')
-            );
+            $this->addFlash('success', 'message.deleted_successfully');
 
             return $this->redirectToRoute('photo_index');
         }

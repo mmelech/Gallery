@@ -52,20 +52,27 @@
         {% endif %}
         <table class="table table-striped">
             <tbody>
-            {% for comment in photo.comments %}
-                <tr>
-
-                    <td>{{ comment.date|date('d/m/Y') }}</td>
-                    <td>{{ comment.content }}</td>
-                    <td>{{ comment.author.userData.login }}</td>
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') and 'ROLE_ADMIN' in app.user.roles %}
-                    <td><a href="{{ url('comment_delete', {id: comment.id}) }}" title="{{ 'action.delete'|trans }}">
-                            {{ 'action.delete'|trans }}
-                        </a></td>
-                    {% endif %}
-                </tr>
-            {% endfor %}
-            </tbody>
+            {% if comments is defined and comments|length %}
+            <h3>{{ 'label_comments'|trans }}</h3>
+            <table class="table table-striped">
+                {% for comment in comments %}
+{#                    {% if comment.status %}#}
+                    <tbody>
+                        <tr>
+                            <td>{{ comment.author.login }}</td>
+                            <td>{{ comment.content }}</td>
+                            <td>{{ comment.createdAt|format_date('short') }}</td>
+                            {% if is_granted('DELETE', comment) %}
+                            <td><a href="{{ url('comment_delete', {id: comment.id}) }}" title="{{ 'action.delete'|trans }}">
+                                    {{ 'action.delete'|trans }}
+                                </a></td>
+                            {% endif %}
+                        </tr>
+                    </tbody>
+{#                    {% endif %}#}
+                {% endfor %}
+            </table>
+        {% endif %}            </tbody>
         </table>
         <p>
             {% if app.user.photo.filename is defined and app.user.photo.filename|length %}

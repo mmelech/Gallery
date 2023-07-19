@@ -68,10 +68,7 @@ class RegistrationController extends AbstractController
             $userRepository->save($user);
             $userDataRepository->save($userData);
 
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.created_successfully')
-            );
+            $this->addFlash('success', 'message.created_successfully');
 
             return $userAuthenticator->authenticateUser($user, $formAuthenticator, $request);
         }

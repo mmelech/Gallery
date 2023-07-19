@@ -62,10 +62,7 @@ class UserDataController extends AbstractController
             // Handle the case when the user is not authorized to edit this user
             // Redirect or show an error message
             // For example:
-            $this->addFlash(
-                'warning',
-                $this->translator->trans('message_action_impossible')
-            );
+            $this->addFlash('warning', 'message_action_impossible');
 
             return $this->redirectToRoute('photo_index');
         }

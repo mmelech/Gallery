@@ -100,7 +100,7 @@ class PhotoEditType extends AbstractType
     /**
      * Prefix.
      *
-     * @return string
+     * @return string Photo
      */
     public function getBlockPrefix(): string
     {

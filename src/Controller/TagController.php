@@ -100,10 +100,7 @@ class TagController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->tagService->save($tag);
 
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.created_successfully')
-            );
+            $this->addFlash('success', 'message.created_successfully');
 
             return $this->redirectToRoute('tag_index');
         }
@@ -139,10 +136,7 @@ class TagController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->tagService->save($tag);
 
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.created_successfully')
-            );
+            $this->addFlash('success', 'message.created_successfully');
 
             return $this->redirectToRoute('tag_index');
         }
@@ -182,10 +176,7 @@ class TagController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->tagService->delete($tag);
 
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.deleted_successfully')
-            );
+            $this->addFlash('success', 'message.deleted_successfully');
 
             return $this->redirectToRoute('tag_index');
         }

@@ -104,10 +104,7 @@ class GalleryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->galleryService->save($gallery);
 
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.created_successfully')
-            );
+            $this->addFlash('success', 'message.created_successfully');
 
             return $this->redirectToRoute('gallery_index');
         }
@@ -138,10 +135,7 @@ class GalleryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->galleryService->save($gallery);
 
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.created_successfully')
-            );
+            $this->addFlash('success', 'message.created_successfully');
 
             return $this->redirectToRoute('gallery_index');
         }
@@ -176,10 +170,7 @@ class GalleryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->galleryService->delete($gallery);
 
-            $this->addFlash(
-                'success',
-                $this->translator->trans('message.deleted_successfully')
-            );
+            $this->addFlash('success', 'message.deleted_successfully');
 
             return $this->redirectToRoute('gallery_index');
         }

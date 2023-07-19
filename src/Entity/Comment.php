@@ -25,7 +25,7 @@ class Comment
      */
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(type: 'integer')]
+    #[ORM\Column]
     private ?int $id = null;
 
     /**
@@ -48,8 +48,9 @@ class Comment
      *
      * @var Photo|null
      */
-    #[ORM\ManyToOne(targetEntity: Photo::class, inversedBy: 'comments')]
-    private $photo;
+    #[ORM\ManyToOne(targetEntity: Photo::class, fetch: 'EXTRA_LAZY')]
+    #[Assert\Type(Photo::class)]
+    private $phoro;
 
     /**
      * Author.
@@ -127,7 +128,7 @@ class Comment
      *
      * @return $this
      */
-    public function setPhoto(?Photo $photo): self
+    public function setPhoto(?Photo $photo): static
     {
         $this->photo = $photo;
 
